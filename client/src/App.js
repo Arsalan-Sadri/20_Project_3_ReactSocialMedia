@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import SignUp from "./components/SignUp";
 import Footer from "./components/Footer";
 import SignIn from "./components/SignIn";
+import Profile from "./components/Profile";
 
 const App = () => (
     <React.Fragment>
@@ -14,10 +15,9 @@ const App = () => (
         <div className="container">
             <Router>
                 <Switch>
-                    {/* <Route exact path="/" component={Books} /> */}
                     <Route exact path="/sign-up" component={SignUp} />
                     <Route exact path="/sign-in" component={SignIn} />
-                    {/* <Route component={NoMatch} /> */}
+                    <Route exact path="/profile" component={Profile} />
                 </Switch>
             </Router>
         </div>
