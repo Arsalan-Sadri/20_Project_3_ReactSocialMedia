@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 const App = () => (
   <Router>
     <div className="container">
+      <br></br>
       <Navbar />
       {/* <Switch>
         <Route exact path="/" component={Books} />
