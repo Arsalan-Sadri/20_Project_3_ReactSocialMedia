@@ -58,8 +58,7 @@ const Navbar = () => (
                                     ? "nav-link active"
                                     : "nav-link"
                             }
-                            href="/sing-up">
-                            {" "}
+                            href="/sign-up">
                             Sign Up
                         </a>
                     </li>
