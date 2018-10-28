@@ -1,9 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 const Navbar = () => (
   <nav className="navbar navbar-expand-lg bg-dark navbar-dark">
-      {/* <div className="navbar-brand" href="/">Facelook</div> */}
       <button 
           className="navbar-toggler" type="button" data-toggle="collapse" 
           data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" 
@@ -25,7 +24,12 @@ const Navbar = () => (
           <form className="form-inline my-2 my-lg-0">
               <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
                   <li className="nav-item">
-                      <a className={window.location.pathname === "/login" ? "nav-link active" : "nav-link"} href="/login">Login</a>
+                      <a className={window.location.pathname === "/sing-up" ? "nav-link active" : "nav-link"} 
+                         href="/sing-up"> Sign Up</a>
+                  </li>
+                  <li className="nav-item">
+                      <a className={window.location.pathname === "/sign-in" ? "nav-link active" : "nav-link"}
+                         href="/sign-in"><i class="fa fa-sign-in" aria-hidden="true"></i> Sign in</a>
                   </li>
               </ul>
           </form>
