@@ -19,16 +19,16 @@ const Navbar = () => (
                     <a
                         className={
                             window.location.pathname === "/"
-                                ? "nav-link"
+                                ? "nav-link active"
                                 : "nav-link text-white"
                         }
                         href="/">
                         Home
                     </a>
                 </li>
-                {/* <li className="nav-item">
-                    <span className="nav-link"> | </span>
-                </li> */}
+                <li className="nav-item">
+                    <span className="nav-link">|</span>
+                </li>
                 <li className="nav-item">
                     <a
                         className={
@@ -39,6 +39,9 @@ const Navbar = () => (
                         href="/profile">
                         Profile
                     </a>
+                </li>
+                <li className="nav-item">
+                    <span className="nav-link">|</span>
                 </li>
                 <li className="nav-item">
                     <a
@@ -64,6 +67,9 @@ const Navbar = () => (
                             href="/sign-up">
                             Sign Up
                         </a>
+                    </li>
+                    <li className="nav-item">
+                        <span className="nav-link">|</span>
                     </li>
                     <li className="nav-item">
                         <a

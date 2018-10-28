@@ -1,8 +1,12 @@
 .my-navbar {
     position: sticky;
     top: 0;
-    padding-left: 250px;
-    padding-right: 250px;
+    padding-left: 18%;;
+    padding-right: 18%;;
     margin-bottom: 50px;
     background: rgb(158, 17, 17);
+}
+
+a.nav-link.active {
+  border-bottom: 2px solid white;
 }
