@@ -2,7 +2,7 @@ import React from "react";
 import "./Navbar.css";
 
 const Navbar = () => (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-primary my-navbar">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark my-navbar">
         <button
             className="navbar-toggler"
             type="button"
