@@ -69,7 +69,7 @@ const Navbar = () => (
                   : "nav-link"
               }
               href="/sign-in">
-              <i class="fa fa-sign-in" aria-hidden="true" /> Sign in
+              <i className="fa fa-sign-in" aria-hidden="true" /> Sign in
             </a>
           </li>
         </ul>
