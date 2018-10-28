@@ -12,7 +12,7 @@ const App = () => (
     <React.Fragment>
         <Header />
         <Navbar />
-        <div className="container">
+        <div className="container-fluid">
             <Router>
                 <Switch>
                     <Route exact path="/sign-up" component={SignUp} />
