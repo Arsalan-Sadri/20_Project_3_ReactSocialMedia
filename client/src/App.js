@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 import SignUp from "./components/SignUp";
 import Footer from "./components/Footer";
+import SignIn from "./components/SignIn";
 
 const App = () => (
     <React.Fragment>
@@ -15,7 +16,7 @@ const App = () => (
                 <Switch>
                     {/* <Route exact path="/" component={Books} /> */}
                     <Route exact path="/sign-up" component={SignUp} />
-                    {/* <Route exact path="/books/:id" component={Detail} /> */}
+                    <Route exact path="/sign-in" component={SignIn} />
                     {/* <Route component={NoMatch} /> */}
                 </Switch>
             </Router>
