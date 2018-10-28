@@ -2,58 +2,20 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Navbar = () => (
-  <nav className="nav nav-tabs">
-    <li className="nav-item">
-      <Link
-        to="/"
-        className={
-          window.location.pathname === "/" ? "nav-link active" : "nav-link"
-        }
-      >
-        Home
-      </Link>
-    </li>
-    <li className="nav-item">
-      <Link
-        to="/about"
-        className={
-          window.location.pathname === "/about" ? "nav-link active" : "nav-link"
-        }
-      >
-        About
-      </Link>
-    </li>
-    <li className="nav-item">
-      <Link
-        to="/blog"
-        className={
-          window.location.pathname === "/blog" ? "nav-link active" : "nav-link"
-        }
-      >
-        Blog
-      </Link>
-    </li>
-    <li className="nav-item">
-      <Link
-        to="/contact"
-        className={
-          window.location.pathname === "/contact" ? "nav-link active" : "nav-link"
-        }
-      >
-        Contact
-      </Link>
-    </li>
-    <li className="nav-item">
-      <Link
-        to="/contact/learn"
-        className={
-          window.location.pathname === "/contact/learn" ? "nav-link active" : "nav-link"
-        }
-      >
-        Learn
-      </Link>
-    </li>
+  <nav className="navbar navbar-expand-sm bg-dark navbar-dark">
+      <ul className="navbar-nav">
+          <li className="nav-item">
+              <a className={window.location.pathname === "/" ? "nav-link active" : "nav-link"} href="/">Home</a>
+          </li>
+          <li className="nav-item">
+              <a className={window.location.pathname === "/profile" ? "nav-link active" : "nav-link"} href="/profile">Profile</a>
+          </li>
+          <li className="nav-item">
+              <a className={window.location.pathname === "/friends" ? "nav-link active" : "nav-link"} href="/friends">Friends</a>
+          </li>
+      </ul>
   </nav>
 );
 
 export default Navbar;
+
