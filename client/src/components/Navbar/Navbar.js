@@ -2,7 +2,7 @@ import React from "react";
 import "./Navbar.css";
 
 const Navbar = () => (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark my-navbar">
+    <nav className="navbar navbar-expand-lg navbar-dark my-navbar">
         <button
             className="navbar-toggler"
             type="button"
@@ -19,19 +19,22 @@ const Navbar = () => (
                     <a
                         className={
                             window.location.pathname === "/"
-                                ? "nav-link active"
-                                : "nav-link"
+                                ? "nav-link"
+                                : "nav-link text-white"
                         }
                         href="/">
                         Home
                     </a>
                 </li>
+                {/* <li className="nav-item">
+                    <span className="nav-link"> | </span>
+                </li> */}
                 <li className="nav-item">
                     <a
                         className={
                             window.location.pathname === "/profile"
                                 ? "nav-link active"
-                                : "nav-link"
+                                : "nav-link text-white"
                         }
                         href="/profile">
                         Profile
@@ -42,7 +45,7 @@ const Navbar = () => (
                         className={
                             window.location.pathname === "/friends"
                                 ? "nav-link active"
-                                : "nav-link"
+                                : "nav-link text-white"
                         }
                         href="/friends">
                         Friends
@@ -56,7 +59,7 @@ const Navbar = () => (
                             className={
                                 window.location.pathname === "/sign-up"
                                     ? "nav-link active"
-                                    : "nav-link"
+                                    : "nav-link text-white"
                             }
                             href="/sign-up">
                             Sign Up
@@ -67,7 +70,7 @@ const Navbar = () => (
                             className={
                                 window.location.pathname === "/sign-in"
                                     ? "nav-link active"
-                                    : "nav-link"
+                                    : "nav-link text-white"
                             }
                             href="/sign-in">
                             <i className="fa fa-sign-in" aria-hidden="true" />{" "}

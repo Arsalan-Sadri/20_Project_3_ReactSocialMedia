@@ -4,7 +4,7 @@ import "./Profile.css";
 class Profile extends React.Component {
     render() {
         return (
-            1
+            <div>Bomshakalaka</div>
         );
     }
 }
