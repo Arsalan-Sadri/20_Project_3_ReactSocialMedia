@@ -4,12 +4,13 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 import SignUp from "./components/SignUp";
+import Footer from "./components/Footer";
 
 const App = () => (
     <React.Fragment>
         <Header />
+        <Navbar />
         <div className="container">
-            <Navbar />
             <Router>
                 <Switch>
                     {/* <Route exact path="/" component={Books} /> */}
@@ -19,6 +20,7 @@ const App = () => (
                 </Switch>
             </Router>
         </div>
+        <Footer />
     </React.Fragment>
 );
 
