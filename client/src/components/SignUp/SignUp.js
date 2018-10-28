@@ -4,7 +4,10 @@ import "./SignUp.css";
 class SignUp extends React.Component {
     state = {
         firstName: "",
-        lastName: ""
+        lastName: "",
+        email: "",
+        password: "",
+        confirmPass: ""
     };
 
     inputChangeHandler = event => {
@@ -26,7 +29,7 @@ class SignUp extends React.Component {
 
     render() {
         return (
-            <div className="form-wrapper">
+            <div className="my-form-wrapper">
                 <form>
                     <div className="form-group">
                         <label htmlFor="first-name">First name:</label>
@@ -50,6 +53,42 @@ class SignUp extends React.Component {
                             onChange={this.inputChangeHandler}
                             type="text"
                             placeholder="Last Name"
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="email">Email:</label>
+                        <input
+                            id="email"
+                            className="form-control"
+                            value={this.state.email}
+                            name="email"
+                            onChange={this.inputChangeHandler}
+                            type="email"
+                            placeholder="Email"
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="password">Password:</label>
+                        <input
+                            id="password"
+                            className="form-control"
+                            value={this.state.password}
+                            name="password"
+                            onChange={this.inputChangeHandler}
+                            type="password"
+                            placeholder="Password"
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="confirm-password">Confirm password:</label>
+                        <input
+                            id="confirm-password"
+                            className="form-control"
+                            value={this.state.confirmPass}
+                            name="confirmPass"
+                            onChange={this.inputChangeHandler}
+                            type="password"
+                            placeholder="Password"
                         />
                     </div>
                     <button
