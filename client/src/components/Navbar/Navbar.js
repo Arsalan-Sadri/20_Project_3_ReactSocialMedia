@@ -54,7 +54,7 @@ const Navbar = () => (
                     <li className="nav-item">
                         <a
                             className={
-                                window.location.pathname === "/sing-up"
+                                window.location.pathname === "/sign-up"
                                     ? "nav-link active"
                                     : "nav-link"
                             }
