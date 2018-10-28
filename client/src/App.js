@@ -5,20 +5,20 @@ import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 
 const App = () => (
-  <Router>
     <React.Fragment>
-      <Header />
-      <div className="container">
-        <Navbar />
-        {/* <Switch>
+        <Header />
+        <div className="container">
+            <Navbar />
+            <Router>
+                {/* <Switch>
         <Route exact path="/" component={Books} />
         <Route exact path="/books" component={Books} />
         <Route exact path="/books/:id" component={Detail} />
         <Route component={NoMatch} />
       </Switch> */}
-      </div>
+            </Router>
+        </div>
     </React.Fragment>
-  </Router>
 );
 
 export default App;
