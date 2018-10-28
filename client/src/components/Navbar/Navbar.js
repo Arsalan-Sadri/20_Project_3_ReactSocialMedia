@@ -1,8 +1,8 @@
 import React from "react";
-// import { Link } from "react-router-dom";
+import "./Navbar.css";
 
 const Navbar = () => (
-  <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+  <nav className="navbar navbar-expand-lg navbar-dark bg-primary my-navbar">
     <button
       className="navbar-toggler"
       type="button"
