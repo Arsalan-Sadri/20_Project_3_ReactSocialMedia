@@ -104,6 +104,19 @@ class SignUp extends React.Component {
                             placeholder="Password"
                         />
                     </div>
+                    {/* <div className="form-group">
+                        <label>Profile picture (optional):</label>
+                        <input
+                            id="profile-pic"
+                            // className="form-control"
+                            // value={this.state.confirmPass}
+                            name="profilePic"
+                            accept="image/*"
+                            // onChange={this.inputChangeHandler}
+                            type="file"
+                            // placeholder="Password"
+                        />
+                    </div> */}
                     <button
                         className="btn btn-info"
                         onClick={this.formSubmitHandler}

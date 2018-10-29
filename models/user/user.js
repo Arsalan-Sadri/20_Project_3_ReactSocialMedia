@@ -32,6 +32,12 @@ const userSchema = new mongoose.Schema({
             "Password should be at least 8 characters!"
         ]
     }
+    // ,
+    // img: {
+    //     data: Buffer, 
+    //     contentType: String 
+    // }
+
 });
 
 module.exports = mongoose.model("User", userSchema);
