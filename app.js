@@ -22,7 +22,7 @@ mongoose.connect(
     }
 );
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 8080;
 const host = "localhost";
 app.listen(PORT, host, function() {
     console.log(`\n**********\nApp is running on: http://${host}:${PORT}\n**********\n`);
