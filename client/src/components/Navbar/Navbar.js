@@ -46,6 +46,20 @@ const Navbar = () => (
                 <li className="nav-item">
                     <a
                         className={
+                            window.location.pathname === "/search"
+                                ? "nav-link active"
+                                : "nav-link text-white"
+                        }
+                        href="/search">
+                        Search
+                    </a>
+                </li>
+                <li className="nav-item">
+                    <span className="nav-link">|</span>
+                </li>
+                <li className="nav-item">
+                    <a
+                        className={
                             window.location.pathname === "/friends"
                                 ? "nav-link active"
                                 : "nav-link text-white"
