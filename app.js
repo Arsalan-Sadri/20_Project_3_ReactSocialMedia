@@ -15,10 +15,15 @@ if (process.env.NODE_ENV === "production") {
 
 app.use(routes);
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/project-3");
+mongoose.connect(
+    process.env.MONGODB_URI || "mongodb://localhost/project-3",
+    {
+        useNewUrlParser: true
+    }
+);
 
 const PORT = process.env.PORT || 8080;
 const host = "localhost";
 app.listen(PORT, host, function() {
-    console.log(`App is running on http://${host}:${PORT}`);
+    console.log(`\n**********\nApp is running on: http://${host}:${PORT}\n**********\n`);
 });

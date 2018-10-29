@@ -1,17 +1,18 @@
-// const jwt = require("jsonwebtoken");
-// const bcrypt = require("bcrypt");
-// const userAuth = require("../../../middleware/user-auth");
-// const db = require("../../../models/user");
-// if (process.env.NODE_ENV !== 'production') require("dotenv").load();
+const middleware = require("../../../middleware");
 
 const router = require("express").Router();
 const userControlller = require("../../../controllers/userController");
 
 router
-    .route("/")
-    .get(function (req, res, next) {
-        res.send("It just works!");
+    .use((req, res, next) => {
+        console.log("\n**********\nGateway middleware is hit!\n**********\n");
+        next();
     });
+
+router
+    .route("/")
+    .get((req, res, next) => res.send("It just works!")
+    );
 
 router
     .route("/sign-up")
@@ -21,5 +22,8 @@ router
     .route("/sign-in")
     .post(userControlller.signIn);
 
+router
+    .route("/posts")
+    .post(middleware.verifyToken, (req, res, next) => res.send("Posted!!!"));
 
 module.exports = router;
