@@ -105,7 +105,7 @@ class SignUp extends React.Component {
                         />
                     </div>
                     <button
-                        className="btn btn-primary"
+                        className="btn btn-info"
                         onClick={this.formSubmitHandler}
                         type="submit">
                         Sign up
