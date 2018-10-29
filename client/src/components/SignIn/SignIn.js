@@ -1,5 +1,6 @@
 import React from "react";
 import "./SignIn.css";
+import API from "../../utils/API";
 
 class SignIn extends React.Component {
     state = {
@@ -9,7 +10,6 @@ class SignIn extends React.Component {
 
     inputChangeHandler = event => {
         const { name, value } = event.target;
-
         this.setState({
             [name]: value
         });
@@ -17,11 +17,16 @@ class SignIn extends React.Component {
 
     formSubmitHandler = event => {
         event.preventDefault();
-        alert(`Hello`);
-        this.setState({
-            firstName: "",
-            lastName: ""
-        });
+        
+        if (this.state.email && this.state.password) {
+            API.signIn({
+                email: this.state.email,
+                password: this.state.password
+            })
+                .then(res => console.log(res))
+                .catch(err => console.log(err));
+        }
+
     };
 
     render() {
