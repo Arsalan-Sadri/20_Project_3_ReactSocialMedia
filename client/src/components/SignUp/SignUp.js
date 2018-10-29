@@ -22,15 +22,21 @@ class SignUp extends React.Component {
     formSubmitHandler = event => {
         event.preventDefault();
         
-        if (this.state.firstName && this.state.lastName && this.state.email && this.state.password && this.state.confirmPass) {
-            API.signUp({
-                firstName: this.state.firstName,
-                lastName: this.state.lastName,
-                email: this.state.email,
-                password: this.state.password
-            })
-                .then(res => console.log(res))
-                .catch(err => console.log(err));
+        if (this.state.firstName && this.state.lastName
+            && this.state.email && this.state.password
+            && this.state.confirmPass) {
+                if (this.state.password === this.state.confirmPass) {
+                    API.signUp({
+                        firstName: this.state.firstName,
+                        lastName: this.state.lastName,
+                        email: this.state.email,
+                        password: this.state.password
+                    })
+                        .then(res => console.log(res))
+                        .catch(err => console.log(err));
+                }
+                else alert(`WARNING!\nPasswords do NOT match!\nPlease try again later`);
+                
         }
     };
 
