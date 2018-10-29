@@ -3,7 +3,7 @@ import "./Footer.css";
 
 const Footer = () => (
     <div className="text-center my-footer">
-        This is a footer
+        copyright @FACES
     </div>
 );
 

@@ -1,5 +1,6 @@
 import React from "react";
 import "./SignUp.css";
+import API from "../../utils/API";
 
 class SignUp extends React.Component {
     state = {
@@ -20,11 +21,17 @@ class SignUp extends React.Component {
 
     formSubmitHandler = event => {
         event.preventDefault();
-        alert(`Hello ${this.state.firstName} ${this.state.lastName}`);
-        this.setState({
-            firstName: "",
-            lastName: ""
-        });
+        
+        if (this.state.firstName && this.state.lastName && this.state.email && this.state.password && this.state.confirmPass) {
+            API.signUp({
+                firstName: this.state.firstName,
+                lastName: this.state.lastName,
+                email: this.state.email,
+                password: this.state.password
+            })
+                .then(res => console.log(res))
+                .catch(err => console.log(err));
+        }
     };
 
     render() {
