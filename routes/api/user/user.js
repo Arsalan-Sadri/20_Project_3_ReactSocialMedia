@@ -16,7 +16,7 @@ router
 
 router
     .route("/sign-up")
-    .post(userControlller.create);
+    .post(userControlller.createAndSignIn);
 
 router
     .route("/sign-in")

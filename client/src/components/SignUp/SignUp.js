@@ -19,7 +19,7 @@ class SignUp extends React.Component {
         });
     };
 
-    formSubmitHandler = event => {
+    formSingUpHandler = event => {
         event.preventDefault();
         
         if (this.state.firstName && this.state.lastName
@@ -32,7 +32,12 @@ class SignUp extends React.Component {
                         email: this.state.email,
                         password: this.state.password
                     })
-                        .then(res => console.log(res))
+                        .then(res => {
+                            console.log(res.data);
+                            localStorage.setItem("token", res.data);
+                            console.log(localStorage.getItem("token"));
+                            // window.location.pathname = "/sign-in";
+                        })
                         .catch(err => console.log(err));
                 }
                 else alert(`WARNING!\nPasswords do NOT match!\nPlease try again later`);
@@ -115,7 +120,7 @@ class SignUp extends React.Component {
                     </div> */}
                     <button
                         className="btn btn-info"
-                        onClick={this.formSubmitHandler}
+                        onClick={this.formSingUpHandler}
                         type="submit">
                         Sign up
                     </button>
