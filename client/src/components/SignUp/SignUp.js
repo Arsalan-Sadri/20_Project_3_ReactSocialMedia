@@ -6,6 +6,7 @@ class SignUp extends React.Component {
     state = {
         firstName: "",
         lastName: "",
+        username: "",
         email: "",
         password: "",
         confirmPass: ""
@@ -29,11 +30,11 @@ class SignUp extends React.Component {
                     API.signUp({
                         firstName: this.state.firstName,
                         lastName: this.state.lastName,
+                        userName: this.state.userName,
                         email: this.state.email,
                         password: this.state.password
                     })
                         .then(res => {
-                            console.log(res.data);
                             localStorage.setItem("token", res.data);
                             console.log(localStorage.getItem("token"));
                             // window.location.pathname = "/profile";
@@ -71,6 +72,18 @@ class SignUp extends React.Component {
                             onChange={this.inputChangeHandler}
                             type="text"
                             placeholder="Last Name"
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="user-name">Username:</label>
+                        <input
+                            id="user-name"
+                            className="form-control"
+                            value={this.state.userName}
+                            name="userName"
+                            onChange={this.inputChangeHandler}
+                            type="text"
+                            placeholder="Username"
                         />
                     </div>
                     <div className="form-group">

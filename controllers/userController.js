@@ -10,10 +10,10 @@ module.exports = {
             else {
                 req.body.password = encrypted;
                 db.User.create(req.body)
-                    .then(addedUser => {
+                    .then(dbUser => {
                         jwt.sign(
                             {
-                                email: addedUser.email
+                                email: dbUser.email
                             },
                             process.env.JWT_KEY,
                             {
