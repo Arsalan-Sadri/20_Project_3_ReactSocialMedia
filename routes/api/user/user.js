@@ -23,5 +23,11 @@ router
         
     });
     
+router
+    .route("/api/user/:username")
+    .get((req, res) => {
+        // token is in req headers
+        res.send("Hiiii");
+    });
 
 module.exports = router;

@@ -9,39 +9,17 @@ class Profile extends React.Component {
         email: ""
     };
 
-    // componentDidMount () {
-
-    //     let config = {
-    //         headers: {
-    //           header1: value,
-    //         }
-    //       }
-          
-    //       let data = {
-    //         'HTTP_CONTENT_LANGUAGE': self.language
-    //       }
-          
-    //       axios.post(URL, data, config).then(...)
-
-
-
-    //     var instance = axios.create({
-    //         baseURL: 'https://some-domain.com/api/',
-    //         timeout: 1000,
-    //         headers: {'X-Custom-Header': 'foobar'}
-    //       });
-
-
-    //     axios({
-    //         method: "post",
-    //         url: "/profile",
-    //         data: {
-    //             firstName: 'Fred',
-    //             lastName: 'Flintstone'
-    //         }
-    //     });
-
-    // }
+    componentDidMount() {
+        axios({
+            method: "get",
+            url: "/api" + window.location.pathname,
+            headers: {
+                Authorization: "Bearer " + localStorage.getItem("token")
+            }
+        }).then(res => {
+            console.log(res);
+        });
+    }
 
     render() {
         return (
