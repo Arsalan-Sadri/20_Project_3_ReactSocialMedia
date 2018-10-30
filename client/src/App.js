@@ -15,9 +15,10 @@ const App = () => (
         <div className="container-fluid">
             <Router>
                 <Switch>
+                    <Route exact path="/" component={SignIn} />
                     <Route exact path="/sign-up" component={SignUp} />
                     <Route exact path="/sign-in" component={SignIn} />
-                    <Route exact path="/profile" component={Profile} />
+                    <Route exact path="/profile/:username" component={Profile} />
                 </Switch>
             </Router>
         </div>
