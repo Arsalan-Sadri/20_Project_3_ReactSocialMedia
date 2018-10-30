@@ -46,20 +46,6 @@ const Navbar = () => (
                 <li className="nav-item">
                     <a
                         className={
-                            window.location.pathname === "/search"
-                                ? "nav-link active"
-                                : "nav-link text-white"
-                        }
-                        href="/search">
-                        Search
-                    </a>
-                </li>
-                <li className="nav-item">
-                    <span className="nav-link">|</span>
-                </li>
-                <li className="nav-item">
-                    <a
-                        className={
                             window.location.pathname === "/friends"
                                 ? "nav-link active"
                                 : "nav-link text-white"
@@ -67,6 +53,42 @@ const Navbar = () => (
                         href="/friends">
                         Friends
                     </a>
+                </li>
+                <li className="nav-item">
+                    <span className="nav-link">|</span>
+                </li>
+                <li className="nav-item dropdown">
+                    <a
+                        className={
+                            window.location.pathname === "/search"
+                                ? "nav-link active"
+                                : "nav-link text-white dropdown-toggle"
+                        }
+                        href="#"
+                        id="navbarDropdown"
+                        role="button"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false">
+                        Search
+                    </a>
+                    <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a className="dropdown-item" href={window.location.pathname+"/search-friends"}>
+                            Friends
+                        </a>
+                        <a className="dropdown-item" href="search-events">
+                            Events
+                        </a>
+                        {/* <a
+                            className={
+                                window.location.pathname === "/search"
+                                    ? "nav-link active"
+                                    : "nav-link text-white"
+                            }
+                            href="/search">
+                            Search
+                        </a> */}
+                    </div>
                 </li>
             </ul>
             <form className="form-inline my-2 my-lg-0">

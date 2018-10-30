@@ -7,6 +7,7 @@ import SignUp from "./components/SignUp";
 import Footer from "./components/Footer";
 import SignIn from "./components/SignIn";
 import Profile from "./components/Profile";
+import Friend from "./components/Friend";
 
 const App = () => (
     <React.Fragment>
@@ -19,6 +20,7 @@ const App = () => (
                     <Route exact path="/sign-up" component={SignUp} />
                     <Route exact path="/sign-in" component={SignIn} />
                     <Route path="/user" component={Profile} />
+                    <Route exact path="/user/:username/search-friends" component={Friend} />
                 </Switch>
             </Router>
         </div>
@@ -26,4 +28,4 @@ const App = () => (
     </React.Fragment>
 );
 
-export default App;
+export default App

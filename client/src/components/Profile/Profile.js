@@ -1,6 +1,6 @@
 import React from "react";
 import "./Profile.css";
-import axios from "axios";
+import API from "../../utils/API";
 
 class Profile extends React.Component {
     state = {
@@ -10,13 +10,7 @@ class Profile extends React.Component {
     };
 
     componentDidMount() {
-        axios({
-            method: "get",
-            url: "/api" + window.location.pathname, // /api/user/username
-            headers: {
-                Authorization: "Bearer " + localStorage.getItem("token")
-            }
-        }).then(res =>
+        API.getDbUser().then(res =>
             this.setState({
                 firstName: res.data.firstName,
                 lastName: res.data.lastName,
@@ -25,9 +19,13 @@ class Profile extends React.Component {
         );
     }
 
+    createEventHander = (e) => {
+        window.location.pathname = "/user/" + this.state.username;
+    }
+
     render() {
         return (
-            <div className="card">
+            <div className="card img-fluid">
                 <img
                     className="card-img-top"
                     src="./avatar.png"
@@ -38,7 +36,7 @@ class Profile extends React.Component {
                         {this.state.firstName} {this.state.lastName}
                     </h4>
                     <p className="card-text">{this.state.email}</p>
-                    <a href="#" className="btn btn-info">
+                    <a href={window.location.pathname+"/create-event"} className="btn btn-info" onClick={this.createEventHander}>
                         Create event
                     </a>
                 </div>

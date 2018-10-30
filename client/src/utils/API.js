@@ -7,7 +7,13 @@ export default {
     signIn: function(User) {
         return axios.post("/api/user/sign-in", User);
     },
-    getProfile: function (token) {
-
+    getDbUser: function() {
+        return axios({
+            method: "get",
+            url: "/api" + window.location.pathname, // /api/user/username
+            headers: {
+                Authorization: "Bearer " + localStorage.getItem("token")
+            }
+        });
     }
 };

@@ -79,5 +79,14 @@ module.exports = {
             .catch(function(err) {
                 res.send("User not found!");
             });
+    },
+    findAll: function (req, res) {
+        db.User
+            .find({})
+            .then(allDbUsers => res.json(allDbUsers))
+            .catch(function(err) {
+                res.send("User not found!");
+            });
+
     }
 };
