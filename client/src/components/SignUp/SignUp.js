@@ -30,14 +30,14 @@ class SignUp extends React.Component {
                     API.signUp({
                         firstName: this.state.firstName,
                         lastName: this.state.lastName,
-                        userName: this.state.userName,
+                        username: this.state.username,
                         email: this.state.email,
                         password: this.state.password
                     })
                         .then(res => {
                             localStorage.setItem("token", res.data);
                             console.log(localStorage.getItem("token"));
-                            // window.location.pathname = "/profile";
+                            // window.location.pathname = "/profile/";
                         })
                         .catch(err => console.log(err));
                 }
@@ -79,8 +79,8 @@ class SignUp extends React.Component {
                         <input
                             id="user-name"
                             className="form-control"
-                            value={this.state.userName}
-                            name="userName"
+                            value={this.state.username}
+                            name="username"
                             onChange={this.inputChangeHandler}
                             type="text"
                             placeholder="Username"
