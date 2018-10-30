@@ -5,26 +5,15 @@ const userControlller = require("../../../controllers/userController");
 
 router
     .route("/sign-up")
-    .get((req, res) => res.sendFile(path.join(__dirname, "../../../client/build/index.html")))
     .post(userControlller.createAndSignIn);
 
 router
     .route("/sign-in")
-    .get((req, res) => res.sendFile(path.join(__dirname, "../../../client/build/index.html")))
     .post(userControlller.signIn);
-
-// router
-//     .use(middleware.verifyToken);
-
-router
-    .route("/user/:username")
-    .get((req, res) => res.sendFile(path.join(__dirname, "../../../client/build/index.html")))
-    .post(middleware.verifyToken, (req, res) => {
-        
-    });
     
+// Matches with "/api/user/:username"
 router
-    .route("/api/user/:username")
+    .route("/:username")
     .get((req, res) => {
         // token is in req headers
         res.send("Hiiii");
