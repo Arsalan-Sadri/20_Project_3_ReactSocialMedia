@@ -35,8 +35,9 @@ class SignUp extends React.Component {
                         password: this.state.password
                     })
                         .then(res => {
-                            localStorage.setItem("token", res.data);
-                            window.location.pathname = "/user/" + this.state.username;
+                            localStorage.setItem("token", res.data.token);
+                            localStorage.setItem("username", res.data.username);
+                            window.location.pathname = "/user/" + localStorage.getItem("username");
                         })
                         .catch(err => console.log(err));
                 }
@@ -121,7 +122,7 @@ class SignUp extends React.Component {
                             placeholder="Password"
                         />
                     </div>
-                    {/* <div className="form-group">
+                    <div className="form-group">
                         <label>Profile picture (optional):</label>
                         <input
                             id="profile-pic"
@@ -129,7 +130,7 @@ class SignUp extends React.Component {
                             accept="image/*"
                             type="file"
                         />
-                    </div> */}
+                    </div>
                     <button
                         className="btn btn-info"
                         onClick={this.formSingUpHandler}

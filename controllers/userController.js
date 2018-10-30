@@ -22,7 +22,10 @@ module.exports = {
                             function(err, token) {
                                 if (err) res.send(err);
                                 else {
-                                    res.send(token);
+                                    res.json({
+                                        token: token,
+                                        username: dbUser.username
+                                    });
                                 }
                             }
                         );

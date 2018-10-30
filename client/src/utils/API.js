@@ -10,7 +10,16 @@ export default {
     getDbUser: function() {
         return axios({
             method: "get",
-            url: "/api" + window.location.pathname, // /api/user/username
+            url: "/api/user/" +localStorage.getItem("username") ,
+            headers: {
+                Authorization: "Bearer " + localStorage.getItem("token")
+            }
+        });
+    }, 
+    getAllUsers: function() {
+        return axios({
+            method: "get",
+            url: "/api/user/search-friends",
             headers: {
                 Authorization: "Bearer " + localStorage.getItem("token")
             }

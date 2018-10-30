@@ -23,7 +23,7 @@ class SignIn extends React.Component {
                 email: this.state.email,
                 password: this.state.password
             })
-                .then(res => console.log(res))
+                .then(res => window.location.href="/")
                 .catch(err => console.log(err));
         }
 

@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 import SignIn from "./components/SignIn";
 import Profile from "./components/Profile";
 import Friend from "./components/Friend";
+import Home from "./components/Home";
 
 const App = () => (
     <React.Fragment>
@@ -16,11 +17,11 @@ const App = () => (
         <div className="container-fluid">
             <Router>
                 <Switch>
-                    <Route exact path="/" component={SignIn} />
+                    <Route exact path="/" component={Home} />
                     <Route exact path="/sign-up" component={SignUp} />
                     <Route exact path="/sign-in" component={SignIn} />
-                    <Route path="/user" component={Profile} />
-                    <Route exact path="/user/:username/search-friends" component={Friend} />
+                    <Route exact path="/search-friends" component={Friend} />
+                    <Route exact path="/user/:username" component={Profile} />
                 </Switch>
             </Router>
         </div>

@@ -1,41 +1,42 @@
 import React from "react";
 import "./Friend.css";
+import API from "../../utils/API";
+import img1 from "../Profile/avatar.png"
 
 class Friend extends React.Component {
-
     state = {
         persons: []
     };
 
-    // componentDidMount() {
-    //     axios({
-    //         method: "get",
-    //         url: "/api" + window.location.pathname, // /api/user/username/search-friends
-    //         headers: {
-    //             Authorization: "Bearer " + localStorage.getItem("token")
-    //         }
-    //     }).then(res => this.setState({}));
-    // }
+    componentDidMount() {
+        API.getAllUsers().then(allDbUser =>
+            this.setState({
+                persons: allDbUser.data
+            })
+        );
+    }
 
     render() {
-        return (
-            this.state.persons.map((user) =>
-                <React.Fragment>
-                    <div className="card">
-                        <div className="card-body">
-                            <h4 className="card-title">
-                                {user.firstName} {user.lastName}
-                            </h4>
-                            <p className="card-text">{user.email}</p>
-                            <a href={window.location.pathname + "/create-event"} className="btn btn-info" onClick={this.createEventHander}>
-                                Create event
-                    </a>
-                        </div>
+        return this.state.persons.map(user => (
+            <React.Fragment>
+                <div className="card img-fluid">
+                    <img className="card-img-top" src={img1} alt="Card image" />
+                    <div className="card-body">
+                        <h4 className="card-title">
+                            {user.firstName} {user.lastName}
+                        </h4>
+                        <p className="card-text">{user.email}</p>
+                        <a
+                            href={window.location.pathname + "/create-event"}
+                            className="btn btn-info"
+                            onClick={this.createEventHander}>
+                            Create event
+                        </a>
                     </div>
-                    <br></br>
-                </React.Fragment>
-            )
-        );
+                </div>
+                <br />
+            </React.Fragment>
+        ));
     }
 }
 

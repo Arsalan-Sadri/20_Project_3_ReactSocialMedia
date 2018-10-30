@@ -1,6 +1,7 @@
 import React from "react";
 import "./Profile.css";
 import API from "../../utils/API";
+import img1 from "./avatar.png"; 
 
 class Profile extends React.Component {
     state = {
@@ -28,7 +29,7 @@ class Profile extends React.Component {
             <div className="card img-fluid">
                 <img
                     className="card-img-top"
-                    src="./avatar.png"
+                    src={img1}
                     alt="Card image"
                 />
                 <div className="card-body">

@@ -24,7 +24,7 @@ router
     .get(userControlller.findAndReturn);
 
 router
-    .route("/:username/search-friends")
-    .get(userControlller.findAndReturn);
+    .route("/search-friends")
+    .get(userControlller.findAll);
 
 module.exports = router;
