@@ -15,13 +15,13 @@ const userControlller = require("../../../controllers/userController");
 router
     .route("/sign-in")
     .post(userControlller.signIn);
-    
+
+
+router
+    .use(middleware.verifyToken);
 
 router
     .route("/:username")
-    .get((req, res) => {
-        // token is in the req headers
-        res.send("Hiiii");
-    });
+    .get(userControlller.findAndReturn);
 
 module.exports = router;

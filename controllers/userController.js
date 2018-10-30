@@ -22,7 +22,7 @@ module.exports = {
                             function(err, token) {
                                 if (err) res.send(err);
                                 else {
-                                    res.send(token); 
+                                    res.send(token);
                                 }
                             }
                         );
@@ -62,6 +62,22 @@ module.exports = {
             })
             .catch(function(err) {
                 res.send("Email not found!");
+            });
+    },
+    findAndReturn: function(req, res) {
+        db.User.findOne({
+            username: req.params.username
+        })
+            .then(function(dbUser) {
+                res.send({
+                    firstName: dbUser.firstName,
+                    lastName: dbUser.lastName,
+                    username: dbUser.username,
+                    email: dbUser.email
+                });
+            })
+            .catch(function(err) {
+                res.send("User not found!");
             });
     }
 };

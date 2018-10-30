@@ -12,7 +12,7 @@ class Profile extends React.Component {
     componentDidMount() {
         axios({
             method: "get",
-            url: "/api" + window.location.pathname,
+            url: "/api" + window.location.pathname, // /api/user/username
             headers: {
                 Authorization: "Bearer " + localStorage.getItem("token")
             }
