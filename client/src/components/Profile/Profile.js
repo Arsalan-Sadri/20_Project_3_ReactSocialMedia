@@ -39,7 +39,7 @@ class Profile extends React.Component {
                     </h4>
                     <p className="card-text">{this.state.email}</p>
                     <a href="#" className="btn btn-info">
-                        Update profile
+                        Create event
                     </a>
                 </div>
             </div>

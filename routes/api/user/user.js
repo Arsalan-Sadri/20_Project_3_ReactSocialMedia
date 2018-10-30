@@ -1,5 +1,4 @@
 const middleware = require("../../../middleware");
-const path = require("path");
 const router = require("express").Router();
 const userControlller = require("../../../controllers/userController");
 
