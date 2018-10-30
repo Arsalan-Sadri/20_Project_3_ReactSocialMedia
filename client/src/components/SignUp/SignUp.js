@@ -33,8 +33,10 @@ class SignUp extends React.Component {
                         password: this.state.password
                     })
                         .then(res => {
+                            console.log(res.data);
                             localStorage.setItem("token", res.data);
-                            window.location.pathname = "/profile";
+                            console.log(localStorage.getItem("token"));
+                            // window.location.pathname = "/profile";
                         })
                         .catch(err => console.log(err));
                 }

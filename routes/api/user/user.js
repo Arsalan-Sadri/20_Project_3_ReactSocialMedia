@@ -1,29 +1,27 @@
 const middleware = require("../../../middleware");
-
+const path = require("path");
 const router = require("express").Router();
 const userControlller = require("../../../controllers/userController");
 
 router
-    .use((req, res, next) => {
-        console.log("\n**********\nGateway middleware is hit!\n**********\n");
-        next();
-    });
-
-router
-    .route("/")
-    .get((req, res, next) => res.send("It just works!")
-    );
-
-router
     .route("/sign-up")
+    .get((req, res) => res.sendFile(path.join(__dirname, "../../../client/build/index.html")))
     .post(userControlller.createAndSignIn);
 
 router
     .route("/sign-in")
+    .get((req, res) => res.sendFile(path.join(__dirname, "../../../client/build/index.html")))
     .post(userControlller.signIn);
 
+// router
+//     .use(middleware.verifyToken);
+
 router
-    .route("/posts")
-    .post(middleware.verifyToken, (req, res, next) => res.send("Posted!!!"));
+    .route("/profile")
+    .get((req, res) => res.sendFile(path.join(__dirname, "../../../client/build/index.html")))
+    .post(middleware.verifyToken, (req, res) => {
+
+    });
+    
 
 module.exports = router;

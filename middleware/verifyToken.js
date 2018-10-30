@@ -9,12 +9,13 @@ module.exports = function verifyToken(req, res, next) {
 
         jwt.verify(token, process.env.JWT_KEY, function(err, decoded) {
             // User has NOT been authorized
-            if (err) res.sendStatus(403);
+            if (err) res.send("You need to sign in first!");
             // User has been authorized
             else {
                 // Decoded is an obj that has the user's email
                 // the token was originaly signed with 
                 console.log("\n**********");
+                console.log("Token verified");
                 console.log(decoded);
                 console.log("\n**********");
                 next();

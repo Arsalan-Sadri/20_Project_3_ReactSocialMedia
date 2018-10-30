@@ -6,5 +6,8 @@ export default {
     },
     signIn: function(User) {
         return axios.post("/sign-in", User);
+    },
+    getProfile: function (token) {
+        
     }
 };

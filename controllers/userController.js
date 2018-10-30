@@ -1,7 +1,7 @@
 const db = require("../models/user");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-if (process.env.NODE_ENV !== "production") require("dotenv").load();
+require("dotenv").load();
 
 module.exports = {
     createAndSignIn: function(req, res) {
