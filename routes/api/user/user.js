@@ -17,10 +17,10 @@ router
 //     .use(middleware.verifyToken);
 
 router
-    .route("/profile/:username")
+    .route("/user/:username")
     .get((req, res) => res.sendFile(path.join(__dirname, "../../../client/build/index.html")))
     .post(middleware.verifyToken, (req, res) => {
-
+        
     });
     
 

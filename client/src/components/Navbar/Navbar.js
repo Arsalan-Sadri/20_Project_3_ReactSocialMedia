@@ -2,7 +2,7 @@ import React from "react";
 import "./Navbar.css";
 
 const Navbar = () => (
-    <nav className="navbar navbar-expand-lg navbar-dark my-navbar">
+    <nav className="navbar navbar-expand-lg navbar-dark sticky-top my-navbar">
         <button
             className="navbar-toggler"
             type="button"
@@ -32,11 +32,11 @@ const Navbar = () => (
                 <li className="nav-item">
                     <a
                         className={
-                            window.location.pathname === "/profile"
+                            window.location.pathname === "/user"
                                 ? "nav-link active"
                                 : "nav-link text-white"
                         }
-                        href="/profile">
+                        href="/user">
                         Profile
                     </a>
                 </li>

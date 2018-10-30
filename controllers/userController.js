@@ -22,8 +22,7 @@ module.exports = {
                             function(err, token) {
                                 if (err) res.send(err);
                                 else {
-                                    console.log(token);
-                                    res.send(token);
+                                    res.send(token); 
                                 }
                             }
                         );
