@@ -24,21 +24,15 @@ class Profile extends React.Component {
     render() {
         return (
             <div className="card">
-                {/* <div className="img-container">
-                    <img alt={props.name} src={props.image} />
-                </div> */}
-                <div className="content">
-                    <ul>
-                        <li>
-                            <strong>First name:</strong> {this.state.firstName}
-                        </li>
-                        <li>
-                            <strong>Last name:</strong> {this.state.lastName}
-                        </li>
-                        <li>
-                            <strong>Email:</strong> {this.state.email}
-                        </li>
-                    </ul>
+                <img className="card-img-top" src="#" alt="Card image" />
+                <div className="card-body">
+                    <h4 className="card-title">(John Doe)</h4>
+                    <p className="card-text">
+                        email
+                    </p>
+                    <a href="#" className="btn btn-info">
+                        Update profile
+                    </a>
                 </div>
             </div>
         );
