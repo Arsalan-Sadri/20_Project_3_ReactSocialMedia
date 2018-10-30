@@ -6,6 +6,7 @@ class SignUp extends React.Component {
     state = {
         firstName: "",
         lastName: "",
+        username: "",
         email: "",
         password: "",
         confirmPass: ""
@@ -19,7 +20,7 @@ class SignUp extends React.Component {
         });
     };
 
-    formSubmitHandler = event => {
+    formSingUpHandler = event => {
         event.preventDefault();
         
         if (this.state.firstName && this.state.lastName
@@ -29,10 +30,15 @@ class SignUp extends React.Component {
                     API.signUp({
                         firstName: this.state.firstName,
                         lastName: this.state.lastName,
+                        username: this.state.username,
                         email: this.state.email,
                         password: this.state.password
                     })
-                        .then(res => console.log(res))
+                        .then(res => {
+                            localStorage.setItem("token", res.data.token);
+                            localStorage.setItem("username", res.data.username);
+                            window.location.pathname = "/user/" + localStorage.getItem("username");
+                        })
                         .catch(err => console.log(err));
                 }
                 else alert(`WARNING!\nPasswords do NOT match!\nPlease try again later`);
@@ -66,6 +72,18 @@ class SignUp extends React.Component {
                             onChange={this.inputChangeHandler}
                             type="text"
                             placeholder="Last Name"
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="user-name">Username:</label>
+                        <input
+                            id="user-name"
+                            className="form-control"
+                            value={this.state.username}
+                            name="username"
+                            onChange={this.inputChangeHandler}
+                            type="text"
+                            placeholder="Username"
                         />
                     </div>
                     <div className="form-group">
@@ -104,22 +122,18 @@ class SignUp extends React.Component {
                             placeholder="Password"
                         />
                     </div>
-                    {/* <div className="form-group">
+                    <div className="form-group">
                         <label>Profile picture (optional):</label>
                         <input
                             id="profile-pic"
-                            // className="form-control"
-                            // value={this.state.confirmPass}
                             name="profilePic"
                             accept="image/*"
-                            // onChange={this.inputChangeHandler}
                             type="file"
-                            // placeholder="Password"
                         />
-                    </div> */}
+                    </div>
                     <button
                         className="btn btn-info"
-                        onClick={this.formSubmitHandler}
+                        onClick={this.formSingUpHandler}
                         type="submit">
                         Sign up
                     </button>

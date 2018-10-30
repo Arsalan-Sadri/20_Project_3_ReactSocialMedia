@@ -2,7 +2,7 @@ import React from "react";
 import "./Footer.css";
 
 const Footer = () => (
-    <div className="text-center my-footer">
+    <div className="text-center fixed-bottom my-footer">
         copyright @FACES
     </div>
 );

@@ -5,4 +5,5 @@ body {
 .container-fluid {
     padding-left: 20%;
     padding-right: 20%;
+    min-height: 700px;
 }
