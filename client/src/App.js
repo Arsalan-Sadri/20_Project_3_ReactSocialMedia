@@ -12,7 +12,7 @@ import Home from "./components/Home";
 
 const App = () => (
     <React.Fragment>
-        <Header />
+        {/* <Header /> */}
         <Navbar />
         <div className="container-fluid">
             <Router>

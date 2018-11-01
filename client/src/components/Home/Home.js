@@ -1,10 +1,12 @@
 import React from "react";
 import "./Home.css";
 
-const Home = () => (
-    <div className="my-home">
-        Welcome To Faces
-    </div>
-);
+class Home extends React.Component {
+    state = {};
+
+    render() {
+        return 1;
+    }
+}
 
 export default Home;
