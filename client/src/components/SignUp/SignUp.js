@@ -20,7 +20,7 @@ class SignUp extends React.Component {
         });
     };
 
-    formSignUpHandler = event => {
+    formBtnHandler = event => {
         event.preventDefault();
         
         if (this.state.firstName && this.state.lastName
@@ -133,7 +133,7 @@ class SignUp extends React.Component {
                     </div>
                     <button
                         className="btn btn-info"
-                        onClick={this.formSignUpHandler}
+                        onClick={this.formBtnHandler}
                         type="submit">
                         Sign up
                     </button>
