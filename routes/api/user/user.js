@@ -17,7 +17,7 @@ const upload = multer({ storage });
 
  router
     .route("/sign-up")
-    .post(upload.single("profilePic"), userControlller.signUp);
+    .post(upload.single("picPath"), userControlller.signUp);
 
 
 router

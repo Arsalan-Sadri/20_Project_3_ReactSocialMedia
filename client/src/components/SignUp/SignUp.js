@@ -20,42 +20,42 @@ class SignUp extends React.Component {
         });
     };
 
-    formBtnHandler = event => {
-        event.preventDefault();
+    // formBtnHandler = event => {
+    //     event.preventDefault();
 
-        if (
-            this.state.firstName &&
-            this.state.lastName &&
-            this.state.email &&
-            this.state.password &&
-            this.state.confirmPass
-        ) {
-            if (this.state.password === this.state.confirmPass) {
-                API.signUp({
-                    firstName: this.state.firstName,
-                    lastName: this.state.lastName,
-                    username: this.state.username,
-                    email: this.state.email,
-                    password: this.state.password
-                })
-                    .then(res => {
-                        localStorage.setItem("token", res.data.token);
-                        localStorage.setItem("username", res.data.username);
-                        window.location.pathname =
-                            "/user/" + localStorage.getItem("username");
-                    })
-                    .catch(err => console.log(err));
-            } else
-                alert(
-                    `WARNING!\nPasswords do NOT match!\nPlease try again later`
-                );
-        }
-    };
+    //     if (
+    //         this.state.firstName &&
+    //         this.state.lastName &&
+    //         this.state.email &&
+    //         this.state.password &&
+    //         this.state.confirmPass
+    //     ) {
+    //         if (this.state.password === this.state.confirmPass) {
+    //             API.signUp({
+    //                 firstName: this.state.firstName,
+    //                 lastName: this.state.lastName,
+    //                 username: this.state.username,
+    //                 email: this.state.email,
+    //                 password: this.state.password
+    //             })
+    //                 .then(res => {
+    //                     localStorage.setItem("token", res.data.token);
+    //                     localStorage.setItem("username", res.data.username);
+    //                     window.location.pathname =
+    //                         "/user/" + localStorage.getItem("username");
+    //                 })
+    //                 .catch(err => console.log(err));
+    //         } else
+    //             alert(
+    //                 `WARNING!\nPasswords do NOT match!\nPlease try again later`
+    //             );
+    //     }
+    // };
 
     render() {
         return (
             <div className="my-form-wrapper">
-                <form>
+                <form action="/api/user/sign-up" method="post" enctype="multipart/form-data">
                     <div className="form-group">
                         <label htmlFor="first-name">First name:</label>
                         <input
@@ -133,15 +133,14 @@ class SignUp extends React.Component {
                     <div className="form-group">
                         <label>Profile picture (optional):</label>
                         <input
-                            id="profile-pic"
-                            name="profilePic"
+                            name="picPath"
                             accept="image/*"
                             type="file"
                         />
                     </div>
                     <button
                         className="btn btn-info"
-                        onClick={this.formBtnHandler}
+                        // onClick={this.formBtnHandler}
                         type="submit">
                         Sign up
                     </button>
