@@ -4,11 +4,12 @@ const jwt = require("jsonwebtoken");
 require("dotenv").load();
 
 module.exports = {
-    createAndSignIn: function(req, res) {
+    signUp: (req, res) => {
         bcrypt.hash(req.body.password, 10, function(err, encrypted) {
             if (err) res.sendStatus(400);
             else {
                 req.body.password = encrypted;
+                req.body.picPath = req.file.path;
                 db.User.create(req.body)
                     .then(dbUser => {
                         jwt.sign(
@@ -34,7 +35,7 @@ module.exports = {
             }
         });
     },
-    signIn: function(req, res) {
+    signIn: (req, res) => {
         db.User.findOne({
             email: req.body.email
         })
@@ -67,7 +68,7 @@ module.exports = {
                 res.send("Email not found!");
             });
     },
-    findAndReturn: function(req, res) {
+    findAndReturn: (req, res) => {
         db.User.findOne({
             username: req.params.username
         })
@@ -83,13 +84,8 @@ module.exports = {
                 res.send("User not found!");
             });
     },
-    findAll: function (req, res) {
-        db.User
-            .find({})
+    findAll: (req, res) =>
+        db.User.find({})
             .then(allDbUsers => res.json(allDbUsers))
-            .catch(function(err) {
-                res.send("User not found!");
-            });
-
-    }
+            .catch(err => res.send("User not found!"))
 };

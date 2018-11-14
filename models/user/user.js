@@ -14,7 +14,7 @@ const userSchema = new mongoose.Schema({
     username: {
         type: String,
         trim: true,
-        required: "Last name is required",
+        required: "Username is required",
         unique: true
     },
     email: {
@@ -37,13 +37,11 @@ const userSchema = new mongoose.Schema({
             },
             "Password should be at least 8 characters!"
         ]
+    },
+    picPath: {
+        type: String,
+        required: true
     }
-    // ,
-    // img: {
-    //     data: Buffer, 
-    //     contentType: String 
-    // }
-
 });
 
 module.exports = mongoose.model("User", userSchema);

@@ -9,6 +9,8 @@ app.use(logger("dev"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+app.use("/uploads", express.static("uploads"));
+
 if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
 }
@@ -25,6 +27,7 @@ mongoose.connect(
 const PORT = process.env.PORT || 3001;
 const host = "localhost";
 app.listen(PORT, host, function() {
-    console.log(`\n**********\nApp is running on: http://${host}:${PORT}\n**********\n`);
+    console.log(
+        `\n**********\nApp is running on: http://${host}:${PORT}\n**********\n`
+    );
 });
-

@@ -22,27 +22,33 @@ class SignUp extends React.Component {
 
     formBtnHandler = event => {
         event.preventDefault();
-        
-        if (this.state.firstName && this.state.lastName
-            && this.state.email && this.state.password
-            && this.state.confirmPass) {
-                if (this.state.password === this.state.confirmPass) {
-                    API.signUp({
-                        firstName: this.state.firstName,
-                        lastName: this.state.lastName,
-                        username: this.state.username,
-                        email: this.state.email,
-                        password: this.state.password
+
+        if (
+            this.state.firstName &&
+            this.state.lastName &&
+            this.state.email &&
+            this.state.password &&
+            this.state.confirmPass
+        ) {
+            if (this.state.password === this.state.confirmPass) {
+                API.signUp({
+                    firstName: this.state.firstName,
+                    lastName: this.state.lastName,
+                    username: this.state.username,
+                    email: this.state.email,
+                    password: this.state.password
+                })
+                    .then(res => {
+                        localStorage.setItem("token", res.data.token);
+                        localStorage.setItem("username", res.data.username);
+                        window.location.pathname =
+                            "/user/" + localStorage.getItem("username");
                     })
-                        .then(res => {
-                            localStorage.setItem("token", res.data.token);
-                            localStorage.setItem("username", res.data.username);
-                            window.location.pathname = "/user/" + localStorage.getItem("username");
-                        })
-                        .catch(err => console.log(err));
-                }
-                else alert(`WARNING!\nPasswords do NOT match!\nPlease try again later`);
-                
+                    .catch(err => console.log(err));
+            } else
+                alert(
+                    `WARNING!\nPasswords do NOT match!\nPlease try again later`
+                );
         }
     };
 
@@ -111,7 +117,9 @@ class SignUp extends React.Component {
                         />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="confirm-password">Confirm password:</label>
+                        <label htmlFor="confirm-password">
+                            Confirm password:
+                        </label>
                         <input
                             id="confirm-password"
                             className="form-control"

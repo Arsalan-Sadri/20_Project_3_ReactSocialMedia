@@ -1,6 +1,15 @@
-const middleware = require("../../../middleware");
 const router = require("express").Router();
 const userControlller = require("../../../controllers/userController");
+const middleware = require("../../../middleware");
+const multer = require("multer");
+
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => cb(null, "./uploads/"),
+    filename: (req, file, cb) =>
+        cb(null, new Date().toISOString() + "-" + file.originalname)
+});
+
+const upload = multer({ storage });
 
 /* 
         /api/user
@@ -8,7 +17,7 @@ const userControlller = require("../../../controllers/userController");
 
  router
     .route("/sign-up")
-    .post(userControlller.createAndSignIn);
+    .post(upload.single("profilePic"), userControlller.signUp);
 
 
 router
