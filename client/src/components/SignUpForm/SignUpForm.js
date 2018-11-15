@@ -6,6 +6,9 @@ class SignUpForm extends React.Component {
     state = {
         firstName: "",
         lastName: "",
+        jobTitle: "",
+        city: "",
+        state: "",
         username: "",
         email: "",
         password: "",
@@ -35,6 +38,11 @@ class SignUpForm extends React.Component {
         const userInfo = new FormData();
         userInfo.append("firstName", this.state.firstName);
         userInfo.append("lastName", this.state.lastName);
+
+        userInfo.append("jobTitle", this.state.jobTitle);
+        userInfo.append("city", this.state.city);
+        userInfo.append("state", this.state.state);
+
         userInfo.append("username", this.state.username);
         userInfo.append("email", this.state.email);
         userInfo.append("password", this.state.password);
@@ -43,6 +51,9 @@ class SignUpForm extends React.Component {
         if (
             this.state.firstName &&
             this.state.lastName &&
+            this.state.jobTitle &&
+            this.state.city &&
+            this.state.state &&
             this.state.email &&
             this.state.password &&
             this.state.confirmPass &&
@@ -63,6 +74,7 @@ class SignUpForm extends React.Component {
                     `WARNING!\nPasswords do NOT match!\nPlease try again later`
                 );
         }
+        else alert("Please fill out the form!");
     };
 
     render() {
@@ -89,6 +101,43 @@ class SignUpForm extends React.Component {
                                 required
                                 name="lastName"
                                 value={this.state.lastName}
+                                onChange={this.inputChangeHandler}
+                            />
+                        </div>
+                    </div>
+                    <div className="form-row mb-3">
+                        <div className="col-md">
+                            <input
+                                type="text"
+                                className="form-control"
+                                placeholder="Job title"
+                                required
+                                name="jobTitle"
+                                value={this.state.jobTitle}
+                                onChange={this.inputChangeHandler}
+                            />
+                        </div>
+                    </div>
+                    <div className="form-row mb-3">
+                        <div className="col-md">
+                            <input
+                                type="text"
+                                className="form-control"
+                                placeholder="City"
+                                required
+                                name="city"
+                                value={this.state.city}
+                                onChange={this.inputChangeHandler}
+                            />
+                        </div>
+                        <div className="col-md">
+                            <input
+                                type="text"
+                                className="form-control"
+                                placeholder="State"
+                                required
+                                name="state"
+                                value={this.state.state}
                                 onChange={this.inputChangeHandler}
                             />
                         </div>

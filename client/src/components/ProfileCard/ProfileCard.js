@@ -6,11 +6,11 @@ class Profile extends React.Component {
     state = {
         firstName: "",
         lastName: "",
+        jobTitle: "",
+        city: "",
+        state: "",
         email: "",
-        picPath: "",
-        jobTitle: "IT Professional",
-        city: "Irvine",
-        state: "California"
+        picPath: ""
     };
 
     componentDidMount() {
@@ -18,6 +18,9 @@ class Profile extends React.Component {
             this.setState({
                 firstName: res.data.firstName,
                 lastName: res.data.lastName,
+                jobTitle: res.data.jobTitle,
+                city: res.data.city,
+                state: res.data.state,
                 email: res.data.email,
                 picPath: res.data.picPath
             })

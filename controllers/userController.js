@@ -76,6 +76,9 @@ module.exports = {
                 res.send({
                     firstName: dbUser.firstName,
                     lastName: dbUser.lastName,
+                    jobTitle: dbUser.jobTitle,
+                    city: dbUser.city,
+                    state: dbUser.state,
                     username: dbUser.username,
                     email: dbUser.email,
                     picPath: "http://" + req.headers.host + "/" + dbUser.picPath
