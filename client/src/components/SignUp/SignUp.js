@@ -49,10 +49,9 @@ class SignUp extends React.Component {
             if (this.state.password === this.state.confirmPass) {
                 API.signUp(userInfo)
                     .then(res => {
+                        localStorage.clear();
                         localStorage.setItem("token", res.data.token);
                         localStorage.setItem("username", res.data.username);
-                        console.log(res.data.token);
-                        console.log(res.data.username);
                         // window.location.pathname =
                         //     "/user/" + localStorage.getItem("username");
                     })
