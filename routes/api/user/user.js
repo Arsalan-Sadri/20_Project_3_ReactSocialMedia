@@ -4,7 +4,7 @@ const middleware = require("../../../middleware");
 const multer = require("multer");
 
 const storage = multer.diskStorage({
-    destination: (req, file, cb) => cb(null, "./uploads/"),
+    destination: (req, file, cb) => cb(null, "./profile_pics/"),
     filename: (req, file, cb) =>
         cb(null, new Date().toISOString() + "-" + file.originalname)
 });
@@ -16,7 +16,7 @@ const upload = multer({ storage });
 
  router
     .route("/sign-up")
-    .post(upload.single("picPath"), userControlller.signUp);
+    .post(upload.single("profilePic"), userControlller.signUp);
 
 router
     .route("/sign-in")

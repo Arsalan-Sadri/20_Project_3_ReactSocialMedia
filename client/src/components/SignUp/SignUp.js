@@ -51,10 +51,8 @@ class SignUp extends React.Component {
                     .then(res => {
                         localStorage.setItem("token", res.data.token);
                         localStorage.setItem("username", res.data.username);
-                        console.log(
-                            localStorage.getItem("token"),
-                            localStorage.getItem("username")
-                        );
+                        console.log(res.data.token);
+                        console.log(res.data.username);
                         // window.location.pathname =
                         //     "/user/" + localStorage.getItem("username");
                     })
@@ -70,9 +68,10 @@ class SignUp extends React.Component {
         return (
             <div className="my-form-wrapper">
                 <form
-                    action="/api/user/sign-up"
-                    method="post"
-                    enctype="multipart/form-data">
+                // action="/api/user/sign-up"
+                // method="post"
+                // enctype="multipart/form-data"
+                >
                     <div className="form-group">
                         <label htmlFor="first-name">First name:</label>
                         <input
@@ -152,16 +151,15 @@ class SignUp extends React.Component {
                         <br />
                         <input
                             id="profile-pic"
-                            name="picPath"
+                            name="profilePic"
                             accept="image/*"
                             type="file"
-                            // onChange={this.fileSelectionHandler}
+                            onChange={this.fileSelectionHandler}
                         />
                     </div>
                     <button
                         className="btn btn-info"
-                        // onClick={this.formBtnHandler}
-                        type="submit">
+                        onClick={this.formBtnHandler}>
                         Sign up
                     </button>
                 </form>
