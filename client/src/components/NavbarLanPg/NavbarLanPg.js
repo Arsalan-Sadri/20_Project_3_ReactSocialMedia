@@ -27,12 +27,22 @@ class NavbarLanPg extends React.Component {
 
             API.signIn(userCredential)
                 .then(res => {
-                    
-                    localStorage.clear();
-                    localStorage.setItem("token", res.data.token);
-                    localStorage.setItem("username", res.data.username);
-                    window.location.pathname =
-                        "/user/" + localStorage.getItem("username");
+                    switch (res.data) {
+                        case "Email not found!":
+                            alert(
+                                `WARNING!\nThere is no account associated with this email address!`
+                            );
+                            break;
+                        case "Wrong password!":
+                            alert(`WARNING!\nPassword is wrong!`);
+                            break;
+                        default:
+                            localStorage.clear();
+                            localStorage.setItem("token", res.data.token);
+                            localStorage.setItem("username", res.data.username);
+                            window.location.pathname =
+                                "/user/" + localStorage.getItem("username");
+                    }
                 })
                 .catch(err => console.log(err));
         } else alert(`WARNING!\nPlease fill in your credential!`);
