@@ -53,7 +53,7 @@ class Navbar extends React.Component {
                                 localStorage.getItem("username") +
                                 "/photos"
                             }>
-                            <i className="fas fa-picture-o" aria-hidden="true" />{" "}
+                            <i className="fas fa-images" aria-hidden="true" />{" "}
                             Photos
                         </a>
                         <a
