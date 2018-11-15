@@ -3,7 +3,12 @@ import "./Navbar.css";
 
 class Navbar extends React.Component {
     state = {
-        username: "John.Doe"
+        username: localStorage.getItem("username") || ""
+    };
+
+    signOutHandler = () => {
+        localStorage.clear();
+        window.location.pathname = "/";
     };
 
     render() {
@@ -70,11 +75,18 @@ class Navbar extends React.Component {
                         <div
                             className="dropdown-menu dropdown-menu-right"
                             aria-labelledby="navbarDropdown">
-                            <a className="dropdown-item" href="/">
+                            <a
+                                className="dropdown-item"
+                                href={
+                                    "/user/" + localStorage.getItem("username")
+                                }>
                                 "{this.state.username}"
                             </a>
                             <div className="dropdown-divider" />
-                            <a className="dropdown-item" href="/">
+                            <a
+                                className="dropdown-item"
+                                href="/"
+                                onClick={this.signOutHandler}>
                                 <i
                                     className="fa fa-sign-out"
                                     aria-hidden="true"
