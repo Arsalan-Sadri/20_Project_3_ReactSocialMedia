@@ -38,12 +38,12 @@ class Navbar extends React.Component {
                         <a
                             className="nav-item nav-link text-white px-0 mx-3"
                             href="/">
-                            <i className="fa fa-home" aria-hidden="true" /> Home
+                            <i className="fas fa-home" aria-hidden="true" /> Home
                         </a>
                         <a
                             className="nav-item nav-link text-white px-0 mx-3"
                             href={"/user/" + localStorage.getItem("username")}>
-                            <i className="fa fa-user" aria-hidden="true" />{" "}
+                            <i className="fas fa-user" aria-hidden="true" />{" "}
                             Profile
                         </a>
                         <a
@@ -53,13 +53,13 @@ class Navbar extends React.Component {
                                 localStorage.getItem("username") +
                                 "/photos"
                             }>
-                            <i className="fa fa-picture-o" aria-hidden="true" />{" "}
+                            <i className="fas fa-picture-o" aria-hidden="true" />{" "}
                             Photos
                         </a>
                         <a
                             className="nav-item nav-link text-white px-0 mx-3"
                             href="/">
-                            <i className="fa fa-list-alt" aria-hidden="true" />{" "}
+                            <i className="fas fa-list-alt" aria-hidden="true" />{" "}
                             Events
                         </a>
                     </div>
@@ -91,7 +91,7 @@ class Navbar extends React.Component {
                                 href="/"
                                 onClick={this.signOutHandler}>
                                 <i
-                                    className="fa fa-sign-out"
+                                    className="fas fa-sign-out"
                                     aria-hidden="true"
                                 />{" "}
                                 Sign out

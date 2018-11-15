@@ -15,7 +15,7 @@ const LandPage = () => (
                     </section>
                 </div>
                 <div className="col-7">
-                    <aside className="mx-auto">[welcome msg to be update]</aside>
+                    <aside className="mx-auto">[Welcome!]</aside>
                 </div>
             </div>
         </div>

@@ -60,10 +60,10 @@ class PhotosForm extends React.Component {
                 <div className="form-row mb-3">
                     <div className="col-md">
                         <button
-                            className="btn btn-lg"
+                            className="btn btn"
                             onClick={this.formBtnHandler}>
-                            <i className="fa fa-user-plus" aria-hidden="true" />{" "}
-                            Sign up
+                            <i className="fa fa-cloud-upload-alt" aria-hidden="true"></i>{" "}
+                            Upload
                         </button>
                     </div>
                 </div>

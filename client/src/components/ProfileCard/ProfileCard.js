@@ -41,12 +41,12 @@ class Profile extends React.Component {
                     </h4>
                     <p className="my-0">{this.state.jobTitle}</p>
                     <p className="my-0">
-                        <i className="fa fa-map-marker" aria-hidden="true" />{" "}
+                        <i className="fas fa-map-marker-alt" aria-hidden="true" />{" "}
                         {this.state.city}
                         {","} {this.state.state}
                     </p>
                     <p className="my-0">
-                        <i className="fa fa-envelope" aria-hidden="true" />{" "}
+                        <i className="fas fa-envelope" aria-hidden="true" />{" "}
                         <i>{this.state.email}</i>
                     </p>
                 </div>
