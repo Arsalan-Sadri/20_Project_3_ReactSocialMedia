@@ -51,12 +51,12 @@ class Profile extends React.Component {
                     <button
                         className="btn my-2 mx-1"
                         onClick={this.createEventBtnHandler}>
-                        > Create event
+                        Create event
                     </button>
                     <button
                         className="btn ml-1"
                         onClick={this.createEventBtnHandler}>
-                        > Update profile
+                        Update profile
                     </button>
                 </div>
             </div>
