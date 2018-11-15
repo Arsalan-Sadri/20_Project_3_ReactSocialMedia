@@ -35,19 +35,6 @@ class SignUpForm extends React.Component {
     formBtnHandler = event => {
         event.preventDefault();
 
-        const userInfo = new FormData();
-        userInfo.append("firstName", this.state.firstName);
-        userInfo.append("lastName", this.state.lastName);
-
-        userInfo.append("jobTitle", this.state.jobTitle);
-        userInfo.append("city", this.state.city);
-        userInfo.append("state", this.state.state);
-
-        userInfo.append("username", this.state.username);
-        userInfo.append("email", this.state.email);
-        userInfo.append("password", this.state.password);
-        userInfo.append("profilePic", this.state.selectedFile);
-
         if (
             this.state.firstName &&
             this.state.lastName &&
@@ -60,6 +47,19 @@ class SignUpForm extends React.Component {
             this.state.selectedFile
         ) {
             if (this.state.password === this.state.confirmPass) {
+                const userInfo = new FormData();
+                userInfo.append("firstName", this.state.firstName);
+                userInfo.append("lastName", this.state.lastName);
+
+                userInfo.append("jobTitle", this.state.jobTitle);
+                userInfo.append("city", this.state.city);
+                userInfo.append("state", this.state.state);
+
+                userInfo.append("username", this.state.username);
+                userInfo.append("email", this.state.email);
+                userInfo.append("password", this.state.password);
+                userInfo.append("profilePic", this.state.selectedFile);
+
                 API.signUp(userInfo)
                     .then(res => {
                         localStorage.clear();
@@ -73,8 +73,7 @@ class SignUpForm extends React.Component {
                 alert(
                     `WARNING!\nPasswords do NOT match!\nPlease try again later`
                 );
-        }
-        else alert("Please fill out the form!");
+        } else alert(`WARNING!\nPlease fill out the form!`);
     };
 
     render() {

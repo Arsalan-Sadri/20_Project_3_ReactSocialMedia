@@ -4,18 +4,18 @@ export default {
     signUp: function(newUser) {
         return axios.post("/api/user/sign-up", newUser);
     },
-    signIn: function(User) {
-        return axios.post("/api/user/sign-in", User);
+    signIn: function(userCredential) {
+        return axios.post("/api/user/sign-in", userCredential);
     },
     getDbUser: function() {
         return axios({
             method: "get",
-            url: "/api/user/" +localStorage.getItem("username") ,
+            url: "/api/user/" + localStorage.getItem("username"),
             headers: {
                 Authorization: "Bearer " + localStorage.getItem("token")
             }
         });
-    }, 
+    },
     getAllUsers: function() {
         return axios({
             method: "get",
@@ -26,4 +26,3 @@ export default {
         });
     }
 };
-

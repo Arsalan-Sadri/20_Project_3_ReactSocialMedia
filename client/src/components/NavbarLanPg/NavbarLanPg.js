@@ -1,8 +1,42 @@
 import React from "react";
 import "./NavbarLanPg.css";
+import API from "../../utils/API";
 
 class NavbarLanPg extends React.Component {
-    state = {};
+    state = {
+        email: "",
+        password: ""
+    };
+
+    inputChangeHandler = event => {
+        const { name, value } = event.target;
+
+        this.setState({
+            [name]: value
+        });
+    };
+
+    signInHandler = () => {
+        event.preventDefault();
+
+        if (this.state.email && this.state.password) {
+            const userCredential = {
+                email: this.state.email,
+                password: this.state.password
+            };
+
+            API.signIn(userCredential)
+                .then(res => {
+                    
+                    localStorage.clear();
+                    localStorage.setItem("token", res.data.token);
+                    localStorage.setItem("username", res.data.username);
+                    window.location.pathname =
+                        "/user/" + localStorage.getItem("username");
+                })
+                .catch(err => console.log(err));
+        } else alert(`WARNING!\nPlease fill in your credential!`);
+    };
 
     render() {
         return (
@@ -29,24 +63,30 @@ class NavbarLanPg extends React.Component {
                     id="navbarSupportedContent">
                     {/********** NAVBAR LINKS **********/}
                     <div className="mr-auto" />
-                    {/********** SEARCH FORM **********/}
+                    {/********** SIGN IN FORM **********/}
                     <form className="form-inline">
                         <input
                             className="form-control-sm mr-2"
                             type="text"
-                            placeholder="Username"
-                            aria-label="username"
+                            aria-label="email"
+                            placeholder="Email"
+                            name="email"
+                            value={this.state.email}
+                            onChange={this.inputChangeHandler}
                         />
                         <input
                             className="form-control-sm mr-2"
                             type="password"
-                            placeholder="Password"
                             aria-label="password"
+                            placeholder="Password"
+                            name="password"
+                            value={this.state.password}
+                            onChange={this.inputChangeHandler}
                         />
                         {/********** BUTTON **********/}
                         <button
                             className="btn btn-outline btn-sm text-white ml-1 mb-0"
-                            type="submit">
+                            onClick={this.signInHandler}>
                             <i className="fa fa-sign-in" aria-hidden="true" />{" "}
                             Sign in
                         </button>
