@@ -1,13 +1,14 @@
 import React from "react";
 import "./Profile.css";
 import API from "../../utils/API";
-import profPic from "./avatar.png";
+// import profPic from "./avatar.png";
 
 class Profile extends React.Component {
     state = {
         firstName: "",
         lastName: "",
-        email: ""
+        email: "",
+        picPath: ""
     };
 
     componentDidMount() {
@@ -15,7 +16,8 @@ class Profile extends React.Component {
             this.setState({
                 firstName: res.data.firstName,
                 lastName: res.data.lastName,
-                email: res.data.email
+                email: res.data.email,
+                picPath: res.data.picPath
             })
         );
     }
@@ -27,7 +29,11 @@ class Profile extends React.Component {
     render() {
         return (
             <div className="card img-fluid">
-                <img className="card-img-top" src={profPic} alt="card" />
+                <img
+                    className="card-img-top"
+                    src={this.state.picPath}
+                    alt="card"
+                />
                 <div className="card-body">
                     <h4 className="card-title">
                         {this.state.firstName} {this.state.lastName}

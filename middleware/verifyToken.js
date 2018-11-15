@@ -6,7 +6,7 @@ module.exports = (req, res, next) => {
         jwt.verify(token, process.env.JWT_KEY, function(err, decoded) {
             if (err) res.send("2Access denied! Please sign in!");
             else {
-                console.log("\n\nToken verified\n\n");
+                console.log("\n**********\nUser authenticated!\n**********\n");
                 next();
             }
         });

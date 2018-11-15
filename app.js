@@ -9,7 +9,7 @@ app.use(logger("dev"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.use("/uploads", express.static("uploads"));
+app.use("/profile_pics", express.static("profile_pics"));
 
 if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));

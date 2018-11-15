@@ -20,8 +20,8 @@ const App = () => (
                     <Route exact path="/" component={Home} />
                     <Route exact path="/sign-up" component={SignUp} />
                     <Route exact path="/sign-in" component={SignIn} />
-                    <Route exact path="/search-friends" component={Friend} />
                     <Route exact path="/user/:username" component={Profile} />
+                    <Route exact path="/search-friends" component={Friend} />
                 </Switch>
             </Router>
         </div>

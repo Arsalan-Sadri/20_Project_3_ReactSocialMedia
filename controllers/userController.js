@@ -77,7 +77,8 @@ module.exports = {
                     firstName: dbUser.firstName,
                     lastName: dbUser.lastName,
                     username: dbUser.username,
-                    email: dbUser.email
+                    email: dbUser.email,
+                    picPath: "http://" + req.headers.host + "/" + dbUser.picPath
                 });
             })
             .catch(function(err) {

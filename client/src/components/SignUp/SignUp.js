@@ -52,8 +52,8 @@ class SignUp extends React.Component {
                         localStorage.clear();
                         localStorage.setItem("token", res.data.token);
                         localStorage.setItem("username", res.data.username);
-                        // window.location.pathname =
-                        //     "/user/" + localStorage.getItem("username");
+                        window.location.pathname =
+                            "/user/" + localStorage.getItem("username");
                     })
                     .catch(err => console.log(err));
             } else
@@ -66,11 +66,7 @@ class SignUp extends React.Component {
     render() {
         return (
             <div className="my-form-wrapper">
-                <form
-                // action="/api/user/sign-up"
-                // method="post"
-                // enctype="multipart/form-data"
-                >
+                <form>
                     <div className="form-group">
                         <label htmlFor="first-name">First name:</label>
                         <input
