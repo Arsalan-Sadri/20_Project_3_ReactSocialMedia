@@ -16,7 +16,7 @@ class NavbarLanPg extends React.Component {
         });
     };
 
-    signInHandler = () => {
+    signInHandler = event => {
         event.preventDefault();
 
         if (this.state.email && this.state.password) {

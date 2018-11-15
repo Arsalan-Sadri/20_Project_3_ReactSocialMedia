@@ -3,10 +3,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 @media screen and (max-width: 460px) {
     .my-footer {
-        flex-wrap: wrap;
+        flex-direction: column;
     }
 }

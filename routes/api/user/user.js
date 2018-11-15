@@ -31,7 +31,7 @@ router
     .get(userControlller.findAndReturn);
 
 router
-    .route("/search-friends")
-    .get(userControlller.findAll);
+    .route("/photos")
+    .post(upload.fields);
 
 module.exports = router;

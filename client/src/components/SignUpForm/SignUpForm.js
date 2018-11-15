@@ -78,162 +78,157 @@ class SignUpForm extends React.Component {
 
     render() {
         return (
-            <React.Fragment>
-                <form className="p-2">
-                    <div className="form-row mb-3">
-                        <div className="col-md">
-                            <input
-                                type="text"
-                                className="form-control"
-                                placeholder="First name"
-                                required
-                                name="firstName"
-                                value={this.state.firstName}
-                                onChange={this.inputChangeHandler}
-                            />
-                        </div>
-                        <div className="col-md">
-                            <input
-                                type="text"
-                                className="form-control"
-                                placeholder="Last name"
-                                required
-                                name="lastName"
-                                value={this.state.lastName}
-                                onChange={this.inputChangeHandler}
-                            />
-                        </div>
+            <form className="p-2">
+                <div className="form-row mb-3">
+                    <div className="col-md">
+                        <input
+                            type="text"
+                            className="form-control"
+                            placeholder="First name"
+                            required
+                            name="firstName"
+                            value={this.state.firstName}
+                            onChange={this.inputChangeHandler}
+                        />
                     </div>
-                    <div className="form-row mb-3">
-                        <div className="col-md">
-                            <input
-                                type="text"
-                                className="form-control"
-                                placeholder="Job title"
-                                required
-                                name="jobTitle"
-                                value={this.state.jobTitle}
-                                onChange={this.inputChangeHandler}
-                            />
-                        </div>
+                    <div className="col-md">
+                        <input
+                            type="text"
+                            className="form-control"
+                            placeholder="Last name"
+                            required
+                            name="lastName"
+                            value={this.state.lastName}
+                            onChange={this.inputChangeHandler}
+                        />
                     </div>
-                    <div className="form-row mb-3">
-                        <div className="col-md">
-                            <input
-                                type="text"
-                                className="form-control"
-                                placeholder="City"
-                                required
-                                name="city"
-                                value={this.state.city}
-                                onChange={this.inputChangeHandler}
-                            />
-                        </div>
-                        <div className="col-md">
-                            <input
-                                type="text"
-                                className="form-control"
-                                placeholder="State"
-                                required
-                                name="state"
-                                value={this.state.state}
-                                onChange={this.inputChangeHandler}
-                            />
-                        </div>
+                </div>
+                <div className="form-row mb-3">
+                    <div className="col-md">
+                        <input
+                            type="text"
+                            className="form-control"
+                            placeholder="Job title"
+                            required
+                            name="jobTitle"
+                            value={this.state.jobTitle}
+                            onChange={this.inputChangeHandler}
+                        />
                     </div>
-                    <div className="form-row mb-3">
-                        <div className="col-md">
-                            <div className="input-group">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text">
-                                        http://www.faces.com/
-                                    </span>
-                                </div>
-                                <input
-                                    type="text"
-                                    className="form-control"
-                                    placeholder="Username"
-                                    aria-describedby="validationTooltipUsernamePrepend"
-                                    required
-                                    value={this.state.username}
-                                    name="username"
-                                    onChange={this.inputChangeHandler}
-                                />
+                </div>
+                <div className="form-row mb-3">
+                    <div className="col-md">
+                        <input
+                            type="text"
+                            className="form-control"
+                            placeholder="City"
+                            required
+                            name="city"
+                            value={this.state.city}
+                            onChange={this.inputChangeHandler}
+                        />
+                    </div>
+                    <div className="col-md">
+                        <input
+                            type="text"
+                            className="form-control"
+                            placeholder="State"
+                            required
+                            name="state"
+                            value={this.state.state}
+                            onChange={this.inputChangeHandler}
+                        />
+                    </div>
+                </div>
+                <div className="form-row mb-3">
+                    <div className="col-md">
+                        <div className="input-group">
+                            <div className="input-group-prepend">
+                                <span className="input-group-text">
+                                    http://www.faces.com/
+                                </span>
                             </div>
-                        </div>
-                    </div>
-                    <div className="form-row mb-3">
-                        <div className="col-md">
                             <input
                                 type="text"
                                 className="form-control"
-                                placeholder="Email"
+                                placeholder="Username"
+                                aria-describedby="validationTooltipUsernamePrepend"
                                 required
-                                value={this.state.email}
-                                name="email"
+                                value={this.state.username}
+                                name="username"
                                 onChange={this.inputChangeHandler}
                             />
                         </div>
                     </div>
-                    <div className="form-row mb-3">
-                        <div className="col-md">
+                </div>
+                <div className="form-row mb-3">
+                    <div className="col-md">
+                        <input
+                            type="text"
+                            className="form-control"
+                            placeholder="Email"
+                            required
+                            value={this.state.email}
+                            name="email"
+                            onChange={this.inputChangeHandler}
+                        />
+                    </div>
+                </div>
+                <div className="form-row mb-3">
+                    <div className="col-md">
+                        <input
+                            type="password"
+                            className="form-control"
+                            placeholder="Password"
+                            required
+                            value={this.state.password}
+                            name="password"
+                            onChange={this.inputChangeHandler}
+                        />
+                    </div>
+                    <div className="col-md">
+                        <input
+                            type="password"
+                            className="form-control"
+                            placeholder="Confirm password"
+                            required
+                            value={this.state.confirmPass}
+                            name="confirmPass"
+                            onChange={this.inputChangeHandler}
+                        />
+                    </div>
+                </div>
+                <div className="form-row mb-3">
+                    <div className="col-md">
+                        <div className="custom-file">
                             <input
-                                type="password"
-                                className="form-control"
-                                placeholder="Password"
+                                type="file"
+                                className="custom-file-input"
+                                id="validatedCustomFile"
                                 required
-                                value={this.state.password}
-                                name="password"
-                                onChange={this.inputChangeHandler}
+                                name="profilePic"
+                                accept="image/*"
+                                onChange={this.fileSelectionHandler}
                             />
-                        </div>
-                        <div className="col-md">
-                            <input
-                                type="password"
-                                className="form-control"
-                                placeholder="Confirm password"
-                                required
-                                value={this.state.confirmPass}
-                                name="confirmPass"
-                                onChange={this.inputChangeHandler}
-                            />
+                            <label
+                                className="custom-file-label"
+                                htmlFor="validatedCustomFile">
+                                {this.state.fileDisplayVal}
+                            </label>
                         </div>
                     </div>
-                    <div className="form-row mb-3">
-                        <div className="col-md">
-                            <div className="custom-file">
-                                <input
-                                    type="file"
-                                    className="custom-file-input"
-                                    id="validatedCustomFile"
-                                    required
-                                    name="profilePic"
-                                    accept="image/*"
-                                    onChange={this.fileSelectionHandler}
-                                />
-                                <label
-                                    className="custom-file-label"
-                                    htmlFor="validatedCustomFile">
-                                    {this.state.fileDisplayVal}
-                                </label>
-                            </div>
-                        </div>
+                </div>
+                <div className="form-row mb-3">
+                    <div className="col-md">
+                        <button
+                            className="btn btn-lg"
+                            onClick={this.formBtnHandler}>
+                            <i className="fa fa-user-plus" aria-hidden="true" />{" "}
+                            Sign up
+                        </button>
                     </div>
-                    <div className="form-row mb-3">
-                        <div className="col-md">
-                            <button
-                                className="btn btn-lg"
-                                onClick={this.formBtnHandler}>
-                                <i
-                                    className="fa fa-user-plus"
-                                    aria-hidden="true"
-                                />{" "}
-                                Sign up
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            </React.Fragment>
+                </div>
+            </form>
         );
     }
 }

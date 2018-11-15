@@ -3,10 +3,10 @@ import "./Footer.css";
 
 const Footer = () => (
     <div className="text-secondary text-center my-footer">
-        <div className="pr-1">Contact |</div>
-        <div className="pr-1">Terms of Use |</div>
-        <div className="pr-1">Privacy Policy |</div>
-        <div className="pr-1">About</div>
+        <a className="pr-1">Contact |</a>
+        <a className="pr-1">Terms of Use |</a>
+        <a className="pr-1">Privacy Policy |</a>
+        <a className="pr-1">About</a>
     </div>
 );
 

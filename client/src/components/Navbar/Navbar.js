@@ -15,10 +15,9 @@ class Navbar extends React.Component {
         return (
             <nav className="navbar navbar-expand-md navbar-dark sticky-top py-0">
                 {/********** BRAND **********/}
-                <a className="navbar-brand" href="/">
-                    {/* <img src={logo} alt="logo" /> */}
-                    LOGO
-                </a>
+                {/* <a className="navbar-brand" href="/">
+                    <img src={logo} alt="logo" />
+                </a> */}
                 {/********** TOGGLER BUTTON **********/}
                 <button
                     className="navbar-toggler"
@@ -49,7 +48,11 @@ class Navbar extends React.Component {
                         </a>
                         <a
                             className="nav-item nav-link text-white px-0 mx-3"
-                            href="/">
+                            href={
+                                "/user/" +
+                                localStorage.getItem("username") +
+                                "/photos"
+                            }>
                             <i className="fa fa-picture-o" aria-hidden="true" />{" "}
                             Photos
                         </a>
