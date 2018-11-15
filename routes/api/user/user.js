@@ -8,17 +8,15 @@ const storage = multer.diskStorage({
     filename: (req, file, cb) =>
         cb(null, new Date().toISOString() + "-" + file.originalname)
 });
-
 const upload = multer({ storage });
 
 /* 
-        /api/user
+        /api/user/
  */
 
  router
     .route("/sign-up")
     .post(upload.single("picPath"), userControlller.signUp);
-
 
 router
     .route("/sign-in")

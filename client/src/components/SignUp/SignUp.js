@@ -9,7 +9,8 @@ class SignUp extends React.Component {
         username: "",
         email: "",
         password: "",
-        confirmPass: ""
+        confirmPass: "",
+        selectedFile: null
     };
 
     inputChangeHandler = event => {
@@ -20,42 +21,58 @@ class SignUp extends React.Component {
         });
     };
 
-    // formBtnHandler = event => {
-    //     event.preventDefault();
+    fileSelectionHandler = event => {
+        this.setState({
+            selectedFile: event.target.files[0]
+        });
+    };
 
-    //     if (
-    //         this.state.firstName &&
-    //         this.state.lastName &&
-    //         this.state.email &&
-    //         this.state.password &&
-    //         this.state.confirmPass
-    //     ) {
-    //         if (this.state.password === this.state.confirmPass) {
-    //             API.signUp({
-    //                 firstName: this.state.firstName,
-    //                 lastName: this.state.lastName,
-    //                 username: this.state.username,
-    //                 email: this.state.email,
-    //                 password: this.state.password
-    //             })
-    //                 .then(res => {
-    //                     localStorage.setItem("token", res.data.token);
-    //                     localStorage.setItem("username", res.data.username);
-    //                     window.location.pathname =
-    //                         "/user/" + localStorage.getItem("username");
-    //                 })
-    //                 .catch(err => console.log(err));
-    //         } else
-    //             alert(
-    //                 `WARNING!\nPasswords do NOT match!\nPlease try again later`
-    //             );
-    //     }
-    // };
+    formBtnHandler = event => {
+        event.preventDefault();
+
+        const userInfo = new FormData();
+        userInfo.append("firstName", this.state.firstName);
+        userInfo.append("lastName", this.state.lastName);
+        userInfo.append("username", this.state.username);
+        userInfo.append("email", this.state.email);
+        userInfo.append("password", this.state.password);
+        userInfo.append("profilePic", this.state.selectedFile);
+
+        if (
+            this.state.firstName &&
+            this.state.lastName &&
+            this.state.email &&
+            this.state.password &&
+            this.state.confirmPass &&
+            this.state.selectedFile
+        ) {
+            if (this.state.password === this.state.confirmPass) {
+                API.signUp(userInfo)
+                    .then(res => {
+                        localStorage.setItem("token", res.data.token);
+                        localStorage.setItem("username", res.data.username);
+                        console.log(
+                            localStorage.getItem("token"),
+                            localStorage.getItem("username")
+                        );
+                        // window.location.pathname =
+                        //     "/user/" + localStorage.getItem("username");
+                    })
+                    .catch(err => console.log(err));
+            } else
+                alert(
+                    `WARNING!\nPasswords do NOT match!\nPlease try again later`
+                );
+        }
+    };
 
     render() {
         return (
             <div className="my-form-wrapper">
-                <form action="/api/user/sign-up" method="post" enctype="multipart/form-data">
+                <form
+                    action="/api/user/sign-up"
+                    method="post"
+                    enctype="multipart/form-data">
                     <div className="form-group">
                         <label htmlFor="first-name">First name:</label>
                         <input
@@ -131,11 +148,14 @@ class SignUp extends React.Component {
                         />
                     </div>
                     <div className="form-group">
-                        <label>Profile picture (optional):</label>
+                        <label htmlFor="profile-pic">Profile picture:</label>
+                        <br />
                         <input
+                            id="profile-pic"
                             name="picPath"
                             accept="image/*"
                             type="file"
+                            // onChange={this.fileSelectionHandler}
                         />
                     </div>
                     <button

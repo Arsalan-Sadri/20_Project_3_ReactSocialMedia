@@ -73,7 +73,7 @@ class Navbar extends React.Component {
                                         ? "nav-link active"
                                         : "nav-link text-white dropdown-toggle"
                                 }
-                                href="#"
+                                href="/"
                                 id="navbarDropdown"
                                 role="button"
                                 data-toggle="dropdown"

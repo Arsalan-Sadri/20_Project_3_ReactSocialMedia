@@ -1,7 +1,7 @@
 import React from "react";
 import "./Friend.css";
 import API from "../../utils/API";
-import img1 from "../Profile/avatar.png"
+import pic from "../Profile/avatar.png"
 
 class Friend extends React.Component {
     state = {
@@ -20,7 +20,7 @@ class Friend extends React.Component {
         return this.state.persons.map(user => (
             <React.Fragment>
                 <div className="card img-fluid">
-                    <img className="card-img-top" src={img1} alt="Card image" />
+                    <img className="card-img-top" src={pic} alt="card" />
                     <div className="card-body">
                         <h4 className="card-title">
                             {user.firstName} {user.lastName}
