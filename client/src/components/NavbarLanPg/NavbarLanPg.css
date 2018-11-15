@@ -30,31 +30,31 @@
     background: rgb(143, 40, 143);
 }
 
+.navbar-brand {
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
+    font-size: 3em;
+}
+
 img {
-    width: 35px;
-    height: 35px;
+    width: 100px;
+    height: 100px;
 }
 
-.navbar-nav a {
-    padding-top: 10px;
-    padding-bottom: 6px;
-    border-bottom: 4px solid transparent;
+.navbar button {
+    background: rgb(122, 11, 122);
+    border: 1px solid rgb(65, 17, 65);
 }
 
-.navbar-nav a:hover {
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    border-bottom: 4px solid white;
+.navbar button:hover {
+    background: rgb(104, 9, 104);
 }
 
-.nav-item.dropdown a {
-    border-bottom: 4px solid transparent;
+.form-inline input {
+    border: 0;
 }
 
-.nav-item.dropdown a:hover {
-    border-bottom: 4px solid white;
-}
-
-.dropdown-menu a:hover {
-    background: rgb(232, 232, 235);
+.form-inline input:focus {
+    outline: 0;
+    background: rgb(231, 222, 171);
 }

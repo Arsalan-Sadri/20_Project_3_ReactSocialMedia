@@ -2,156 +2,87 @@ import React from "react";
 import "./Navbar.css";
 
 class Navbar extends React.Component {
-    signOutHandler = () => {
-        localStorage.clear();
-        window.location.pathname = "/";
+    state = {
+        username: "John.Doe"
     };
 
     render() {
         return (
-            <nav className="navbar navbar-expand-sm navbar-dark sticky-top my-navbar">
+            <nav className="navbar navbar-expand-md navbar-dark sticky-top py-0">
+                {/********** BRAND **********/}
+                <a className="navbar-brand" href="/">
+                    {/* <img src={logo} alt="logo" /> */}
+                    LOGO
+                </a>
+                {/********** TOGGLER BUTTON **********/}
                 <button
                     className="navbar-toggler"
                     type="button"
                     data-toggle="collapse"
-                    data-target="#navbarTogglerDemo02"
-                    aria-controls="navbarTogglerDemo02"
+                    data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
                     aria-expanded="false"
                     aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon" />
                 </button>
+                {/********** COLLAPSE WRAPPER **********/}
                 <div
                     className="collapse navbar-collapse"
-                    id="navbarTogglerDemo02">
-                    <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
-                        <li className="nav-item">
-                            <a
-                                className={
-                                    window.location.pathname === "/"
-                                        ? "nav-link active"
-                                        : "nav-link text-white"
-                                }
-                                href="/">
-                                Home
+                    id="navbarSupportedContent">
+                    {/********** NAVBAR LINKS **********/}
+                    <div className="navbar-nav">
+                        <a
+                            className="nav-item nav-link text-white px-0 mx-3"
+                            href="/">
+                            <i className="fa fa-home" aria-hidden="true" /> Home
+                        </a>
+                        <a
+                            className="nav-item nav-link text-white px-0 mx-3"
+                            href={"/user/" + localStorage.getItem("username")}>
+                            <i className="fa fa-user" aria-hidden="true" />{" "}
+                            Profile
+                        </a>
+                        <a
+                            className="nav-item nav-link text-white px-0 mx-3"
+                            href="/">
+                            <i className="fa fa-picture-o" aria-hidden="true" />{" "}
+                            Photos
+                        </a>
+                        <a
+                            className="nav-item nav-link text-white px-0 mx-3"
+                            href="/">
+                            <i className="fa fa-list-alt" aria-hidden="true" />{" "}
+                            Events
+                        </a>
+                    </div>
+                    {/********** DROPDOWN **********/}
+                    <div className="nav-item dropdown ml-auto">
+                        <a
+                            className="nav-link dropdown-toggle text-white px-0"
+                            href="/"
+                            id="navbarDropdown"
+                            role="button"
+                            data-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false">
+                            Signed in
+                        </a>
+                        <div
+                            className="dropdown-menu dropdown-menu-right"
+                            aria-labelledby="navbarDropdown">
+                            <a className="dropdown-item" href="/">
+                                "{this.state.username}"
                             </a>
-                        </li>
-                        <li className="nav-item">
-                            <span className="nav-link">|</span>
-                        </li>
-                        <li className="nav-item">
-                            <a
-                                className={
-                                    window.location.pathname === "/user"
-                                        ? "nav-link active"
-                                        : "nav-link text-white"
-                                }
-                                href={"/user/"+localStorage.getItem("username")}>
-                                Profile
+                            <div className="dropdown-divider" />
+                            <a className="dropdown-item" href="/">
+                                <i
+                                    className="fa fa-sign-out"
+                                    aria-hidden="true"
+                                />{" "}
+                                Sign out
                             </a>
-                        </li>
-                        <li className="nav-item">
-                            <span className="nav-link">|</span>
-                        </li>
-                        <li className="nav-item">
-                            <a
-                                className={
-                                    window.location.pathname === "/friends"
-                                        ? "nav-link active"
-                                        : "nav-link text-white"
-                                }
-                                href="/friends">
-                                Friends
-                            </a>
-                        </li>
-                        <li className="nav-item">
-                            <span className="nav-link">|</span>
-                        </li>
-                        <li className="nav-item dropdown">
-                            <a
-                                className={
-                                    window.location.pathname === "/search"
-                                        ? "nav-link active"
-                                        : "nav-link text-white dropdown-toggle"
-                                }
-                                href="/"
-                                id="navbarDropdown"
-                                role="button"
-                                data-toggle="dropdown"
-                                aria-haspopup="true"
-                                aria-expanded="false">
-                                Search
-                            </a>
-                            <div
-                                className="dropdown-menu"
-                                aria-labelledby="navbarDropdown">
-                                <a
-                                    className="dropdown-item"
-                                    href={
-                                        "/search-friends"
-                                    }>
-                                    Friends
-                                </a>
-                                <a
-                                    className="dropdown-item"
-                                    href="search-events">
-                                    Events
-                                </a>
-                            </div>
-                        </li>
-                    </ul>
-                    <form className="form-inline my-2 my-lg-0">
-                        <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
-                            <li className="nav-item">
-                                <a
-                                    className={
-                                        window.location.pathname === "/sign-up"
-                                            ? "nav-link active"
-                                            : "nav-link text-white"
-                                    }
-                                    href="/sign-up">
-                                    Sign Up
-                                </a>
-                            </li>
-                            <li className="nav-item">
-                                <span className="nav-link">|</span>
-                            </li>
-                            <li className="nav-item">
-                                <a
-                                    className={
-                                        window.location.pathname === "/sign-in"
-                                            ? "nav-link active"
-                                            : "nav-link text-white"
-                                    }
-                                    href="/sign-in">
-                                    <i
-                                        className="fa fa-sign-in"
-                                        aria-hidden="true"
-                                    />{" "}
-                                    Sign in
-                                </a>
-                            </li>
-
-                            <li className="nav-item">
-                                <span className="nav-link">|</span>
-                            </li>
-                            <li className="nav-item">
-                                <a
-                                    className={
-                                        window.location.pathname === "/sign-out"
-                                            ? "nav-link active"
-                                            : "nav-link text-white"
-                                    }
-                                    href=""
-                                    onClick={this.signOutHandler}>
-                                    Sign out{" "}
-                                    <i
-                                        class="fa fa-sign-out"
-                                        aria-hidden="true"
-                                    />
-                                </a>
-                            </li>
-                        </ul>
-                    </form>
+                        </div>
+                    </div>
                 </div>
             </nav>
         );

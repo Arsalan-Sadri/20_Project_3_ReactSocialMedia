@@ -1,0 +1,22 @@
+[class^="col-"] input:focus {
+    background: rgb(231, 222, 171);
+    outline: 0;
+    box-shadow: 0 0 0;
+    border: 0px solid #ced4da;
+}
+
+.custom-file label:focus {
+    background: rgb(231, 222, 171);
+    outline: 0;
+    box-shadow: 0 0 0;
+    border: 0px solid #ced4da;
+}
+
+[class^="col-"] input {
+    font-style: italic;
+}
+
+button {
+    color: white;
+    background: rgb(163, 31, 196);
+}

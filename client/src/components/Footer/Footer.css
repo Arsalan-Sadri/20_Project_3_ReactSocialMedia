@@ -1,6 +1,12 @@
 .my-footer {
-    width: 100%;
-    padding: 10px;
-    color: rgb(12, 11, 11);
-    /* background: rgb(143, 40, 143); */
+    font-size: 0.8em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 460px) {
+    .my-footer {
+        flex-wrap: wrap;
+    }
 }
