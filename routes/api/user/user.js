@@ -8,7 +8,7 @@ const storage = multer.diskStorage({
     filename: (req, file, cb) =>
         cb(null, new Date().toISOString() + "-" + file.originalname)
 });
-const upload = multer({ storage });
+const upload = multer({ storage }).single("photo");
 // upload.single("photo");
 
 /* 
@@ -17,7 +17,7 @@ const upload = multer({ storage });
 
  router
     .route("/sign-up")
-    .post(upload.single("photo"), userControlller.signUp);
+    .post(upload, userControlller.signUp);
 
 router
     .route("/sign-in")
