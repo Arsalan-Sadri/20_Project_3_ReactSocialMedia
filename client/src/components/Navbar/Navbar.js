@@ -15,9 +15,10 @@ class Navbar extends React.Component {
         return (
             <nav className="navbar navbar-expand-md navbar-dark sticky-top py-0">
                 {/********** BRAND **********/}
-                {/* <a className="navbar-brand" href="/">
-                    <img src={logo} alt="logo" />
-                </a> */}
+                <a className="navbar-brand" href="/">
+                    {/* <img src={logo} alt="logo" /> */}
+                    LOGO
+                </a>
                 {/********** TOGGLER BUTTON **********/}
                 <button
                     className="navbar-toggler"

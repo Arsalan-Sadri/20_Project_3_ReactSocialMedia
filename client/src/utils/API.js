@@ -16,6 +16,16 @@ export default {
             }
         });
     },
+    uploadPhotos: function(photos) {
+        return axios({
+            method: "post",
+            url: "/api/user/" + localStorage.getItem("username") + "/photos",
+            data: photos,
+            headers: {
+                Authorization: "Bearer " + localStorage.getItem("token")
+            }
+        });
+    },
     getAllUsers: function() {
         return axios({
             method: "get",

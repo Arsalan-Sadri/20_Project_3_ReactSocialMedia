@@ -52,7 +52,7 @@ class NavbarLanPg extends React.Component {
         return (
             <nav className="navbar navbar-expand-md navbar-dark sticky-top">
                 {/********** BRAND **********/}
-                <a className="navbar-brand" href="/">
+                <a className="navbar-brand log-LanPg" href="/">
                     {/* <img src={logo} alt="" /> */}
                     Logo
                 </a>

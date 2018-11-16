@@ -31,7 +31,7 @@ router
     .get(userControlller.findAndReturn);
 
 router
-    .route("/photos")
-    .post(upload.fields);
+    .route("/:username/photos")
+    .post(upload.array('photos', 12));
 
 module.exports = router;

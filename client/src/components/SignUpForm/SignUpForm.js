@@ -14,7 +14,7 @@ class SignUpForm extends React.Component {
         password: "",
         confirmPass: "",
         selectedFile: null,
-        fileDisplayVal: "Upload your picture..."
+        fileBrowserDisplayVal: "Upload your picture..."
     };
 
     inputChangeHandler = event => {
@@ -28,7 +28,7 @@ class SignUpForm extends React.Component {
     fileSelectionHandler = event => {
         this.setState({
             selectedFile: event.target.files[0],
-            fileDisplayVal: event.target.files[0].name
+            fileBrowserDisplayVal: event.target.files[0].name
         });
     };
 
@@ -213,7 +213,7 @@ class SignUpForm extends React.Component {
                             <label
                                 className="custom-file-label"
                                 htmlFor="validatedCustomFile">
-                                {this.state.fileDisplayVal}
+                                {this.state.fileBrowserDisplayVal}
                             </label>
                         </div>
                     </div>
