@@ -39,7 +39,8 @@ class Navbar extends React.Component {
                         <a
                             className="nav-item nav-link text-white px-0 mx-3"
                             href="/">
-                            <i className="fas fa-home" aria-hidden="true" /> Home
+                            <i className="fas fa-home" aria-hidden="true" />{" "}
+                            Home
                         </a>
                         <a
                             className="nav-item nav-link text-white px-0 mx-3"
@@ -84,7 +85,7 @@ class Navbar extends React.Component {
                                 href={
                                     "/user/" + localStorage.getItem("username")
                                 }>
-                                "{this.state.username}"
+                                <i>{this.state.username}</i>
                             </a>
                             <div className="dropdown-divider" />
                             <a
