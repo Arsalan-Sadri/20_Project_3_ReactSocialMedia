@@ -11,7 +11,7 @@ class PhotosForm extends React.Component {
     fileSelectionHandler = event => {
         this.setState({
             selectedFiles: event.target.files,
-            fileBrowserDisplayVal: event.target.files.length + " pictures selected"
+            fileBrowserDisplayVal: event.target.files.length + " files selected."
         });
     };
 
@@ -46,7 +46,7 @@ class PhotosForm extends React.Component {
                                 className="custom-file-input"
                                 id="validatedCustomFile"
                                 required
-                                name="profilePic"
+                                name="photos"
                                 accept="image/*"
                                 onChange={this.fileSelectionHandler}
                                 multiple

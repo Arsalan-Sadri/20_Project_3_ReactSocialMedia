@@ -58,7 +58,7 @@ class SignUpForm extends React.Component {
                 userInfo.append("username", this.state.username);
                 userInfo.append("email", this.state.email);
                 userInfo.append("password", this.state.password);
-                userInfo.append("profilePic", this.state.selectedFile);
+                userInfo.append("photo", this.state.selectedFile);
 
                 API.signUp(userInfo)
                     .then(res => {
@@ -206,7 +206,6 @@ class SignUpForm extends React.Component {
                                 className="custom-file-input"
                                 id="validatedCustomFile"
                                 required
-                                name="profilePic"
                                 accept="image/*"
                                 onChange={this.fileSelectionHandler}
                             />

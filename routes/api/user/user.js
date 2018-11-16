@@ -4,11 +4,12 @@ const middleware = require("../../../middleware");
 const multer = require("multer");
 
 const storage = multer.diskStorage({
-    destination: (req, file, cb) => cb(null, "./profile_pics/"),
+    destination: (req, file, cb) => cb(null, "./uploads/"),
     filename: (req, file, cb) =>
         cb(null, new Date().toISOString() + "-" + file.originalname)
 });
 const upload = multer({ storage });
+// upload.single("photo");
 
 /* 
         /api/user/
@@ -16,7 +17,7 @@ const upload = multer({ storage });
 
  router
     .route("/sign-up")
-    .post(upload.single("profilePic"), userControlller.signUp);
+    .post(upload.single("photo"), userControlller.signUp);
 
 router
     .route("/sign-in")
@@ -30,8 +31,8 @@ router
     .route("/:username")
     .get(userControlller.findAndReturn);
 
-router
-    .route("/:username/photos")
-    .post(upload.array('photos', 12));
+// router
+//     .route("/:username/photos")
+//     .post(upload.array('photos', 12));
 
 module.exports = router;

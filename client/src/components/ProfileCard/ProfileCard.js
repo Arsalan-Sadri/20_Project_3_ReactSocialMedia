@@ -10,7 +10,7 @@ class Profile extends React.Component {
         city: "",
         state: "",
         email: "",
-        picPath: ""
+        photoURL: ""
     };
 
     componentDidMount() {
@@ -22,7 +22,7 @@ class Profile extends React.Component {
                 city: res.data.city,
                 state: res.data.state,
                 email: res.data.email,
-                picPath: res.data.picPath
+                photoURL: res.data.photoURL
             })
         );
     }
@@ -32,7 +32,7 @@ class Profile extends React.Component {
             <div className="card img-fluid">
                 <img
                     className="card-img-top"
-                    src={this.state.picPath}
+                    src={this.state.photoURL}
                     alt="card"
                 />
                 <div className="card-body">

@@ -9,7 +9,7 @@ module.exports = {
             if (err) res.sendStatus(400);
             else {
                 req.body.password = encrypted;
-                req.body.picPath = req.file.path;
+                req.body.photoURL = req.file.path;
                 db.User.create(req.body)
                     .then(dbUser => {
                         jwt.sign(
@@ -84,7 +84,7 @@ module.exports = {
                     state: dbUser.state,
                     username: dbUser.username,
                     email: dbUser.email,
-                    picPath: "http://" + req.headers.host + "/" + dbUser.picPath
+                    photoURL: "http://" + req.headers.host + "/" + dbUser.photoURL
                 });
             })
             .catch(function(err) {
