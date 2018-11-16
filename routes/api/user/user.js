@@ -8,8 +8,7 @@ const storage = multer.diskStorage({
     filename: (req, file, cb) =>
         cb(null, new Date().toISOString() + "-" + file.originalname)
 });
-const upload = multer({ storage }).single("photo");
-// upload.single("photo");
+const upload = multer({ storage });
 
 /* 
         /api/user/
@@ -17,7 +16,7 @@ const upload = multer({ storage }).single("photo");
 
  router
     .route("/sign-up")
-    .post(upload, userControlller.signUp);
+    .post(upload.single("photo"), userControlller.signUp);
 
 router
     .route("/sign-in")
@@ -31,8 +30,8 @@ router
     .route("/:username")
     .get(userControlller.findAndReturn);
 
-// router
-//     .route("/:username/photos")
-//     .post(upload.array('photos', 12));
+router
+    .route("/:username/photos")
+    .post(upload.array("photos", 10));
 
 module.exports = router;

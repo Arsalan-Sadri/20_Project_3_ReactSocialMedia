@@ -9,9 +9,14 @@ class PhotosForm extends React.Component {
     };
 
     fileSelectionHandler = event => {
+        let photos = [];
+        for (var key in event.target.files)
+            if (!(key === "length" || key === "item"))
+                photos.push(event.target.files[key]);
+
         this.setState({
-            selectedFiles: event.target.files,
-            fileBrowserDisplayVal: event.target.files.length + " files selected."
+            selectedFiles: photos,
+            fileBrowserDisplayVal: photos.length + " files selected."
         });
     };
 
@@ -20,17 +25,19 @@ class PhotosForm extends React.Component {
 
         if (this.state.selectedFiles) {
             const photos = new FormData();
-            photos.append("photos", this.state.selectedFiles);
+            this.state.selectedFiles.forEach(elm =>
+                photos.append("photos", elm)
+            );
 
             API.uploadPhotos(photos)
-            .then(res => {
-                console.log(res);
-                // localStorage.clear();
-                // localStorage.setItem("token", res.data.token);
-                // localStorage.setItem("username", res.data.username);
-                // window.location.pathname =
-                //     "/user/" + localStorage.getItem("username");
-            })
+                .then(res => {
+                    console.log(res);
+                    // localStorage.clear();
+                    // localStorage.setItem("token", res.data.token);
+                    // localStorage.setItem("username", res.data.username);
+                    // window.location.pathname =
+                    //     "/user/" + localStorage.getItem("username");
+                })
                 .catch(err => console.log(err));
         } else alert(`WARNING!\nPlease upload at least 1 photo!`);
     };
@@ -46,7 +53,6 @@ class PhotosForm extends React.Component {
                                 className="custom-file-input"
                                 id="validatedCustomFile"
                                 required
-                                name="photos"
                                 accept="image/*"
                                 onChange={this.fileSelectionHandler}
                                 multiple

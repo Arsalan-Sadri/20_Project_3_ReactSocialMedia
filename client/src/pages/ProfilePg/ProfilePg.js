@@ -10,10 +10,10 @@ const ProfilePg = () => (
         <Navbar />
         <div className="container-fluid bg-light py-5">
             <div className="row">
-                <div className="col-md-5">
+                <div className="col-md-4">
                     <ProfileCard />
                 </div>
-                <div className="col-md-7"><Photos /></div>
+                <div className="col-md-8"><Photos /></div>
             </div>
         </div>
         <Footer />

@@ -5,7 +5,7 @@ class Photos extends React.Component {
     state = {};
 
     render() {
-        return "This is photosss!!!";
+        return true;
     }
 }
 
