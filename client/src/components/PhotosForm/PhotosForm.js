@@ -84,39 +84,3 @@ class PhotosForm extends React.Component {
 }
 
 export default PhotosForm;
-
-// <form className="p-2">
-// <div className="form-row mb-3">
-//     <div className="col-md">
-//         <div class="form-group">
-//             <label htmlFor="validatedCustomFile">
-//                 Choose photos:
-//             </label>
-//             <input
-//                 type="file"
-//                 class="form-control-file"
-//                 id="validatedCustomFile"
-//                 required
-//                 name="profilePic"
-//                 accept="image/*"
-//                 onChange={this.fileSelectionHandler}
-//                 multiple
-//             />
-//         </div>
-//     </div>
-// </div>
-
-// <div className="form-row mb-3">
-//     <div className="col-md">
-//         <button
-//             className="btn btn"
-//             onClick={this.formBtnHandler}>
-//             <i
-//                 className="fa fa-cloud-upload-alt"
-//                 aria-hidden="true"
-//             />{" "}
-//             Upload
-//         </button>
-//     </div>
-// </div>
-// </form>
