@@ -16,6 +16,15 @@ export default {
             }
         });
     },
+    verifyMe: function() {
+        return axios({
+            method: "get",
+            url: "",
+            headers: {
+                Authorization: "Bearer " + localStorage.getItem("token")
+            }
+        });
+    },
     getDbUser: function() {
         return axios({
             method: "get",
