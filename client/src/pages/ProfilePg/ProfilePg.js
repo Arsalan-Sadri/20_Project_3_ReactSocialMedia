@@ -5,19 +5,32 @@ import ProfileCard from "../../components/ProfileCard";
 import Footer from "../../components/Footer";
 import Photos from "../../components/Photos";
 
-const ProfilePg = () => (
-    <React.Fragment>
-        <Navbar />
-        <div className="container-fluid bg-light py-5">
-            <div className="row">
-                <div className="col-md-4">
-                    <ProfileCard />
+class ProfilePg extends React.Component {
+    // componentWillMount() {
+    //     API
+    //         .verifyMe("/user/" + localStorage.getItem("username"))
+    //         .then(res => console.log(res));
+    // }
+
+    render() {
+        return (
+            <React.Fragment>
+                <Navbar />
+                <div className="container-fluid bg-light py-5">
+                    <div className="row">
+                        <div className="col-md-4">
+                            <ProfileCard />
+                        </div>
+                        <div className="col-md-8">
+                            <Photos />
+                        </div>
+                    </div>
                 </div>
-                <div className="col-md-8"><Photos /></div>
-            </div>
-        </div>
-        <Footer />
-    </React.Fragment>
-);
+                <Footer />
+            </React.Fragment>
+        );
+    }
+}
+
 
 export default ProfilePg;
