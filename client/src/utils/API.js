@@ -7,6 +7,15 @@ export default {
     signIn: function(userCredential) {
         return axios.post("/api/user/sign-in", userCredential);
     },
+    getHTML: function(url) {
+        return axios({
+            method: "get",
+            url: url,
+            headers: {
+                Authorization: "Bearer " + localStorage.getItem("token")
+            }
+        });
+    },
     getDbUser: function() {
         return axios({
             method: "get",

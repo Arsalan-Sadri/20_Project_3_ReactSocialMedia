@@ -12,8 +12,8 @@ router
 router
     .use("/api", apiRoutes);
 
-router
-    .use(middleware.verifyToken);
+// router
+//     .use(middleware.verifyToken);
 
 router
     .use((req, res) =>
