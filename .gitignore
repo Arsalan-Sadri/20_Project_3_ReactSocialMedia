@@ -1,4 +1,4 @@
 node_modules/
 client/node_modules/
 uploads/
-client/build
+client/build/
