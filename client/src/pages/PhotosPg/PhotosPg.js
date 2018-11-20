@@ -1,13 +1,49 @@
 import React from "react";
 import "./PhotosPg.css";
+import API from "../../utils/API";
 import Navbar from "../../components/Navbar";
-// import ProfileCard from "../../components/Photos";
 import PhotosForm from "../../components/PhotosForm";
+import Footer from "../../components/Footer";
 
 class ProfilePg extends React.Component {
+    state = {
+        selectedFiles: [],
+        fileBrowserDisplayVal: "Upload your picture(s)..."
+    };
+
     componentWillMount() {
         if (!localStorage.getItem("username")) window.location.href = "/";
     }
+
+    fileSelectionHandler = event => {
+        let photos = [];
+        for (var key in event.target.files)
+            if (!(key === "length" || key === "item"))
+                photos.push(event.target.files[key]);
+
+        this.setState({
+            selectedFiles: photos,
+            fileBrowserDisplayVal: photos.length + " files selected."
+        });
+    };
+
+    formBtnHandler = event => {
+        event.preventDefault();
+
+        if (this.state.selectedFiles) {
+            const photos = new FormData();
+            this.state.selectedFiles.forEach(elm =>
+                photos.append("photos", elm)
+            );
+
+            API.uploadPhotos(photos)
+                .then(res => {
+                    window.location.pathname =
+                        "/user/" + localStorage.getItem("username");
+                })
+                .catch(err => console.log(err));
+        } else alert(`WARNING!\nPlease upload at least 1 photo!`);
+    };
 
     render() {
         return (
@@ -16,10 +52,20 @@ class ProfilePg extends React.Component {
                 <div className="container-fluid bg-light py-5">
                     <div className="row">
                         <div className="col-md-auto">
-                            <PhotosForm />
+                            <PhotosForm
+                                fileBrowserDisplayVal={
+                                    this.state.fileBrowserDisplayVal
+                                }
+                                fileSelectionHandler={this.fileSelectionHandler}
+                                formBtnHandler={this.formBtnHandler}
+                            />
                         </div>
                     </div>
+                    <div className="row">
+                        <div className="col-md-auto">photos</div>
+                    </div>
                 </div>
+                <Footer />
             </React.Fragment>
         );
     }
