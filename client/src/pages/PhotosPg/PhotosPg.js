@@ -3,6 +3,7 @@ import "./PhotosPg.css";
 import API from "../../utils/API";
 import Navbar from "../../components/Navbar";
 import PhotosForm from "../../components/PhotosForm";
+import PhotoCarousel from "../../components/PhotoCarousel";
 import Footer from "../../components/Footer";
 
 class ProfilePg extends React.Component {
@@ -62,7 +63,9 @@ class ProfilePg extends React.Component {
                         </div>
                     </div>
                     <div className="row">
-                        <div className="col-md-auto">photos</div>
+                        <div className="col-md-auto">
+                            <PhotoCarousel />
+                        </div>
                     </div>
                 </div>
                 <Footer />
