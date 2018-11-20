@@ -90,7 +90,6 @@ class Navbar extends React.Component {
                             <div className="dropdown-divider" />
                             <a
                                 className="dropdown-item"
-                                href="/"
                                 onClick={this.signOutHandler}>
                                 <i
                                     className="fas fa-sign-out"

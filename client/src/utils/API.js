@@ -1,49 +1,25 @@
 import axios from "axios";
 
 export default {
-    signUp: function(newUser) {
-        return axios.post("/api/user/sign-up", newUser);
-    },
-    signIn: function(userCredential) {
-        return axios.post("/api/user/sign-in", userCredential);
-    },
-    getHTML: function(url) {
-        return axios({
+    signUp: newUser => axios.post("/api/user/sign-up", newUser),
+    signIn: userCredential => axios.post("/api/user/sign-in", userCredential),
+    getDbUser: username =>
+        axios({
             method: "get",
-            url: url,
+            url: "/api/user/" + username,
             headers: {
                 Authorization: "Bearer " + localStorage.getItem("token")
             }
-        });
-    },
-    verifyMe: function() {
-        return axios({
-            method: "get",
-            url: "",
-            headers: {
-                Authorization: "Bearer " + localStorage.getItem("token")
-            }
-        });
-    },
-    getDbUser: function() {
-        return axios({
-            method: "get",
-            url: "/api/user/" + localStorage.getItem("username"),
-            headers: {
-                Authorization: "Bearer " + localStorage.getItem("token")
-            }
-        });
-    },
-    uploadPhotos: function(photos) {
-        return axios({
+        }),
+    uploadPhotos: photos =>
+        axios({
             method: "post",
             url: "/api/user/" + localStorage.getItem("username") + "/photos",
             data: photos,
             headers: {
                 Authorization: "Bearer " + localStorage.getItem("token")
             }
-        });
-    },
+        }),
     getAllUsers: function() {
         return axios({
             method: "get",

@@ -6,11 +6,9 @@ import Footer from "../../components/Footer";
 import Photos from "../../components/Photos";
 
 class ProfilePg extends React.Component {
-    // componentWillMount() {
-    //     API
-    //         .verifyMe("/user/" + localStorage.getItem("username"))
-    //         .then(res => console.log(res));
-    // }
+    componentWillMount() {
+        if (!localStorage.getItem("username")) window.location.href = "/";
+    }
 
     render() {
         return (
@@ -31,6 +29,5 @@ class ProfilePg extends React.Component {
         );
     }
 }
-
 
 export default ProfilePg;

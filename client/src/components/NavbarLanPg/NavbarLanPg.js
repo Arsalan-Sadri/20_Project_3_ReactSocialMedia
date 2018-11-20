@@ -40,12 +40,8 @@ class NavbarLanPg extends React.Component {
                             localStorage.clear();
                             localStorage.setItem("token", res.data.token);
                             localStorage.setItem("username", res.data.username);
-                            API.getHTML(
-                                "/user/" + localStorage.getItem("username")
-                            ).then(res => console.log(res));
-
-                        // window.location.pathname =
-                        //     "/user/" + localStorage.getItem("username");
+                            window.location.pathname =
+                                "/user/" + localStorage.getItem("username");
                     }
                 })
                 .catch(err => console.log(err));

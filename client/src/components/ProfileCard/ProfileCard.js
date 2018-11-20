@@ -14,7 +14,7 @@ class Profile extends React.Component {
     };
 
     componentDidMount() {
-        API.getDbUser().then(res =>
+        API.getDbUser(localStorage.getItem("username")).then(res =>
             this.setState({
                 firstName: res.data.firstName,
                 lastName: res.data.lastName,
@@ -41,7 +41,10 @@ class Profile extends React.Component {
                     </h4>
                     <p className="my-0">{this.state.jobTitle}</p>
                     <p className="my-0">
-                        <i className="fas fa-map-marker-alt" aria-hidden="true" />{" "}
+                        <i
+                            className="fas fa-map-marker-alt"
+                            aria-hidden="true"
+                        />{" "}
                         {this.state.city}
                         {","} {this.state.state}
                     </p>

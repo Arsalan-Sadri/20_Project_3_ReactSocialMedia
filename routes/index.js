@@ -12,9 +12,6 @@ router
 router
     .use("/api", apiRoutes);
 
-// router
-//     .use(middleware.verifyToken);
-
 router
     .use((req, res) =>
         res.sendFile(path.join(__dirname, "../client/build/index.html"))
