@@ -61,8 +61,6 @@ class ProfilePg extends React.Component {
                                 formBtnHandler={this.formBtnHandler}
                             />
                         </div>
-                    </div>
-                    <div className="row">
                         <div className="col-md-auto">
                             <PhotoCarousel />
                         </div>

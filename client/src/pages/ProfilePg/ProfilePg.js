@@ -3,7 +3,7 @@ import "./ProfilePg.css";
 import Navbar from "../../components/Navbar";
 import ProfileCard from "../../components/ProfileCard";
 import Footer from "../../components/Footer";
-import Photos from "../../components/Photos";
+import PhotoCarousel from "../../components/PhotoCarousel";
 
 class ProfilePg extends React.Component {
     componentWillMount() {
@@ -20,7 +20,7 @@ class ProfilePg extends React.Component {
                             <ProfileCard />
                         </div>
                         <div className="col-md-8">
-                            <Photos />
+                            <PhotoCarousel />
                         </div>
                     </div>
                 </div>
