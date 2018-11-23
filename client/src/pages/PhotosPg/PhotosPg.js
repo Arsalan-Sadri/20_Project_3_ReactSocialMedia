@@ -17,15 +17,17 @@ class ProfilePg extends React.Component {
     }
 
     fileSelectionHandler = event => {
+        let fileListObj = event.target.files;
         let photos = [];
-        for (var key in event.target.files)
-            if (!(key === "length" || key === "item"))
-                photos.push(event.target.files[key]);
+        for (var i = 0; i < fileListObj.length; i++) {
+            photos.push(fileListObj[i]);
+        }
 
         this.setState({
             selectedFiles: photos,
             fileBrowserDisplayVal: photos.length + " files selected."
         });
+        console.log(event);
     };
 
     formBtnHandler = event => {
@@ -33,9 +35,7 @@ class ProfilePg extends React.Component {
 
         if (this.state.selectedFiles) {
             const photos = new FormData();
-            this.state.selectedFiles.forEach(elm =>
-                photos.append("photos", elm)
-            );
+            this.state.selectedFiles.forEach(elm => photos.append("photos", elm));
 
             API.uploadPhotos(photos)
                 .then(res => {
@@ -54,15 +54,13 @@ class ProfilePg extends React.Component {
                     <div className="row">
                         <div className="col-md-auto">
                             <PhotosForm
-                                fileBrowserDisplayVal={
-                                    this.state.fileBrowserDisplayVal
-                                }
+                                fileBrowserDisplayVal={this.state.fileBrowserDisplayVal}
                                 fileSelectionHandler={this.fileSelectionHandler}
                                 formBtnHandler={this.formBtnHandler}
                             />
                         </div>
                         <div className="col-md-auto">
-                            <PhotoCarousel />
+                            <PhotoCarousel selectedFiles={this.state.selectedFiles} />
                         </div>
                     </div>
                 </div>
