@@ -9,22 +9,18 @@ module.exports = (req, res, next) => {
                     console.log(
                         `\n**********\nAccess denied! Invalid token!\n**********\n`
                     );
-                    res.sendFile(
-                        path.join(__dirname, "../client/build/index.html")
-                    );
+                    res.sendFile(path.join(__dirname, "../client/build/index.html"));
                 } else {
                     console.log(
-                        `\n**********\nUser authenticated:\n< ${
+                        `\n**********\nUser authenticated:-> ${
                             decoded.email
-                        } >\n**********\n`
+                        }\n**********\n`
                     );
                     next();
                 }
             });
         } else {
-            console.log(
-                `\n**********\nAccess denied! null token!\n**********\n`
-            );
+            console.log(`\n**********\nAccess denied! null token!\n**********\n`);
             res.sendFile(path.join(__dirname, "../client/build/index.html"));
         }
     }

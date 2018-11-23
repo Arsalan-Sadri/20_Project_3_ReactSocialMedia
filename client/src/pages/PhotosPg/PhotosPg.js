@@ -3,7 +3,6 @@ import "./PhotosPg.css";
 import API from "../../utils/API";
 import Navbar from "../../components/Navbar";
 import PhotosForm from "../../components/PhotosForm";
-import PhotoCarousel from "../../components/PhotoCarousel";
 import Footer from "../../components/Footer";
 
 class ProfilePg extends React.Component {
@@ -33,7 +32,7 @@ class ProfilePg extends React.Component {
     formBtnHandler = event => {
         event.preventDefault();
 
-        if (this.state.selectedFiles) {
+        if (!this.state.selectedFiles === []) {
             const photos = new FormData();
             this.state.selectedFiles.forEach(elm => photos.append("photos", elm));
 
@@ -59,9 +58,7 @@ class ProfilePg extends React.Component {
                                 formBtnHandler={this.formBtnHandler}
                             />
                         </div>
-                        <div className="col-md-auto">
-                            <PhotoCarousel selectedFiles={this.state.selectedFiles} />
-                        </div>
+                        <div id="preview" className="col-md-auto" />
                     </div>
                 </div>
                 <Footer />
