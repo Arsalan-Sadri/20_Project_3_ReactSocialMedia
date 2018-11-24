@@ -21,7 +21,7 @@ class ProfilePg extends React.Component {
         for (var i = 0; i < fileListObj.length; i++) {
             photos.push(fileListObj[i]);
         }
-        
+
         this.setState({
             selectedFiles: photos,
             fileBrowserDisplayVal: photos.length + " files selected."
