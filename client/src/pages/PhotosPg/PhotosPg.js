@@ -21,18 +21,17 @@ class ProfilePg extends React.Component {
         for (var i = 0; i < fileListObj.length; i++) {
             photos.push(fileListObj[i]);
         }
-
+        
         this.setState({
             selectedFiles: photos,
             fileBrowserDisplayVal: photos.length + " files selected."
         });
-        console.log(event);
     };
 
     formBtnHandler = event => {
         event.preventDefault();
-
-        if (!this.state.selectedFiles === []) {
+        console.log(this.state.selectedFiles);
+        if (!(this.state.selectedFiles === [])) {
             const photos = new FormData();
             this.state.selectedFiles.forEach(elm => photos.append("photos", elm));
 
