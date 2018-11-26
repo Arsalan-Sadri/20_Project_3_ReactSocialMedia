@@ -2,10 +2,8 @@ import React from "react";
 import "./PreviewCard.css";
 
 const PreviewCard = props => (
-    <div className="card my-preview-card">
-        <div className="img-container">
-            <img alt={this.props.name} src={this.props.photoURL} />
-        </div>
+    <div className="card preview-card">
+        <img alt={props.alt} src={props.src} />
     </div>
 );
 

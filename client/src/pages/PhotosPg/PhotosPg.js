@@ -9,7 +9,6 @@ import Footer from "../../components/Footer";
 class ProfilePg extends React.Component {
     state = {
         selectedFiles: [],
-        selectedFilesSrc: [],
         fileBrowserDisplayVal: "Upload your picture(s)..."
     };
 
@@ -20,10 +19,11 @@ class ProfilePg extends React.Component {
     fileSelectionHandler = event => {
         let fileListObj = event.target.files;
         let photos = [];
+
         for (var i = 0; i < fileListObj.length; i++) {
             var file = fileListObj[i];
-
             if (!file.type.startsWith("image/")) continue;
+            file.key = new Date().toISOString() + "-" + file.name;
 
             var fReader = new FileReader();
             // Attahcing a src property to each file: file.src = event.target.result
@@ -32,8 +32,8 @@ class ProfilePg extends React.Component {
                     anImg.src = event.target.result;
                 };
             })(file);
-            fReader.readAsDataURL(file);
             photos.push(file);
+            fReader.readAsDataURL(file);
         }
 
         this.setState({
@@ -44,7 +44,7 @@ class ProfilePg extends React.Component {
 
     formBtnHandler = event => {
         event.preventDefault();
-        console.log(this.state.selectedFiles);
+        // this.state.selectedFiles.forEach(file => console.log(file.src));
         if (!(this.state.selectedFiles === [])) {
             const photos = new FormData();
             this.state.selectedFiles.forEach(elm => photos.append("photos", elm));
@@ -71,9 +71,17 @@ class ProfilePg extends React.Component {
                                 formBtnHandler={this.formBtnHandler}
                             />
                         </div>
-                        {/* <PreviewCard
-                            alt={this.state.}
-                            scr={} /> */}
+                    </div>
+                    <div className="row">
+                        <div className="col-md">
+                            {this.state.selectedFiles.map(file => (
+                                <PreviewCard
+                                    key={file.key}
+                                    alt={file.name}
+                                    src={file.src}
+                                />
+                            ))}
+                        </div>
                     </div>
                 </div>
                 <Footer />

@@ -1,19 +1,10 @@
-.my-preview-card {
-    height: 200px;
-    width: 200px;
+.preview-card {
+    height: 300px;
+    width: 300px;
     margin: 10px;
-    position: relative;
-    text-align: left;
-    /* same as body */
-    background: #000;
 }
 
-.img-container {
-    height: 100%;
-}
-
-img {
+.preview-card img {
     width: 100%;
     height: 100%;
-    border-radius: 10px;
 }
