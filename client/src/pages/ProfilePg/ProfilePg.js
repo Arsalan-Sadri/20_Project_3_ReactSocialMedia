@@ -6,6 +6,12 @@ import Footer from "../../components/Footer";
 import PhotoCarousel from "../../components/PhotoCarousel";
 
 class ProfilePg extends React.Component {
+    componentDidMount() {
+        setTimeout(() => {
+            localStorage.clear();
+        }, 600000);
+    }
+
     componentWillMount() {
         if (!localStorage.getItem("username")) window.location.href = "/";
     }

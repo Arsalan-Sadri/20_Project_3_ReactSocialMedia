@@ -68,9 +68,7 @@ class NavbarLanPg extends React.Component {
                     <span className="navbar-toggler-icon" />
                 </button>
                 {/********** COLLAPSE WRAPPER **********/}
-                <div
-                    className="collapse navbar-collapse"
-                    id="navbarSupportedContent">
+                <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     {/********** NAVBAR LINKS **********/}
                     <div className="mr-auto" />
                     {/********** SIGN IN FORM **********/}
@@ -97,8 +95,7 @@ class NavbarLanPg extends React.Component {
                         <button
                             className="btn btn-outline btn-sm text-white ml-1 mb-0"
                             onClick={this.signInHandler}>
-                            <i className="fa fa-sign-in" aria-hidden="true" />{" "}
-                            Sign in
+                            <i className="fa fa-sign-in" aria-hidden="true" /> Sign in
                         </button>
                     </form>
                 </div>

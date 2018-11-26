@@ -69,10 +69,7 @@ class SignUpForm extends React.Component {
                             "/user/" + localStorage.getItem("username");
                     })
                     .catch(err => console.log(err));
-            } else
-                alert(
-                    `WARNING!\nPasswords do NOT match!\nPlease try again later`
-                );
+            } else alert(`WARNING!\nPasswords do NOT match!\nPlease try again later`);
         } else alert(`WARNING!\nPlease fill out the form!`);
     };
 
@@ -219,11 +216,8 @@ class SignUpForm extends React.Component {
                 </div>
                 <div className="form-row mb-3">
                     <div className="col-md">
-                        <button
-                            className="btn btn-lg"
-                            onClick={this.formBtnHandler}>
-                            <i className="fa fa-user-plus" aria-hidden="true" />{" "}
-                            Sign up
+                        <button className="btn btn-lg" onClick={this.formBtnHandler}>
+                            <i className="fa fa-user-plus" aria-hidden="true" /> Sign up
                         </button>
                     </div>
                 </div>
