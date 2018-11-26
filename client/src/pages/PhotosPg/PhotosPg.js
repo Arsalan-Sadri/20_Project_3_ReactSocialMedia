@@ -26,25 +26,23 @@ class ProfilePg extends React.Component {
             file.key = new Date().toISOString() + "-" + file.name;
 
             var fReader = new FileReader();
-            // Attahcing a src property to each file: file.src = event.target.result
-            fReader.onload = (function(anImg) {
+            fReader.onload = function(aFile) {
                 return function(event) {
-                    anImg.src = event.target.result;
-                };
-            })(file);
+                    aFile.dataURL = event.target.result;
+                    this.setState({
+                        selectedFiles: photos,
+                        fileBrowserDisplayVal: photos.length + " files selected."
+                    });
+                }.bind(this);
+            }.bind(this)(file);
             photos.push(file);
             fReader.readAsDataURL(file);
         }
-
-        this.setState({
-            selectedFiles: photos,
-            fileBrowserDisplayVal: photos.length + " files selected."
-        });
     };
 
     formBtnHandler = event => {
         event.preventDefault();
-        // this.state.selectedFiles.forEach(file => console.log(file.src));
+
         if (!(this.state.selectedFiles === [])) {
             const photos = new FormData();
             this.state.selectedFiles.forEach(elm => photos.append("photos", elm));
@@ -78,7 +76,7 @@ class ProfilePg extends React.Component {
                                 <PreviewCard
                                     key={file.key}
                                     alt={file.name}
-                                    src={file.src}
+                                    dataURL={file.dataURL}
                                 />
                             ))}
                         </div>
