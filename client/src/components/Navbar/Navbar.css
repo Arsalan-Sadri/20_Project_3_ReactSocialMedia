@@ -47,6 +47,12 @@ img {
     border-bottom: 4px solid white;
 }
 
+a.this-tab {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom: 4px solid white;
+}
+
 .nav-item.dropdown a {
     border-bottom: 4px solid transparent;
 }
@@ -58,3 +64,4 @@ img {
 .dropdown-menu a:hover {
     background: rgb(232, 232, 235);
 }
+

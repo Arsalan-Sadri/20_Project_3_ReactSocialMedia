@@ -31,38 +31,30 @@ class Navbar extends React.Component {
                     <span className="navbar-toggler-icon" />
                 </button>
                 {/********** COLLAPSE WRAPPER **********/}
-                <div
-                    className="collapse navbar-collapse"
-                    id="navbarSupportedContent">
+                <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     {/********** NAVBAR LINKS **********/}
                     <div className="navbar-nav">
-                        <a
-                            className="nav-item nav-link text-white px-0 mx-3"
-                            href="/">
-                            <i className="fas fa-home" aria-hidden="true" />{" "}
-                            Home
+                        <a className="nav-item nav-link text-white px-0 mx-3" href="/">
+                            <i className="fas fa-home" aria-hidden="true" /> Home
                         </a>
                         <a
-                            className="nav-item nav-link text-white px-0 mx-3"
+                            className={
+                                window.location.pathname === "/user/a.sadri"
+                                    ? "nav-item nav-link text-white px-0 mx-3 this-tab"
+                                    : "nav-item nav-link text-white px-0 mx-3"
+                            }
                             href={"/user/" + localStorage.getItem("username")}>
-                            <i className="fas fa-user" aria-hidden="true" />{" "}
-                            Profile
+                            <i className="fas fa-user" aria-hidden="true" /> Profile
                         </a>
                         <a
                             className="nav-item nav-link text-white px-0 mx-3"
                             href={
-                                "/user/" +
-                                localStorage.getItem("username") +
-                                "/photos"
+                                "/user/" + localStorage.getItem("username") + "/photos"
                             }>
-                            <i className="fas fa-images" aria-hidden="true" />{" "}
-                            Photos
+                            <i className="fas fa-images" aria-hidden="true" /> Photos
                         </a>
-                        <a
-                            className="nav-item nav-link text-white px-0 mx-3"
-                            href="/">
-                            <i className="fas fa-list-alt" aria-hidden="true" />{" "}
-                            Events
+                        <a className="nav-item nav-link text-white px-0 mx-3" href="/">
+                            <i className="fas fa-list-alt" aria-hidden="true" /> Events
                         </a>
                     </div>
                     {/********** DROPDOWN **********/}
@@ -82,20 +74,13 @@ class Navbar extends React.Component {
                             aria-labelledby="navbarDropdown">
                             <a
                                 className="dropdown-item"
-                                href={
-                                    "/user/" + localStorage.getItem("username")
-                                }>
+                                href={"/user/" + localStorage.getItem("username")}>
                                 <i>{this.state.username}</i>
                             </a>
                             <div className="dropdown-divider" />
-                            <a
-                                className="dropdown-item"
-                                onClick={this.signOutHandler}>
-                                <i
-                                    className="fas fa-sign-out"
-                                    aria-hidden="true"
-                                />{" "}
-                                Sign out
+                            <a className="dropdown-item" onClick={this.signOutHandler}>
+                                <i className="fas fa-sign-out" aria-hidden="true" /> Sign
+                                out
                             </a>
                         </div>
                     </div>
