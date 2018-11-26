@@ -12,6 +12,12 @@ class ProfilePg extends React.Component {
         fileBrowserDisplayVal: "Upload your picture(s)..."
     };
 
+    componentDidMount() {
+        setTimeout(() => {
+            localStorage.clear();
+        }, 600000);
+    }
+
     componentWillMount() {
         console.log(localStorage.getItem("token"));
         console.log(new Date().getTime());
