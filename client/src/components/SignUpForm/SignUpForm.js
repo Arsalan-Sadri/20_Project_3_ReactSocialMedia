@@ -1,6 +1,5 @@
 import React from "react";
 import "./SignUpForm.css";
-import API from "../../utils/API";
 
 class SignUpForm extends React.Component {
     state = {
@@ -32,7 +31,7 @@ class SignUpForm extends React.Component {
         });
     };
 
-    formBtnHandler = event => {
+    formDataHandler = event => {
         event.preventDefault();
 
         if (
@@ -60,22 +59,14 @@ class SignUpForm extends React.Component {
                 userInfo.append("password", this.state.password);
                 userInfo.append("photo", this.state.selectedFile);
 
-                API.signUp(userInfo)
-                    .then(res => {
-                        localStorage.clear();
-                        localStorage.setItem("token", res.data.token);
-                        localStorage.setItem("username", res.data.username);
-                        window.location.pathname =
-                            "/profile/" + localStorage.getItem("username");
-                    })
-                    .catch(err => console.log(err));
+                this.props.formBtnHandler(userInfo);
             } else alert(`WARNING!\nPasswords do NOT match!\nPlease try again later`);
         } else alert(`WARNING!\nPlease fill out the form!`);
     };
 
     render() {
         return (
-            <form className="p-2">
+            <form className="p-2 sign-up-form">
                 <div className="form-row mb-3">
                     <div className="col-md">
                         <input
@@ -207,7 +198,7 @@ class SignUpForm extends React.Component {
                                 onChange={this.fileSelectionHandler}
                             />
                             <label
-                                className="custom-file-label"
+                                className="custom-file-label font-italic"
                                 htmlFor="validatedCustomFile">
                                 {this.state.fileBrowserDisplayVal}
                             </label>
@@ -216,8 +207,12 @@ class SignUpForm extends React.Component {
                 </div>
                 <div className="form-row mb-3">
                     <div className="col-md">
-                        <button className="btn btn-lg" onClick={this.formBtnHandler}>
-                            <i className="fa fa-user-plus" aria-hidden="true" />{" "}
+                        <button className="btn btn-lg" onClick={this.formDataHandler}>
+                            {window.location.pathname.startsWith("/profile") ? (
+                                <i className="fas fa-user-edit" aria-hidden="true" />
+                            ) : (
+                                <i className="fas fa-user-plus" aria-hidden="true" />
+                            )}{" "}
                             {this.props.btnValue}
                         </button>
                     </div>

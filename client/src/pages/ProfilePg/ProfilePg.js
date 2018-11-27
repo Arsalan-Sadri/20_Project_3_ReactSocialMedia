@@ -16,7 +16,6 @@ class ProfilePg extends React.Component {
         setTimeout(() => {
             localStorage.clear();
         }, 600000);
-        console.log("didMount()");
     }
 
     updateProfileBtnHandler = () => {
@@ -39,7 +38,7 @@ class ProfilePg extends React.Component {
                         </div>
                         <div className="col-md-8">
                             {this.state.updateProfile ? (
-                                <SignUpForm />
+                                <SignUpForm btnValue="Submit" />
                             ) : (
                                 <PhotoCarousel />
                             )}

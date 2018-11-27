@@ -20,3 +20,7 @@ button {
     color: white;
     background: rgb(163, 31, 196);
 }
+
+form.sign-up-form {
+    max-width: 400px;
+}
