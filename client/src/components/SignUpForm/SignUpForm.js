@@ -14,7 +14,7 @@ class SignUpForm extends React.Component {
         password: "",
         confirmPass: "",
         selectedFile: null,
-        fileBrowserDisplayVal: "Upload your picture..."
+        fileBrowserDisplayVal: "Select your picture..."
     };
 
     inputChangeHandler = event => {
@@ -79,61 +79,61 @@ class SignUpForm extends React.Component {
                 <div className="form-row mb-3">
                     <div className="col-md">
                         <input
-                            type="text"
-                            className="form-control"
-                            placeholder="First name"
-                            required
                             name="firstName"
+                            placeholder={this.props.firstName}
                             value={this.state.firstName}
                             onChange={this.inputChangeHandler}
+                            type="text"
+                            className="form-control"
+                            required
                         />
                     </div>
                     <div className="col-md">
                         <input
-                            type="text"
-                            className="form-control"
-                            placeholder="Last name"
-                            required
                             name="lastName"
+                            placeholder={this.props.lastName}
                             value={this.state.lastName}
                             onChange={this.inputChangeHandler}
+                            type="text"
+                            className="form-control"
+                            required
                         />
                     </div>
                 </div>
                 <div className="form-row mb-3">
                     <div className="col-md">
                         <input
-                            type="text"
-                            className="form-control"
-                            placeholder="Job title"
-                            required
                             name="jobTitle"
+                            placeholder={this.props.jobTitle}
                             value={this.state.jobTitle}
                             onChange={this.inputChangeHandler}
+                            type="text"
+                            className="form-control"
+                            required
                         />
                     </div>
                 </div>
                 <div className="form-row mb-3">
                     <div className="col-md">
                         <input
-                            type="text"
-                            className="form-control"
-                            placeholder="City"
-                            required
                             name="city"
+                            placeholder={this.props.city}
                             value={this.state.city}
                             onChange={this.inputChangeHandler}
+                            type="text"
+                            className="form-control"
+                            required
                         />
                     </div>
                     <div className="col-md">
                         <input
-                            type="text"
-                            className="form-control"
-                            placeholder="State"
-                            required
                             name="state"
+                            placeholder={this.props.state}
                             value={this.state.state}
                             onChange={this.inputChangeHandler}
+                            type="text"
+                            className="form-control"
+                            required
                         />
                     </div>
                 </div>
@@ -146,14 +146,14 @@ class SignUpForm extends React.Component {
                                 </span>
                             </div>
                             <input
+                                name="username"
+                                placeholder={this.props.username}
+                                value={this.state.username}
+                                onChange={this.inputChangeHandler}
                                 type="text"
                                 className="form-control"
-                                placeholder="Username"
                                 aria-describedby="validationTooltipUsernamePrepend"
                                 required
-                                value={this.state.username}
-                                name="username"
-                                onChange={this.inputChangeHandler}
                             />
                         </div>
                     </div>
@@ -161,37 +161,37 @@ class SignUpForm extends React.Component {
                 <div className="form-row mb-3">
                     <div className="col-md">
                         <input
+                            name="email"
+                            placeholder={this.props.email}
+                            value={this.state.email}
+                            onChange={this.inputChangeHandler}
                             type="text"
                             className="form-control"
-                            placeholder="Email"
                             required
-                            value={this.state.email}
-                            name="email"
-                            onChange={this.inputChangeHandler}
                         />
                     </div>
                 </div>
                 <div className="form-row mb-3">
                     <div className="col-md">
                         <input
+                            name="password"
+                            placeholder={this.props.password}
+                            value={this.state.password}
+                            onChange={this.inputChangeHandler}
                             type="password"
                             className="form-control"
-                            placeholder="Password"
                             required
-                            value={this.state.password}
-                            name="password"
-                            onChange={this.inputChangeHandler}
                         />
                     </div>
                     <div className="col-md">
                         <input
+                            name="confirmPass"
+                            placeholder={this.props.confirmPass}
+                            value={this.state.confirmPass}
+                            onChange={this.inputChangeHandler}
                             type="password"
                             className="form-control"
-                            placeholder="Confirm password"
                             required
-                            value={this.state.confirmPass}
-                            name="confirmPass"
-                            onChange={this.inputChangeHandler}
                         />
                     </div>
                 </div>

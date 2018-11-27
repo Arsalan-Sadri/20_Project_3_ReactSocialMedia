@@ -14,7 +14,17 @@ class SignUpPg extends React.Component {
                     <div className="row">
                         <div className="col-5">
                             <section>
-                                <SignUpForm />
+                                <SignUpForm
+                                    firstName="First name"
+                                    lastName="Last name"
+                                    jobTitle="Job title"
+                                    city="City"
+                                    state="State"
+                                    username="Username"
+                                    email="Email"
+                                    password="Password"
+                                    confirmPass="Confirm password"
+                                    />
                             </section>
                         </div>
                         <div className="col-7">
