@@ -58,7 +58,7 @@ class ProfilePg extends React.Component {
             API.uploadPhotos(photos)
                 .then(res => {
                     window.location.pathname =
-                        "/user/" + localStorage.getItem("username");
+                        "/profile/" + localStorage.getItem("username");
                 })
                 .catch(err => console.log(err));
         } else alert(`WARNING!\nPlease upload at least 1 photo!`);

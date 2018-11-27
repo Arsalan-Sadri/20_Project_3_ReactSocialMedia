@@ -11,8 +11,9 @@ const App = () => (
             <Route exact path="/" component={LanPg} />
             <Route exact path="/sign-up" component={LanPg} />
             <Route exact path="/sign-in" component={LanPg} />
-            <Route exact path="/user/:username" component={ProfilePg} />
-            <Route exact path="/user/:username/photos" component={PhotosPg} />
+            <Route exact path="/profile/:username" component={ProfilePg} />
+            <Route exact path="/photos/:username" component={PhotosPg} />
+            <Route exact path="/events/:username" component={PhotosPg} />
         </Switch>
     </Router>
 );

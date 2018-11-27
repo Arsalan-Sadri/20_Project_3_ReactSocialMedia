@@ -34,12 +34,18 @@ class Navbar extends React.Component {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     {/********** NAVBAR LINKS **********/}
                     <div className="navbar-nav">
-                        <a className="nav-item nav-link text-white px-0 mx-3" href="/">
+                        <a
+                            className={
+                                window.location.pathname === "/"
+                                    ? "nav-item nav-link text-white px-0 mx-3 this-tab"
+                                    : "nav-item nav-link text-white px-0 mx-3"
+                            }
+                            href="/">
                             <i className="fas fa-home" aria-hidden="true" /> Home
                         </a>
                         <a
                             className={
-                                window.location.pathname === "/user/a.sadri"
+                                window.location.pathname.startsWith("/profile")
                                     ? "nav-item nav-link text-white px-0 mx-3 this-tab"
                                     : "nav-item nav-link text-white px-0 mx-3"
                             }
@@ -47,20 +53,34 @@ class Navbar extends React.Component {
                             <i className="fas fa-user" aria-hidden="true" /> Profile
                         </a>
                         <a
-                            className="nav-item nav-link text-white px-0 mx-3"
+                            className={
+                                window.location.pathname.startsWith("/photos")
+                                    ? "nav-item nav-link text-white px-0 mx-3 this-tab"
+                                    : "nav-item nav-link text-white px-0 mx-3"
+                            }
                             href={
-                                "/user/" + localStorage.getItem("username") + "/photos"
+                                "/photos/" + localStorage.getItem("username")
                             }>
                             <i className="fas fa-images" aria-hidden="true" /> Photos
                         </a>
-                        <a className="nav-item nav-link text-white px-0 mx-3" href="/">
+                        <a
+                            className={
+                                window.location.pathname.startsWith("/events")
+                                    ? "nav-item nav-link text-white px-0 mx-3 this-tab"
+                                    : "nav-item nav-link text-white px-0 mx-3"
+                            }
+                            href="/">
                             <i className="fas fa-list-alt" aria-hidden="true" /> Events
                         </a>
                     </div>
                     {/********** DROPDOWN **********/}
                     <div className="nav-item dropdown ml-auto">
                         <a
-                            className="nav-link dropdown-toggle text-white px-0"
+                            className={
+                                window.location.pathname.startsWith("/photos")
+                                    ? "nav-link dropdown-toggle text-white px-0 this-tab"
+                                    : "nav-link dropdown-toggle text-white px-0"
+                            }
                             href="/"
                             id="navbarDropdown"
                             role="button"
