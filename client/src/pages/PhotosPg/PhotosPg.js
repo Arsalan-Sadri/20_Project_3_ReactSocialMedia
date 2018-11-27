@@ -10,7 +10,7 @@ import "./PhotosPg.css";
 class ProfilePg extends React.Component {
     state = {
         selectedFiles: [],
-        fileBrowserDisplayVal: "Upload your picture(s)..."
+        fileBrowserDisplayVal: "Select your picture(s)..."
     };
 
     componentDidMount() {
