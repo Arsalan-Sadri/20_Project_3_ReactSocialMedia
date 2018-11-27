@@ -49,7 +49,7 @@ class Navbar extends React.Component {
                                     ? "nav-item nav-link text-white px-0 mx-3 this-tab"
                                     : "nav-item nav-link text-white px-0 mx-3"
                             }
-                            href={"/user/" + localStorage.getItem("username")}>
+                            href={"/profile/" + localStorage.getItem("username")}>
                             <i className="fas fa-user" aria-hidden="true" /> Profile
                         </a>
                         <a

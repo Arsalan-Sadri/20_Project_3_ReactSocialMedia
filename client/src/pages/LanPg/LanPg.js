@@ -4,23 +4,28 @@ import NavbarLanPg from "../../components/NavbarLanPg";
 import SignUpForm from "../../components/SignUpForm";
 import Footer from "../../components/Footer";
 
-const LandPage = () => (
-    <React.Fragment>
-        <NavbarLanPg />
-        <div className="container-fluid py-5 bg-light">
-            <div className="row">
-                <div className="col-5">
-                    <section>
-                        <SignUpForm />
-                    </section>
+class LanPg extends React.Component {
+    
+    render() {
+        return (
+            <React.Fragment>
+                <NavbarLanPg />
+                <div className="container-fluid py-5 bg-light">
+                    <div className="row">
+                        <div className="col-5">
+                            <section>
+                                <SignUpForm />
+                            </section>
+                        </div>
+                        <div className="col-7">
+                            <aside className="mx-auto">[Welcome!]</aside>
+                        </div>
+                    </div>
                 </div>
-                <div className="col-7">
-                    <aside className="mx-auto">[Welcome!]</aside>
-                </div>
-            </div>
-        </div>
-        <Footer />
-    </React.Fragment>
-);
+                <Footer />
+            </React.Fragment>
+        );
+    }
+}
 
-export default LandPage;
+export default LanPg;

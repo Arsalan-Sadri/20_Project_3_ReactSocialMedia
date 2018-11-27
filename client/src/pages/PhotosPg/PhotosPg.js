@@ -19,9 +19,7 @@ class ProfilePg extends React.Component {
     }
 
     componentWillMount() {
-        console.log(localStorage.getItem("token"));
-        console.log(new Date().getTime());
-        if (!localStorage.getItem("username")) window.location.href = "/";
+        if (!localStorage.getItem("token")) window.location.href = "/";
     }
 
     fileSelectionHandler = event => {
