@@ -1,10 +1,18 @@
 import React from "react";
-import LanPg from "../LanPg";
-import Home from "../Home";
+import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer";
+import "./HomePg.css";
 
-const HomePg = () => {
-    if (localStorage.getItem("token")) return <Home />;
-    else return <LanPg />;
-};
+const HomePg = () => (
+    <React.Fragment>
+        <Navbar />
+        <div className="container-fluid bg-light py-5">
+            <div className="row">
+                <div className="col-md-4">-- CONTENT --</div>
+            </div>
+        </div>
+        <Footer />
+    </React.Fragment>
+);
 
 export default HomePg;
