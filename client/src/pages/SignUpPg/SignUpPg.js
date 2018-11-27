@@ -24,6 +24,7 @@ class SignUpPg extends React.Component {
                                     email="Email"
                                     password="Password"
                                     confirmPass="Confirm password"
+                                    btnValue="Sign up"
                                     />
                             </section>
                         </div>

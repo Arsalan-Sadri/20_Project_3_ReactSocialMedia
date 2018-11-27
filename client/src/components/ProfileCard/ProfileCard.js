@@ -30,21 +30,14 @@ class Profile extends React.Component {
     render() {
         return (
             <div className="card">
-                <img
-                    className="card-img-top"
-                    src={this.state.photoURL}
-                    alt="card"
-                />
+                <img className="card-img-top" src={this.state.photoURL} alt="card" />
                 <div className="card-body">
                     <h4 className="card-title">
                         {this.state.firstName} {this.state.lastName}
                     </h4>
                     <p className="my-0">{this.state.jobTitle}</p>
                     <p className="my-0">
-                        <i
-                            className="fas fa-map-marker-alt"
-                            aria-hidden="true"
-                        />{" "}
+                        <i className="fas fa-map-marker-alt" aria-hidden="true" />{" "}
                         {this.state.city}
                         {","} {this.state.state}
                     </p>
@@ -61,7 +54,7 @@ class Profile extends React.Component {
                     </button>
                     <button
                         className="btn ml-1"
-                        onClick={this.createEventBtnHandler}>
+                        onClick={this.props.updateProfileBtnHandler}>
                         Update profile
                     </button>
                 </div>
