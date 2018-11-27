@@ -94,7 +94,7 @@ class Navbar extends React.Component {
                             aria-labelledby="navbarDropdown">
                             <a
                                 className="dropdown-item"
-                                href={"/user/" + localStorage.getItem("username")}>
+                                href={"/profile/" + localStorage.getItem("username")}>
                                 <i>{this.state.username}</i>
                             </a>
                             <div className="dropdown-divider" />
