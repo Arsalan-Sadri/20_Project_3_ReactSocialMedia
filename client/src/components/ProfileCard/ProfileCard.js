@@ -29,7 +29,7 @@ class Profile extends React.Component {
 
     render() {
         return (
-            <div className="card img-fluid">
+            <div className="card">
                 <img
                     className="card-img-top"
                     src={this.state.photoURL}

@@ -3,7 +3,7 @@ import "./PreviewCard.css";
 
 const PreviewCard = props => (
     <div className="card preview-card">
-        <img alt={props.alt} src={props.dataURL} />
+        <img className="card-img-top" alt={props.alt} src={props.dataURL} />
     </div>
 );
 

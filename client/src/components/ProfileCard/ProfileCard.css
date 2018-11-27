@@ -1,8 +1,5 @@
-.card {
-    width: 100%;
-}
-
 .card img {
+    min-height: 33vh;
     width: 100%;
     height: 100%;
 }
