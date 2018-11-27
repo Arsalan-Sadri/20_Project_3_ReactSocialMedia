@@ -4,6 +4,7 @@ import Navbar from "../../components/Navbar";
 import ProfileCard from "../../components/ProfileCard";
 import Footer from "../../components/Footer";
 import PhotoCarousel from "../../components/PhotoCarousel";
+import SignUpPg from "../SignUpPg";
 
 class ProfilePg extends React.Component {
     componentDidMount() {
@@ -12,11 +13,8 @@ class ProfilePg extends React.Component {
         }, 600000);
     }
 
-    componentWillMount() {
-        if (!localStorage.getItem("username")) window.location.href = "/";
-    }
-
     render() {
+        if (!localStorage.getItem("token")) return <SignUpPg />;
         return (
             <React.Fragment>
                 <Navbar />

@@ -1,10 +1,11 @@
 import React from "react";
-import "./PhotosPg.css";
 import API from "../../utils/API";
 import Navbar from "../../components/Navbar";
 import PhotosForm from "../../components/PhotosForm";
 import PreviewCard from "../../components/PreviewCard";
 import Footer from "../../components/Footer";
+import SignUpPg from "../SignUpPg";
+import "./PhotosPg.css";
 
 class ProfilePg extends React.Component {
     state = {
@@ -16,10 +17,6 @@ class ProfilePg extends React.Component {
         setTimeout(() => {
             localStorage.clear();
         }, 600000);
-    }
-
-    componentWillMount() {
-        if (!localStorage.getItem("token")) window.location.href = "/";
     }
 
     fileSelectionHandler = event => {
@@ -63,6 +60,7 @@ class ProfilePg extends React.Component {
     };
 
     render() {
+        if (!localStorage.getItem("token")) return <SignUpPg />;
         return (
             <React.Fragment>
                 <Navbar />
