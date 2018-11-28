@@ -79,8 +79,8 @@ class ProfilePg extends React.Component {
                                     state={this.state.state}
                                     username={this.state.username}
                                     email={this.state.email}
-                                    password="Password"
-                                    confirmPass="Confirm password"
+                                    password="********"
+                                    confirmPass="********"
                                 />
                             ) : (
                                 <PhotoCarousel />
