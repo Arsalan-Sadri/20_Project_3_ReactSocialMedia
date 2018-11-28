@@ -50,7 +50,7 @@ class ProfilePg extends React.Component {
         );
     };
 
-    submitBtnHandler = event => {
+    updateBtnHandler = event => {
         // Code to handle submit button to update user info in DB
     };
 
@@ -70,8 +70,8 @@ class ProfilePg extends React.Component {
                         <div className="col-md-6">
                             {this.state.updateProfile ? (
                                 <SignUpForm
-                                    btnValue="Submit"
-                                    formBtnHandler={this.submitBtnHandler}
+                                    btnValue="Update"
+                                    formBtnHandler={this.updateBtnHandler}
                                     firstName={this.state.firstName}
                                     lastName={this.state.lastName}
                                     jobTitle={this.state.jobTitle}
