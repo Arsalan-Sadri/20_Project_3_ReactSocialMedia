@@ -84,7 +84,8 @@ module.exports = {
                     state: dbUser.state,
                     username: dbUser.username,
                     email: dbUser.email,
-                    photoURL: "http://" + req.headers.host + "/" + dbUser.photoURL
+                    photoURL: "http://" + req.headers.host + "/" + dbUser.photoURL,
+                    password: dbUser.password
                 });
             })
             .catch(err => res.send("User not found!"));

@@ -25,6 +25,7 @@ class ProfilePg extends React.Component {
                     <div className="row">
                         <div className="col-md-3" />
                         <div className="col-md-6">
+                            <h5>Edit any field and hit the update button:</h5>
                             <UpdateForm />
                         </div>
                         <div className="col-md-3" />

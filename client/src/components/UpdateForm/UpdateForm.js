@@ -17,6 +17,22 @@ class SignUpForm extends React.Component {
         fileBrowserDisplayVal: "Upload your picture..."
     };
 
+    componentDidMount = () => {
+        API.getDbUser(localStorage.getItem("username")).then(res =>
+            this.setState({
+                firstName: res.data.firstName,
+                lastName: res.data.lastName,
+                jobTitle: res.data.jobTitle,
+                city: res.data.city,
+                state: res.data.state,
+                username: res.data.username,
+                email: res.data.email,
+                password: res.data.password,
+                confirmPass: res.data.password
+            })
+        );
+    };
+
     inputChangeHandler = event => {
         const { name, value } = event.target;
 

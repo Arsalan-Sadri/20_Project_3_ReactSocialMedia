@@ -39,8 +39,7 @@ const userSchema = new mongoose.Schema({
         ]
     },
     photoURL: {
-        type: String,
-        required: true
+        type: String
     },
     jobTitle: {
         type: String,
