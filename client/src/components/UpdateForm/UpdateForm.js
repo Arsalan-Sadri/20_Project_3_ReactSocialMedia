@@ -1,5 +1,5 @@
 import React from "react";
-import "./SignUpForm.css";
+import "./UpdateForm.css";
 import API from "../../utils/API";
 
 class SignUpForm extends React.Component {
