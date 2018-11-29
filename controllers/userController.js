@@ -18,7 +18,7 @@ module.exports = {
                             },
                             process.env.JWT_KEY,
                             {
-                                expiresIn: "1h"
+                                expiresIn: 600000
                             },
                             function(err, token) {
                                 if (err) res.send(err);
@@ -91,10 +91,9 @@ module.exports = {
             .catch(err => res.send("User not found!"));
     },
     updateOneAndReturn: (req, res) => {
-        db.User
-            .findOneAndUpdate({ username: req.params.username }, req.body, {
-                new: true
-            })
+        db.User.findOneAndUpdate({ username: req.params.username }, req.body, {
+            new: true
+        })
             .then(dbUser => {
                 res.send({
                     firstName: dbUser.firstName,
