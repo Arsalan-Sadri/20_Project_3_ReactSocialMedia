@@ -11,7 +11,7 @@ export default {
                 Authorization: "Bearer " + localStorage.getItem("token")
             }
         }),
-    updateUser: userNewInfo =>
+    updateProfile: userNewInfo =>
         axios({
             method: "post",
             url: "/api/user/" + userNewInfo.get("username") + "/update-profile",

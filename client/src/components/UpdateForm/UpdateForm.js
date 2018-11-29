@@ -32,7 +32,7 @@ class SignUpForm extends React.Component {
         });
     };
 
-    formBtnHandler = event => {
+    updateBtnHandler = event => {
         event.preventDefault();
 
         if (
@@ -60,7 +60,7 @@ class SignUpForm extends React.Component {
                 userInfo.append("password", this.state.password);
                 userInfo.append("photo", this.state.selectedFile);
 
-                API.updateUser(userInfo)
+                API.updateProfile(userInfo)
                     .then(res => {
                         localStorage.setItem("username", res.data.username);
                         window.location.pathname =
@@ -214,7 +214,7 @@ class SignUpForm extends React.Component {
                 </div>
                 <div className="form-row mb-3">
                     <div className="col-md">
-                        <button className="btn btn-lg" onClick={this.formBtnHandler}>
+                        <button className="btn btn-lg" onClick={this.updateBtnHandler}>
                             <i className="fa fa-user-edit" aria-hidden="true" /> Update
                         </button>
                     </div>
