@@ -10,7 +10,7 @@ import API from "../../utils/API";
 
 class ProfilePg extends React.Component {
     state = {
-        updateProfile: false,
+        updateFormIsShown: false,
         firstName: "",
         lastName: "",
         jobTitle: "",
@@ -27,9 +27,8 @@ class ProfilePg extends React.Component {
     }
 
     updateProfileBtnHandler = () => {
-        // Have the form show up on the page
         this.setState({
-            updateProfile: true
+            updateFormIsShown: true
         });
 
         /*  Make api call to get user's info and 
@@ -50,8 +49,15 @@ class ProfilePg extends React.Component {
         );
     };
 
-    updateBtnHandler = event => {
+    updateBtnHandler = userNewInfo => {
         // Code to handle submit button to update user info in DB
+        console.log(userNewInfo);
+        // API.updateUser(userNewInfo)
+        //     .then(res => {
+        //         localStorage.setItem("username", res.data.username);
+        //         window.location.pathname = "/profile/" + localStorage.getItem("username");
+        //     })
+        //     .catch(err => console.log(err));
     };
 
     render() {
@@ -68,7 +74,7 @@ class ProfilePg extends React.Component {
                         </div>
                         <div className="col-md-2" />
                         <div className="col-md-6">
-                            {this.state.updateProfile ? (
+                            {this.state.updateFormIsShown ? (
                                 <SignUpForm
                                     btnValue="Update"
                                     formBtnHandler={this.updateBtnHandler}

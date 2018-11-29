@@ -11,6 +11,15 @@ export default {
                 Authorization: "Bearer " + localStorage.getItem("token")
             }
         }),
+    updateUser: userNewInfo =>
+        axios({
+            method: "post",
+            url: "/api/user/update-user/" + userNewInfo.username,
+            data: userNewInfo,
+            headers: {
+                Authorization: "Bearer " + localStorage.getItem("token")
+            }
+        }),
     uploadPhotos: photos =>
         axios({
             method: "post",

@@ -71,7 +71,7 @@ class SignUpForm extends React.Component {
                     <div className="col-md">
                         <input
                             name="firstName"
-                            placeholder={this.props.firstName}
+                            // placeholder={this.props.firstName}
                             value={this.state.firstName}
                             onChange={this.inputChangeHandler}
                             type="text"
@@ -82,7 +82,7 @@ class SignUpForm extends React.Component {
                     <div className="col-md">
                         <input
                             name="lastName"
-                            placeholder={this.props.lastName}
+                            // placeholder={this.props.lastName}
                             value={this.state.lastName}
                             onChange={this.inputChangeHandler}
                             type="text"
@@ -95,7 +95,7 @@ class SignUpForm extends React.Component {
                     <div className="col-md">
                         <input
                             name="jobTitle"
-                            placeholder={this.props.jobTitle}
+                            // placeholder={this.props.jobTitle}
                             value={this.state.jobTitle}
                             onChange={this.inputChangeHandler}
                             type="text"
@@ -108,7 +108,7 @@ class SignUpForm extends React.Component {
                     <div className="col-md">
                         <input
                             name="city"
-                            placeholder={this.props.city}
+                            // placeholder={this.props.city}
                             value={this.state.city}
                             onChange={this.inputChangeHandler}
                             type="text"
@@ -119,7 +119,7 @@ class SignUpForm extends React.Component {
                     <div className="col-md">
                         <input
                             name="state"
-                            placeholder={this.props.state}
+                            // placeholder={this.props.state}
                             value={this.state.state}
                             onChange={this.inputChangeHandler}
                             type="text"
@@ -138,7 +138,7 @@ class SignUpForm extends React.Component {
                             </div>
                             <input
                                 name="username"
-                                placeholder={this.props.username}
+                                // placeholder={this.props.username}
                                 value={this.state.username}
                                 onChange={this.inputChangeHandler}
                                 type="text"
@@ -153,7 +153,7 @@ class SignUpForm extends React.Component {
                     <div className="col-md">
                         <input
                             name="email"
-                            placeholder={this.props.email}
+                            // placeholder={this.props.email}
                             value={this.state.email}
                             onChange={this.inputChangeHandler}
                             type="text"
@@ -166,7 +166,7 @@ class SignUpForm extends React.Component {
                     <div className="col-md">
                         <input
                             name="password"
-                            placeholder={this.props.password}
+                            // placeholder={this.props.password}
                             value={this.state.password}
                             onChange={this.inputChangeHandler}
                             type="password"
@@ -177,7 +177,7 @@ class SignUpForm extends React.Component {
                     <div className="col-md">
                         <input
                             name="confirmPass"
-                            placeholder={this.props.confirmPass}
+                            // placeholder={this.props.confirmPass}
                             value={this.state.confirmPass}
                             onChange={this.inputChangeHandler}
                             type="password"

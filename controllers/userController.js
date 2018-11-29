@@ -71,11 +71,11 @@ module.exports = {
                 res.send("Email not found!");
             });
     },
-    findAndReturn: (req, res) => {
+    findOneAndReturn: (req, res) => {
         db.User.findOne({
             username: req.params.username
         })
-            .then(function(dbUser) {
+            .then(dbUser => {
                 res.send({
                     firstName: dbUser.firstName,
                     lastName: dbUser.lastName,
@@ -87,9 +87,26 @@ module.exports = {
                     photoURL: "http://" + req.headers.host + "/" + dbUser.photoURL
                 });
             })
-            .catch(function(err) {
-                res.send("User not found!");
-            });
+            .catch(err => res.send("User not found!"));
+    },
+    updateOneAndReturn: (req, res) => {
+        db.user
+            .findOneAndUpdate({ username: req.params.username }, req.body, {
+                new: true
+            })
+            .then(dbUser => {
+                res.send({
+                    firstName: dbUser.firstName,
+                    lastName: dbUser.lastName,
+                    jobTitle: dbUser.jobTitle,
+                    city: dbUser.city,
+                    state: dbUser.state,
+                    username: dbUser.username,
+                    email: dbUser.email,
+                    photoURL: "http://" + req.headers.host + "/" + dbUser.photoURL
+                });
+            })
+            .catch(err => res.send("User not found!"));
     },
     findAll: (req, res) =>
         db.User.find({})

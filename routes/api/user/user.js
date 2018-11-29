@@ -28,8 +28,12 @@ router
 
 router
     .route("/:username")
-    .get(userControlller.findAndReturn);
+    .get(userControlller.findOneAndReturn);
 
+router
+    .route("/api/user/update-user/:username")
+    .post(userControlller.updateOneAndReturn);
+    
 router
     .route("/:username/photos")
     .post(upload.array("photos", 10));
