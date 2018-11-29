@@ -25,7 +25,7 @@ const PhotosForm = props => (
         </div>
         <div className="form-row mb-5">
             <div className="col-md">
-                <button className="btn btn" onClick={props.formBtnHandler}>
+                <button className="btn btn" onClick={props.uploadBtnHandler}>
                     <i className="fa fa-cloud-upload-alt" aria-hidden="true" />{" "}
                     Upload
                 </button>

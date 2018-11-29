@@ -43,7 +43,7 @@ class ProfilePg extends React.Component {
         }
     };
 
-    formBtnHandler = event => {
+    uploadBtnHandler = event => {
         event.preventDefault();
 
         if (!(this.state.selectedFiles === [])) {
@@ -74,7 +74,7 @@ class ProfilePg extends React.Component {
                             <PhotosForm
                                 fileBrowserDisplayVal={this.state.fileBrowserDisplayVal}
                                 fileSelectionHandler={this.fileSelectionHandler}
-                                formBtnHandler={this.formBtnHandler}
+                                uploadBtnHandler={this.uploadBtnHandler}
                             />
                         </div>
                     </div>
