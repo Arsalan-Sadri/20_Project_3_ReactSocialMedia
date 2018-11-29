@@ -12,7 +12,11 @@ class HomePg extends React.Component {
     }
 
     render() {
-        if (!localStorage.getItem("token")) return <SignUpPg />;
+        if (
+            !localStorage.getItem("token") ||
+            localStorage.getItem("token") === "undefined"
+        )
+            return <SignUpPg />;
         return (
             <React.Fragment>
                 <Navbar />
