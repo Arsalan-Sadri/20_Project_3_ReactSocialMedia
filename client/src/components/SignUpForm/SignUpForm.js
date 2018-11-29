@@ -14,7 +14,7 @@ class SignUpForm extends React.Component {
         password: "",
         confirmPass: "",
         selectedFile: null,
-        fileBrowserDisplayVal: "Upload your picture..."
+        fileBrowserDisplayVal: "Select your picture... (optional)"
     };
 
     inputChangeHandler = event => {

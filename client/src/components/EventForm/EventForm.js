@@ -4,17 +4,15 @@ import "./EventForm.css";
 
 class SignUpForm extends React.Component {
     state = {
-        firstName: "",
-        lastName: "",
-        jobTitle: "",
+        eventName: "",
+        category: "",
+        capacity: "",
         city: "",
         state: "",
-        username: "",
-        email: "",
-        password: "",
-        confirmPass: "",
+        zipCode: "",
+        description: "",
         selectedFile: null,
-        fileBrowserDisplayVal: "Upload your picture..."
+        fileBrowserDisplayVal: "Select a thumbnail... (optional)"
     };
 
     componentDidMount = () => {};
@@ -34,18 +32,17 @@ class SignUpForm extends React.Component {
         });
     };
 
-    updateBtnHandler = event => {
+    createEventBtnHandler = event => {
         event.preventDefault();
 
         if (
-            this.state.firstName &&
-            this.state.lastName &&
-            this.state.jobTitle &&
+            this.state.eventName &&
+            this.state.category &&
+            this.state.capacity &&
             this.state.city &&
             this.state.state &&
-            this.state.email &&
-            this.state.password &&
-            this.state.confirmPass &&
+            this.state.zipCode &&
+            this.state.description &&
             this.state.selectedFile
         ) {
             const userInfo = new FormData();
@@ -61,7 +58,7 @@ class SignUpForm extends React.Component {
             userInfo.append("password", this.state.password);
             userInfo.append("photo", this.state.selectedFile);
 
-            // API Call
+            // API Call to create event
 
             //
         } else alert(`WARNING!\nPlease fill out the form!`);
@@ -75,116 +72,89 @@ class SignUpForm extends React.Component {
                         <input
                             type="text"
                             className="form-control"
-                            placeholder="First name"
                             required
-                            name="firstName"
-                            value={this.state.firstName}
-                            onChange={this.inputChangeHandler}
-                        />
-                    </div>
-                    <div className="col-md">
-                        <input
-                            type="text"
-                            className="form-control"
-                            placeholder="Last name"
-                            required
-                            name="lastName"
-                            value={this.state.lastName}
+                            placeholder="Event's name"
+                            name="eventName"
+                            value={this.state.eventName}
                             onChange={this.inputChangeHandler}
                         />
                     </div>
                 </div>
                 <div className="form-row mb-3">
-                    <div className="col-md">
-                        <input
-                            type="text"
+                    <div className="col-md-7">
+                        <select
                             className="form-control"
-                            placeholder="Job title"
-                            required
-                            name="jobTitle"
-                            value={this.state.jobTitle}
-                            onChange={this.inputChangeHandler}
-                        />
+                            name="category"
+                            value={this.state.category}
+                            onChange={this.inputChangeHandler}>
+                            <option>-- Category --</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div className="col-md-1" />
+                    <div className="col-md-4">
+                        <select
+                            className="form-control"
+                            name="capacity"
+                            value={this.state.capacity}
+                            onChange={this.inputChangeHandler}>
+                            <option>-- Capacity --</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
                     </div>
                 </div>
                 <div className="form-row mb-3">
-                    <div className="col-md">
+                    <div className="col-md-7">
                         <input
                             type="text"
                             className="form-control"
+                            required
                             placeholder="City"
-                            required
                             name="city"
                             value={this.state.city}
                             onChange={this.inputChangeHandler}
                         />
                     </div>
-                    <div className="col-md">
+                    <div className="col-md-2">
                         <input
                             type="text"
                             className="form-control"
-                            placeholder="State"
                             required
+                            placeholder="State"
                             name="state"
                             value={this.state.state}
                             onChange={this.inputChangeHandler}
                         />
                     </div>
-                </div>
-                <div className="form-row mb-3">
-                    <div className="col-md">
-                        <div className="input-group">
-                            <div className="input-group-prepend">
-                                <span className="input-group-text">
-                                    http://www.faces.com/
-                                </span>
-                            </div>
-                            <input
-                                type="text"
-                                className="form-control"
-                                placeholder="Username"
-                                aria-describedby="validationTooltipUsernamePrepend"
-                                required
-                                value={this.state.username}
-                                name="username"
-                                onChange={this.inputChangeHandler}
-                            />
-                        </div>
-                    </div>
-                </div>
-                <div className="form-row mb-3">
-                    <div className="col-md">
+                    <div className="col-md-3">
                         <input
                             type="text"
                             className="form-control"
-                            placeholder="Email"
                             required
-                            value={this.state.email}
-                            name="email"
+                            placeholder="Zip code"
+                            name="zipCode"
+                            value={this.state.zipCode}
                             onChange={this.inputChangeHandler}
                         />
                     </div>
                 </div>
                 <div className="form-row mb-3">
                     <div className="col-md">
-                        <input
-                            type="password"
+                        <textarea
                             className="form-control"
-                            placeholder="Password"
+                            rows="4"
                             required
-                            value={this.state.password}
-                            name="password"
-                            onChange={this.inputChangeHandler}
-                        />
-                    </div>
-                    <div className="col-md">
-                        <input
-                            type="password"
-                            className="form-control"
-                            placeholder="Confirm password"
-                            required
-                            value={this.state.confirmPass}
-                            name="confirmPass"
+                            placeholder="Event's description"
+                            name="description"
+                            value={this.state.description}
                             onChange={this.inputChangeHandler}
                         />
                     </div>
@@ -210,8 +180,10 @@ class SignUpForm extends React.Component {
                 </div>
                 <div className="form-row mb-3">
                     <div className="col-md">
-                        <button className="btn btn-lg" onClick={this.updateBtnHandler}>
-                            <i className="fas fa-calendar-alt" aria-hidden="true" /> Create Event
+                        <button
+                            className="btn btn-lg"
+                            onClick={this.createEventBtnHandler}>
+                            Submit
                         </button>
                     </div>
                 </div>

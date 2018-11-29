@@ -12,7 +12,13 @@
     border: 0px solid #ced4da;
 }
 
-[class^="col-"] input {
+[class^="col-"] input,
+select,
+textarea {
+    font-style: italic;
+}
+
+label.custom-file-label {
     font-style: italic;
 }
 

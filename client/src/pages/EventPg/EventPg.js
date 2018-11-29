@@ -25,7 +25,10 @@ class ProfilePg extends React.Component {
                     <div className="row">
                         <div className="col-md-3" />
                         <div className="col-md-6">
-                            <h5>Fill in the form and hit create event button!</h5>
+                            <h1>
+                                <i className="fas fa-calendar-alt" aria-hidden="true" />{" "}
+                                Create Event
+                            </h1>
                             <EventForm />
                         </div>
                         <div className="col-md-3" />
