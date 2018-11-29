@@ -47,16 +47,12 @@ class Profile extends React.Component {
                     </p>
                 </div>
                 <div className="card-footer">
-                    <button
-                        className="btn my-2 mx-1"
-                        onClick={this.createEventBtnHandler}>
+                    <a className="btn my-2 mx-1" href="/create-event">
                         Create event
-                    </button>
-                    <button
-                        className="btn ml-1"
-                        onClick={this.props.updateProfileBtnHandler}>
+                    </a>
+                    <a className="btn ml-1" href="/update-profile">
                         Update profile
-                    </button>
+                    </a>
                 </div>
             </div>
         );

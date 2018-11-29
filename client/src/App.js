@@ -16,7 +16,7 @@ const App = () => (
             <Route exact path="/profile/:username" component={ProfilePg} />
             <Route exact path="/update-profile" component={UpdatePg} />
             <Route exact path="/photos/:username" component={PhotosPg} />
-            <Route exact path="/events/:username" component={PhotosPg} />
+            <Route exact path="/create-event" component={PhotosPg} />
         </Switch>
     </Router>
 );

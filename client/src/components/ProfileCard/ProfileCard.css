@@ -4,7 +4,7 @@
     height: 100%;
 }
 
-button {
-    color: white;
+a.btn {
+    color: white !important;
     background: rgb(163, 31, 196);
 }
