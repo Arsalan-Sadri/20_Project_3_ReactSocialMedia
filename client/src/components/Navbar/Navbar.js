@@ -69,7 +69,7 @@ class Navbar extends React.Component {
                                     ? "nav-item nav-link text-white px-0 mx-3 this-tab"
                                     : "nav-item nav-link text-white px-0 mx-3"
                             }
-                            href="/">
+                            href="/create-event">
                             <i className="fas fa-list-alt" aria-hidden="true" /> Events
                         </a>
                     </div>

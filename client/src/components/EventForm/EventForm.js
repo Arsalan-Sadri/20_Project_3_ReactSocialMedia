@@ -1,6 +1,6 @@
 import React from "react";
-import "./UpdateForm.css";
-import API from "../../utils/API";
+import "./EventForm.css";
+// import API from "../../utils/API";
 
 class SignUpForm extends React.Component {
     state = {
@@ -17,21 +17,7 @@ class SignUpForm extends React.Component {
         fileBrowserDisplayVal: "Upload your picture..."
     };
 
-    componentDidMount = () => {
-        API.getDbUser(localStorage.getItem("username")).then(res =>
-            this.setState({
-                firstName: res.data.firstName,
-                lastName: res.data.lastName,
-                jobTitle: res.data.jobTitle,
-                city: res.data.city,
-                state: res.data.state,
-                username: res.data.username,
-                email: res.data.email,
-                password: res.data.password,
-                confirmPass: res.data.password
-            })
-        );
-    };
+    componentDidMount = () => {};
 
     inputChangeHandler = event => {
         const { name, value } = event.target;
@@ -62,28 +48,22 @@ class SignUpForm extends React.Component {
             this.state.confirmPass &&
             this.state.selectedFile
         ) {
-            if (this.state.password === this.state.confirmPass) {
-                const userInfo = new FormData();
-                userInfo.append("firstName", this.state.firstName);
-                userInfo.append("lastName", this.state.lastName);
+            const userInfo = new FormData();
+            userInfo.append("firstName", this.state.firstName);
+            userInfo.append("lastName", this.state.lastName);
 
-                userInfo.append("jobTitle", this.state.jobTitle);
-                userInfo.append("city", this.state.city);
-                userInfo.append("state", this.state.state);
+            userInfo.append("jobTitle", this.state.jobTitle);
+            userInfo.append("city", this.state.city);
+            userInfo.append("state", this.state.state);
 
-                userInfo.append("username", this.state.username);
-                userInfo.append("email", this.state.email);
-                userInfo.append("password", this.state.password);
-                userInfo.append("photo", this.state.selectedFile);
+            userInfo.append("username", this.state.username);
+            userInfo.append("email", this.state.email);
+            userInfo.append("password", this.state.password);
+            userInfo.append("photo", this.state.selectedFile);
 
-                API.updateProfile(userInfo)
-                    .then(res => {
-                        localStorage.setItem("username", res.data.username);
-                        window.location.pathname =
-                            "/profile/" + localStorage.getItem("username");
-                    })
-                    .catch(err => console.log(err));
-            } else alert(`WARNING!\nPasswords do NOT match!\nPlease try again later`);
+            // API Call
+
+            //
         } else alert(`WARNING!\nPlease fill out the form!`);
     };
 
@@ -231,7 +211,7 @@ class SignUpForm extends React.Component {
                 <div className="form-row mb-3">
                     <div className="col-md">
                         <button className="btn btn-lg" onClick={this.updateBtnHandler}>
-                            <i className="fas fa-user-edit" aria-hidden="true" /> Update
+                            <i className="fas fa-calendar-alt" aria-hidden="true" /> Create Event
                         </button>
                     </div>
                 </div>
