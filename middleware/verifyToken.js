@@ -10,7 +10,8 @@ module.exports = (req, res, next) => {
                     console.log(
                         `\n**********\nAccess denied! Invalid token!\n**********\n`
                     );
-                    res.sendFile(path.join(__dirname, "../client/build/index.html"));
+                    // res.sendFile(path.join(__dirname, "../client/build/index.html"));
+                    res.sendStatus(401);
                 } else {
                     console.log(
                         `\n**********\nUser authenticated:-> ${
@@ -22,7 +23,8 @@ module.exports = (req, res, next) => {
             });
         } else {
             console.log(`\n**********\nAccess denied! null token!\n**********\n`);
-            res.sendFile(path.join(__dirname, "../client/build/index.html"));
+            // res.sendFile(path.join(__dirname, "../client/build/index.html"));
+            res.sendStatus(401);
         }
     }
 };
