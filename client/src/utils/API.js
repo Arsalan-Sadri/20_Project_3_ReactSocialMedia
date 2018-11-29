@@ -14,7 +14,7 @@ export default {
     updateUser: userNewInfo =>
         axios({
             method: "post",
-            url: "/api/user/update-user/" + userNewInfo.username,
+            url: "/api/user/" + userNewInfo.get("username") + "/update-profile",
             data: userNewInfo,
             headers: {
                 Authorization: "Bearer " + localStorage.getItem("token")
@@ -23,7 +23,7 @@ export default {
     uploadPhotos: photos =>
         axios({
             method: "post",
-            url: "/api/user/" + localStorage.getItem("username") + "/photos",
+            url: "/api/user/" + localStorage.getItem("username") + "/upload-photos",
             data: photos,
             headers: {
                 Authorization: "Bearer " + localStorage.getItem("token")

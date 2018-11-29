@@ -11,7 +11,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 /* 
-        /api/user/
+        /api/user
  */
 
  router
@@ -31,11 +31,11 @@ router
     .get(userControlller.findOneAndReturn);
 
 router
-    .route("/api/user/update-user/:username")
-    .post(userControlller.updateOneAndReturn);
+    .route("/:username/update-profile")
+    .post(upload.single("photo"), userControlller.updateOneAndReturn);
     
 router
-    .route("/:username/photos")
+    .route("/:username/upload-photos")
     .post(upload.array("photos", 10));
 
 module.exports = router;

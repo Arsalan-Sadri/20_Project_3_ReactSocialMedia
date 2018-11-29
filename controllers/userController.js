@@ -90,7 +90,7 @@ module.exports = {
             .catch(err => res.send("User not found!"));
     },
     updateOneAndReturn: (req, res) => {
-        db.user
+        db.User
             .findOneAndUpdate({ username: req.params.username }, req.body, {
                 new: true
             })
