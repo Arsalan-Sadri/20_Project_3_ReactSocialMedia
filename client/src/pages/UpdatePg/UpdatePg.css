@@ -25,3 +25,8 @@
         padding-right: 25%;
     }
 }
+
+.col-md-6 {
+    padding-left: 30px;
+    padding-right: 30px;
+}

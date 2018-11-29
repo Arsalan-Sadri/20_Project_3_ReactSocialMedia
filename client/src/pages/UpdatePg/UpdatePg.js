@@ -19,9 +19,11 @@ class ProfilePg extends React.Component {
                 <Navbar />
                 <div className="container-fluid bg-light py-5">
                     <div className="row">
-                        <div className="col-md">
+                        <div className="col-md-3" />
+                        <div className="col-md-6">
                             <UpdateForm />
                         </div>
+                        <div className="col-md-3" />
                     </div>
                 </div>
                 <Footer />
