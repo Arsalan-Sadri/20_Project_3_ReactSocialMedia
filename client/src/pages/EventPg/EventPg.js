@@ -22,8 +22,7 @@ class ProfilePg extends React.Component {
             <React.Fragment>
                 <Navbar />
                 <div className="container-fluid bg-light py-5">
-                    <div className="row">
-                        <div className="col-md-3" />
+                    <div className="row mb-5">
                         <div className="col-md-6">
                             <h1>
                                 <i className="fas fa-calendar-alt" aria-hidden="true" />{" "}
@@ -31,7 +30,10 @@ class ProfilePg extends React.Component {
                             </h1>
                             <EventForm />
                         </div>
-                        <div className="col-md-3" />
+                        <div className="col-md-6">-Event list goes here-</div>
+                    </div>
+                    <div className="row">
+                        <div className="col-md event-map">-Map Goes here-</div>
                     </div>
                 </div>
                 <Footer />
