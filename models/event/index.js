@@ -1,3 +1,1 @@
-module.exports = {
-    Event: require("./event")
-};
+module.exports = require("./event");

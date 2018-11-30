@@ -1,5 +1,6 @@
 import React from "react";
 import "./EventForm.css";
+import API from "../../utils/API";
 // import API from "../../utils/API";
 
 class SignUpForm extends React.Component {
@@ -45,22 +46,25 @@ class SignUpForm extends React.Component {
             this.state.description &&
             this.state.selectedFile
         ) {
-            const userInfo = new FormData();
-            userInfo.append("firstName", this.state.firstName);
-            userInfo.append("lastName", this.state.lastName);
+            const newEvent = new FormData();
+            newEvent.append("firstName", this.state.firstName);
+            newEvent.append("lastName", this.state.lastName);
 
-            userInfo.append("jobTitle", this.state.jobTitle);
-            userInfo.append("city", this.state.city);
-            userInfo.append("state", this.state.state);
+            newEvent.append("jobTitle", this.state.jobTitle);
+            newEvent.append("city", this.state.city);
+            newEvent.append("state", this.state.state);
 
-            userInfo.append("username", this.state.username);
-            userInfo.append("email", this.state.email);
-            userInfo.append("password", this.state.password);
-            userInfo.append("photo", this.state.selectedFile);
+            newEvent.append("username", this.state.username);
+            newEvent.append("email", this.state.email);
+            newEvent.append("password", this.state.password);
+            newEvent.append("photo", this.state.selectedFile);
 
-            // API Call to create event
-            
-            //
+            // API Call to create an event
+            API.createEvent(newEvent)
+                .then(res => {
+                    console.log(res.data);
+                })
+                .catch(err => console.log(err));
         } else alert(`WARNING!\nPlease fill out the form!`);
     };
 
