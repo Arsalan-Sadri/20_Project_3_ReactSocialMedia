@@ -44,17 +44,17 @@ const userSchema = new mongoose.Schema({
     jobTitle: {
         type: String,
         trim: true,
-        required: "Job title is required"
+        required: "Job title is required!"
     },
     city: {
         type: String,
         trim: true,
-        required: "City is required"
+        required: "City is required!"
     },
     state: {
         type: String,
         trim: true,
-        required: "State is required"
+        required: "State is required!"
     }
 });
 

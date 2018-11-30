@@ -77,6 +77,7 @@ class ProfilePg extends React.Component {
                                 uploadBtnHandler={this.uploadBtnHandler}
                             />
                         </div>
+                        <div className="col-md-auto">-user photos/album goes here-</div>
                     </div>
                     <div className="row">
                         <div className="col-md">
