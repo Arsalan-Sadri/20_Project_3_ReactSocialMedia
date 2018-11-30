@@ -1,5 +1,5 @@
 import React from "react";
-import "EventCard.css";
+import "./EventCard.css";
 
 class EventCard extends React.Component {
     state = {
@@ -12,6 +12,10 @@ class EventCard extends React.Component {
         description: "",
         photoURL: ""
     };
+
+    componentDidMount() {
+        // API call
+    }
 
     render() {
         return (
@@ -40,7 +44,7 @@ class EventCard extends React.Component {
                         <i className="far fa-edit" /> Modify event
                     </a>
                     <a className="btn ml-1" href="/update-profile">
-                        <i class="far fa-calendar-times" /> Delete event
+                        <i className="far fa-calendar-times" /> Delete event
                     </a>
                 </div>
             </div>
