@@ -50,10 +50,10 @@ class Profile extends React.Component {
                 </div>
                 <div className="card-footer">
                     <a className="btn my-2 mx-1" href="/create-event">
-                        Create event
+                        <i className="fas fa-plus-circle" /> Create event
                     </a>
                     <a className="btn ml-1" href="/update-profile">
-                        Update profile
+                        <i className="fas fa-edit" /> Update profile
                     </a>
                 </div>
             </div>

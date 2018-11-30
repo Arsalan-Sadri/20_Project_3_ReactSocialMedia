@@ -39,10 +39,10 @@ class ProfilePg extends React.Component {
                 <Navbar />
                 <div className="container-fluid bg-light py-5">
                     <div className="row">
-                        <div className="col-md-4">
+                        <div className="col-md-5">
                             <ProfileCard />
                         </div>
-                        <div className="col-md-8">
+                        <div className="col-md-7">
                             <PhotoCarousel />
                         </div>
                     </div>
