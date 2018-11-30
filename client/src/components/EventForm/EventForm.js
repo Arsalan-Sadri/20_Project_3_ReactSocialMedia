@@ -90,7 +90,7 @@ class EventForm extends React.Component {
                             name="category"
                             value={this.state.category}
                             onChange={this.inputChangeHandler}>
-                            <option>-- Category --</option>
+                            <option>- Category -</option>
                             <option>Sports</option>
                             <option>Meetup</option>
                             <option>Boot camp</option>
@@ -105,7 +105,7 @@ class EventForm extends React.Component {
                             name="capacity"
                             value={this.state.capacity}
                             onChange={this.inputChangeHandler}>
-                            <option>-- Capacity --</option>
+                            <option>- Capacity -</option>
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>
