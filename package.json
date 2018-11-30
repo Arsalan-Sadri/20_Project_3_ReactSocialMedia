@@ -6,7 +6,6 @@
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "node app.js",
-    "start:prod:test": "nodemon app.js",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "client": "cd client && npm run start",
     "seed": "node scripts/seedDB.js",

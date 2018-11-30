@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const userControlller = require("../../../controllers/eventController");
+const eventController = require("../../../controllers/eventController");
 const middleware = require("../../../middleware");
 const multer = require("multer");
 

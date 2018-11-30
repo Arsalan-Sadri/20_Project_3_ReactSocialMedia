@@ -29,7 +29,15 @@ export default {
                 Authorization: "Bearer " + localStorage.getItem("token")
             }
         }),
-    createEvent: newEvent => axios.post("/api/event/create-event", newEvent),
+    createEvent: newEvent =>
+        axios({
+            method: "post",
+            url: "/api/event/create-event",
+            data: newEvent,
+            headers: {
+                Authorization: "Bearer " + localStorage.getItem("token")
+            }
+        }),
     getAllUsers: function() {
         return axios({
             method: "get",

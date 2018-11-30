@@ -1,11 +1,10 @@
 import React from "react";
 import "./EventForm.css";
 import API from "../../utils/API";
-// import API from "../../utils/API";
 
-class SignUpForm extends React.Component {
+class EventForm extends React.Component {
     state = {
-        eventName: "",
+        name: "",
         category: "",
         capacity: "",
         city: "",
@@ -37,7 +36,7 @@ class SignUpForm extends React.Component {
         event.preventDefault();
 
         if (
-            this.state.eventName &&
+            this.state.name &&
             this.state.category &&
             this.state.capacity &&
             this.state.city &&
@@ -47,16 +46,16 @@ class SignUpForm extends React.Component {
             this.state.selectedFile
         ) {
             const newEvent = new FormData();
-            newEvent.append("firstName", this.state.firstName);
-            newEvent.append("lastName", this.state.lastName);
+            newEvent.append("name", this.state.name);
 
-            newEvent.append("jobTitle", this.state.jobTitle);
+            newEvent.append("category", this.state.category);
+            newEvent.append("capacity", this.state.capacity);
+
             newEvent.append("city", this.state.city);
             newEvent.append("state", this.state.state);
+            newEvent.append("zipCode", this.state.zipCode);
 
-            newEvent.append("username", this.state.username);
-            newEvent.append("email", this.state.email);
-            newEvent.append("password", this.state.password);
+            newEvent.append("description", this.state.description);
             newEvent.append("photo", this.state.selectedFile);
 
             // API Call to create an event
@@ -78,8 +77,8 @@ class SignUpForm extends React.Component {
                             className="form-control"
                             required
                             placeholder="Event's name"
-                            name="eventName"
-                            value={this.state.eventName}
+                            name="name"
+                            value={this.state.name}
                             onChange={this.inputChangeHandler}
                         />
                     </div>
@@ -92,11 +91,11 @@ class SignUpForm extends React.Component {
                             value={this.state.category}
                             onChange={this.inputChangeHandler}>
                             <option>-- Category --</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                            <option>Sports</option>
+                            <option>Meetup</option>
+                            <option>Boot camp</option>
+                            <option>Summit</option>
+                            <option>Rally</option>
                         </select>
                     </div>
                     <div className="col-md-1" />
@@ -196,4 +195,4 @@ class SignUpForm extends React.Component {
     }
 }
 
-export default SignUpForm;
+export default EventForm;
