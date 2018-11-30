@@ -65,11 +65,11 @@ class Navbar extends React.Component {
                         </a>
                         <a
                             className={
-                                window.location.pathname.startsWith("/create-event")
+                                window.location.pathname.startsWith("/events")
                                     ? "nav-item nav-link text-white px-0 mx-3 this-tab"
                                     : "nav-item nav-link text-white px-0 mx-3"
                             }
-                            href="/create-event">
+                            href="/events">
                             <i className="fas fa-list-alt" aria-hidden="true" /> Events
                         </a>
                     </div>
