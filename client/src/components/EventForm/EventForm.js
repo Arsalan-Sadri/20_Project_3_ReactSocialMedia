@@ -59,7 +59,7 @@ class SignUpForm extends React.Component {
             userInfo.append("photo", this.state.selectedFile);
 
             // API Call to create event
-
+            
             //
         } else alert(`WARNING!\nPlease fill out the form!`);
     };
