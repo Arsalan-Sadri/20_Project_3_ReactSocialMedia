@@ -14,7 +14,7 @@ const Modal = props => (
             <div className="modal-content">
                 <div className="modal-header">
                     <h5 className="modal-title" id="exampleModalLabel">
-                        Modal header
+                        Warning
                     </h5>
                     <button
                         className="close"
@@ -23,7 +23,10 @@ const Modal = props => (
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div className="modal-body">Modal body</div>
+                <div className="modal-body">
+                    <div>You have been inactive for more than 10 minutes!</div>
+                    <div>Plese sign in back.</div>
+                </div>
                 <div className="modal-footer">
                     <button className="btn btn-primary" onClick={props.closeModal}>
                         Close

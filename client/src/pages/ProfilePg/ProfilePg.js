@@ -5,11 +5,26 @@ import ProfileCard from "../../components/ProfileCard";
 import Footer from "../../components/Footer";
 import PhotoCarousel from "../../components/PhotoCarousel";
 import SignUpPg from "../../pages/SignUpPg";
+import Modal from "../../components/Modal";
 
 class ProfilePg extends React.Component {
+    state = {
+        modalIsOpen: false,
+        modalIsClose: true
+    };
+
+    closeModal = () => {
+        this.setState({ modalIsClose: false });
+        setTimeout(() => {
+            this.setState({ modalIsOpen: false });
+            this.setState({ modalIsClose: true });
+        }, 400);
+    };
+
     componentDidMount() {
         setTimeout(() => {
             localStorage.clear();
+            this.setState({ modalIsOpen: true });
         }, 600000);
     }
 
@@ -33,6 +48,11 @@ class ProfilePg extends React.Component {
                     </div>
                 </div>
                 <Footer />
+                <Modal
+                    modalIsOpen={this.state.modalIsOpen}
+                    modalIsClose={this.state.modalIsClose}
+                    closeModal={this.closeModal}
+                />
             </React.Fragment>
         );
     }
