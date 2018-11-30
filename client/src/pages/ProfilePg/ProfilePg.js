@@ -18,14 +18,14 @@ class ProfilePg extends React.Component {
         setTimeout(() => {
             this.setState({ modalIsOpen: false });
             this.setState({ modalIsClose: true });
-        }, 600000);
+        }, 400);
     };
 
     componentDidMount() {
         setTimeout(() => {
             this.setState({ modalIsOpen: true });
             localStorage.clear();
-        }, 5000);
+        }, 600000);
     }
 
     render() {
