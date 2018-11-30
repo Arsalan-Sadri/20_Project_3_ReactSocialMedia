@@ -11,6 +11,21 @@ const userSchema = new mongoose.Schema({
         trim: true,
         required: "Last name is required!"
     },
+    jobTitle: {
+        type: String,
+        trim: true,
+        required: "Job title is required!"
+    },
+    city: {
+        type: String,
+        trim: true,
+        required: "City is required!"
+    },
+    state: {
+        type: String,
+        trim: true,
+        required: "State is required!"
+    },
     username: {
         type: String,
         trim: true,
@@ -41,21 +56,12 @@ const userSchema = new mongoose.Schema({
     photoURL: {
         type: String
     },
-    jobTitle: {
-        type: String,
-        trim: true,
-        required: "Job title is required!"
-    },
-    city: {
-        type: String,
-        trim: true,
-        required: "City is required!"
-    },
-    state: {
-        type: String,
-        trim: true,
-        required: "State is required!"
-    }
+    events: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Event"
+        }
+    ]
 });
 
 module.exports = mongoose.model("User", userSchema);
