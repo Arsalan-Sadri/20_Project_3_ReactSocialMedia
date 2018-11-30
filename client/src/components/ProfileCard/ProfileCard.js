@@ -14,17 +14,19 @@ class Profile extends React.Component {
     };
 
     componentDidMount() {
-        API.getDbUser(localStorage.getItem("username")).then(res =>
-            this.setState({
-                firstName: res.data.firstName,
-                lastName: res.data.lastName,
-                jobTitle: res.data.jobTitle,
-                city: res.data.city,
-                state: res.data.state,
-                email: res.data.email,
-                photoURL: res.data.photoURL
-            })
-        );
+        API.getDbUser(localStorage.getItem("username"))
+            .then(res =>
+                this.setState({
+                    firstName: res.data.firstName,
+                    lastName: res.data.lastName,
+                    jobTitle: res.data.jobTitle,
+                    city: res.data.city,
+                    state: res.data.state,
+                    email: res.data.email,
+                    photoURL: res.data.photoURL
+                })
+            )
+            .catch(err => console.log(err));
     }
 
     render() {

@@ -25,7 +25,7 @@ const Modal = props => (
                 </div>
                 <div className="modal-body">
                     <div>You have been inactive for more than 10 minutes!</div>
-                    <div>Plese sign in back.</div>
+                    <div>Please sign in back.</div>
                 </div>
                 <div className="modal-footer">
                     <button className="btn btn-primary" onClick={props.closeModal}>
