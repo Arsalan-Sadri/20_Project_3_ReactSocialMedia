@@ -7,6 +7,8 @@ class EventForm extends React.Component {
         name: "",
         category: "",
         capacity: "",
+        date: "",
+        time: "",
         city: "",
         state: "",
         zipCode: "",
@@ -39,6 +41,8 @@ class EventForm extends React.Component {
             this.state.name &&
             this.state.category &&
             this.state.capacity &&
+            this.state.date &&
+            this.state.time &&
             this.state.city &&
             this.state.state &&
             this.state.zipCode &&
@@ -51,6 +55,9 @@ class EventForm extends React.Component {
             newEvent.append("category", this.state.category);
             newEvent.append("capacity", this.state.capacity);
 
+            newEvent.append("date", this.state.date);
+            newEvent.append("time", this.state.time);
+
             newEvent.append("city", this.state.city);
             newEvent.append("state", this.state.state);
             newEvent.append("zipCode", this.state.zipCode);
@@ -58,12 +65,16 @@ class EventForm extends React.Component {
             newEvent.append("description", this.state.description);
             newEvent.append("photo", this.state.selectedFile);
 
+            console.log(this.state.name);
+            console.log(this.state.description);
+            console.log(this.state.date);
+            console.log(this.state.time);
             // API Call to create an event
-            API.createEvent(newEvent)
-                .then(res => {
-                    console.log(res.data);
-                })
-                .catch(err => console.log(err));
+            // API.createEvent(newEvent)
+            //     .then(res => {
+            //         console.log(res.data);
+            //     })
+            //     .catch(err => console.log(err));
         } else alert(`WARNING!\nPlease fill out the form!`);
     };
 
@@ -112,6 +123,27 @@ class EventForm extends React.Component {
                             <option>4</option>
                             <option>5</option>
                         </select>
+                    </div>
+                </div>
+                <div className="form-row mb-3">
+                    <div className="col-md-7">
+                        <input
+                            type="date"
+                            className="form-control"
+                            name="date"
+                            value={this.state.date}
+                            onChange={this.inputChangeHandler}
+                        />
+                    </div>
+                    <div className="col-md-1" />
+                    <div className="col-md-4">
+                        <input
+                            type="time"
+                            className="form-control"
+                            name="time"
+                            value={this.state.time}
+                            onChange={this.inputChangeHandler}
+                        />
                     </div>
                 </div>
                 <div className="form-row mb-3">

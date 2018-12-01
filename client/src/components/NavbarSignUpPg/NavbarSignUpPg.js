@@ -1,8 +1,8 @@
 import React from "react";
-import "./NavbarLanPg.css";
+import "./NavbarSignUpPg.css";
 import API from "../../utils/API";
 
-class NavbarLanPg extends React.Component {
+class NavbarSignUpPg extends React.Component {
     state = {
         email: "",
         password: ""
@@ -104,4 +104,4 @@ class NavbarLanPg extends React.Component {
     }
 }
 
-export default NavbarLanPg;
+export default NavbarSignUpPg;

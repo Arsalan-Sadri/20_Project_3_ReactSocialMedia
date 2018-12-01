@@ -1,6 +1,6 @@
 import React from "react";
 import "./SignUpPg.css";
-import NavbarLanPg from "../../components/NavbarLanPg";
+import NavbarSignUpPg from "../../components/NavbarSignUpPg";
 import SignUpForm from "../../components/SignUpForm";
 import Footer from "../../components/Footer";
 
@@ -8,7 +8,7 @@ class SignUpPg extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <NavbarLanPg />
+                <NavbarSignUpPg />
                 <div className="container-fluid py-5 bg-light">
                     <div className="row">
                         <div className="col-md-5">
