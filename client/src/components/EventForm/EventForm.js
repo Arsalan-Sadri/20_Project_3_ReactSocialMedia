@@ -1,6 +1,6 @@
 import React from "react";
 import "./EventForm.css";
-import API from "../../utils/API";
+// import API from "../../utils/API";
 
 class EventForm extends React.Component {
     state = {
