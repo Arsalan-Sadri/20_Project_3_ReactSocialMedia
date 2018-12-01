@@ -23,7 +23,7 @@ class ProfilePg extends React.Component {
                 <Navbar />
                 <div className="container-fluid bg-light py-5">
                     <div className="row mb-5 justify-content-md-center">
-                        <div className="col-md-6">
+                        <div className="col-md-7">
                             <h1>
                                 <i className="fas fa-calendar-alt" aria-hidden="true" />{" "}
                                 Create Event
