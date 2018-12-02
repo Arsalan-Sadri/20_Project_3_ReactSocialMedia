@@ -9,9 +9,5 @@ export default {
             headers: {
                 Authorization: "Bearer " + localStorage.getItem("token")
             }
-        }),
-    getUserEvents: username =>
-        axios({
-            // define the body
         })
 };

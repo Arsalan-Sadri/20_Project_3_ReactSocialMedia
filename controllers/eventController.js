@@ -7,7 +7,7 @@ module.exports = {
         db.Event.create(req.body)
             .then(dbEvent => {
                 userController
-                    .updateUserEvents(req.body.username, dbEvent._id, req.headers.host)
+                    .createUserEvent(req.body.username, dbEvent._id, req.headers.host)
                     .then(dbUser => res.send(dbUser))
                     .catch(err => console.log(err));
             })

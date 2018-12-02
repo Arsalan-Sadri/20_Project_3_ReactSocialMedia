@@ -38,4 +38,8 @@ router
     .route("/:username/upload-photos")
     .post(upload.array("photos", 10));
 
+router
+    .route("/:username/events")
+    .get(userControlller.getUserEvents)
+
 module.exports = router;

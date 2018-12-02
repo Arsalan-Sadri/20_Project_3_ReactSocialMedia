@@ -29,6 +29,14 @@ export default {
                 Authorization: "Bearer " + localStorage.getItem("token")
             }
         }),
+    getUserEvents: username =>
+        axios({
+            method: "get",
+            url: `/api/user/${username}/events`,
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem("token")}`
+            }
+        }),
     getAllUsers: function() {
         return axios({
             method: "get",

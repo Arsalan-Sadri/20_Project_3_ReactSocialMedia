@@ -75,7 +75,7 @@ module.exports = {
         db.User.findOne({
             username: req.params.username
         })
-            .then(dbUser => {
+            .then(dbUser =>
                 res.send({
                     firstName: dbUser.firstName,
                     lastName: dbUser.lastName,
@@ -87,15 +87,15 @@ module.exports = {
                     photoURL: "http://" + req.headers.host + "/" + dbUser.photoURL,
                     password: dbUser.password,
                     events: dbUser.events
-                });
-            })
+                })
+            )
             .catch(err => res.send("User not found!"));
     },
     updateOneAndReturn: (req, res) => {
         db.User.findOneAndUpdate({ username: req.params.username }, req.body, {
             new: true
         })
-            .then(dbUser => {
+            .then(dbUser =>
                 res.send({
                     firstName: dbUser.firstName,
                     lastName: dbUser.lastName,
@@ -106,11 +106,11 @@ module.exports = {
                     email: dbUser.email,
                     photoURL: "http://" + req.headers.host + "/" + dbUser.photoURL,
                     events: dbUser.events
-                });
-            })
+                })
+            )
             .catch(err => res.send("User not found!"));
     },
-    updateUserEvents: (username, eventID, host) =>
+    createUserEvent: (username, eventID, host) =>
         db.User.findOneAndUpdate(
             { username: username },
             { $push: { events: eventID } },
@@ -128,6 +128,12 @@ module.exports = {
                 events: dbUser.events
             };
         }),
+    getUserEvents: (req, res) => {
+        db.User.findOne({ username: req.params.username })
+            .populate("events")
+            .then(dbUser => res.send(dbUser))
+            .catch(err => res.send(err));
+    },
     findAll: (req, res) =>
         db.User.find({})
             .then(allDbUsers => res.json(allDbUsers))
