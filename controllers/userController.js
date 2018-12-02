@@ -75,39 +75,22 @@ module.exports = {
         db.User.findOne({
             username: req.params.username
         })
-            .then(dbUser =>
-                res.send({
-                    firstName: dbUser.firstName,
-                    lastName: dbUser.lastName,
-                    jobTitle: dbUser.jobTitle,
-                    city: dbUser.city,
-                    state: dbUser.state,
-                    username: dbUser.username,
-                    email: dbUser.email,
-                    photoURL: "http://" + req.headers.host + "/" + dbUser.photoURL,
-                    password: dbUser.password,
-                    events: dbUser.events
-                })
-            )
+            .then(dbUser => {
+                delete dbUser.password;
+                dbUser.photoURL = `http://${req.headers.host}/${dbUser.photoURL}`;
+                res.send(dbUser);
+            })
             .catch(err => res.send("User not found!"));
     },
     updateOneAndReturn: (req, res) => {
         db.User.findOneAndUpdate({ username: req.params.username }, req.body, {
             new: true
         })
-            .then(dbUser =>
-                res.send({
-                    firstName: dbUser.firstName,
-                    lastName: dbUser.lastName,
-                    jobTitle: dbUser.jobTitle,
-                    city: dbUser.city,
-                    state: dbUser.state,
-                    username: dbUser.username,
-                    email: dbUser.email,
-                    photoURL: "http://" + req.headers.host + "/" + dbUser.photoURL,
-                    events: dbUser.events
-                })
-            )
+            .then(dbUser => {
+                delete dbUser.password;
+                dbUser.photoURL = `http://${req.headers.host}/${dbUser.photoURL}`;
+                res.send(dbUser);
+            })
             .catch(err => res.send("User not found!"));
     },
     createUserEvent: (username, eventID, host) =>
@@ -116,24 +99,16 @@ module.exports = {
             { $push: { events: eventID } },
             { new: true }
         ).then(dbUser => {
-            return {
-                firstName: dbUser.firstName,
-                lastName: dbUser.lastName,
-                jobTitle: dbUser.jobTitle,
-                city: dbUser.city,
-                state: dbUser.state,
-                username: dbUser.username,
-                email: dbUser.email,
-                photoURL: "http://" + host + "/" + dbUser.photoURL,
-                events: dbUser.events
-            };
+            delete dbUser.password;
+            dbUser.photoURL = `http://${req.headers.host}/${dbUser.photoURL}`;
+            return dbUser;
         }),
     getUserEvents: (req, res) => {
         db.User.findOne({ username: req.params.username })
             .populate("events")
             .then(dbUser => {
                 delete dbUser.password;
-                dbUser.photoURL = `htt://${req.headers.host}/${dbUser.photoURL}`;
+                dbUser.photoURL = `http://${req.headers.host}/${dbUser.photoURL}`;
                 res.send(dbUser);
             })
             .catch(err => res.send(err));
