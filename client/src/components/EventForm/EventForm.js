@@ -1,5 +1,6 @@
 import React from "react";
 import "./EventForm.css";
+import API from "../../utils/api/API";
 
 class EventForm extends React.Component {
     state = {
@@ -64,16 +65,13 @@ class EventForm extends React.Component {
             newEvent.append("description", this.state.description);
             newEvent.append("photo", this.state.selectedFile);
 
-            console.log(this.state.name);
-            console.log(this.state.description);
-            console.log(this.state.date);
-            console.log(this.state.time);
             // API Call to create an event
-            // API.createEvent(newEvent)
-            //     .then(res => {
-            //         console.log(res.data);
-            //     })
-            //     .catch(err => console.log(err));
+            API.event
+                .createEvent(localStorage.getItem("username"), newEvent)
+                .then(res => {
+                    console.log(res.data);
+                })
+                .catch(err => console.log(err));
         } else alert(`WARNING!\nPlease fill out the form!`);
     };
 
@@ -100,7 +98,9 @@ class EventForm extends React.Component {
                             name="category"
                             value={this.state.category}
                             onChange={this.inputChangeHandler}>
-                            <option>- Category -</option>
+                            <option value="" disabled>
+                                Category
+                            </option>
                             <option>Sports</option>
                             <option>Meetup</option>
                             <option>Boot camp</option>
@@ -110,18 +110,16 @@ class EventForm extends React.Component {
                     </div>
                     <div className="col-md-1" />
                     <div className="col-md-4">
-                        <select
+                        <input
+                            type="number"
+                            min="2"
+                            max="100"
+                            placeholder="Capacity"
                             className="form-control"
                             name="capacity"
                             value={this.state.capacity}
-                            onChange={this.inputChangeHandler}>
-                            <option>- Capacity -</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                        </select>
+                            onChange={this.inputChangeHandler}
+                        />
                     </div>
                 </div>
                 <div className="form-row mb-3">

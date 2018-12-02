@@ -2,6 +2,7 @@ const db = require("../models");
 
 module.exports = {
     createEvent: (req, res) => {
+        console.log(req.body);
         req.body.photoURL = req.file.path;
         db.Event.create(req.body)
             .then(dbEvent => res.send(dbEvent))

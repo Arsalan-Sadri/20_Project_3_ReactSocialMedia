@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export default {
-    createEvent: newEvent =>
+    createEvent: (username, newEvent) =>
         axios({
             method: "post",
             url: "/api/event/create-event",
@@ -9,5 +9,9 @@ export default {
             headers: {
                 Authorization: "Bearer " + localStorage.getItem("token")
             }
+        }),
+    getUserEvents: username =>
+        axios({
+            // define the body
         })
 };
