@@ -131,7 +131,11 @@ module.exports = {
     getUserEvents: (req, res) => {
         db.User.findOne({ username: req.params.username })
             .populate("events")
-            .then(dbUser => res.send(dbUser))
+            .then(dbUser => {
+                delete dbUser.password;
+                dbUser.photoURL = `htt://${req.headers.host}/${dbUser.photoURL}`;
+                res.send(dbUser);
+            })
             .catch(err => res.send(err));
     },
     findAll: (req, res) =>
