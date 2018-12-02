@@ -1,6 +1,6 @@
 import React from "react";
 import "./NavbarSignUpPg.css";
-import API from "../../utils/API";
+import API from "../../utils/api/API";
 
 class NavbarSignUpPg extends React.Component {
     state = {
@@ -25,7 +25,7 @@ class NavbarSignUpPg extends React.Component {
                 password: this.state.password
             };
 
-            API.signIn(userCredential)
+            API.user.signIn(userCredential)
                 .then(res => {
                     switch (res.data) {
                         case "Email not found!":

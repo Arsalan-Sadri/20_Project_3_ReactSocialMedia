@@ -2,21 +2,6 @@ import React from "react";
 import "./EventCard.css";
 
 class EventCard extends React.Component {
-    state = {
-        name: "",
-        category: "",
-        capacity: "",
-        city: "",
-        state: "",
-        zipCode: "",
-        description: "",
-        photoURL: ""
-    };
-
-    componentDidMount() {
-        // API call
-    }
-
     render() {
         return (
             <div className="card">

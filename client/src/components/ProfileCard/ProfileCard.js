@@ -1,6 +1,6 @@
 import React from "react";
 import "./ProfileCard.css";
-import API from "../../utils/API";
+import API from "../../utils/api/API";
 
 class Profile extends React.Component {
     state = {
@@ -14,7 +14,7 @@ class Profile extends React.Component {
     };
 
     componentDidMount() {
-        API.getDbUser(localStorage.getItem("username"))
+        API.user.getDbUser(localStorage.getItem("username"))
             .then(res =>
                 this.setState({
                     firstName: res.data.firstName,

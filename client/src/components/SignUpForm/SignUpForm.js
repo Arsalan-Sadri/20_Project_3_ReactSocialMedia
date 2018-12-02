@@ -1,6 +1,6 @@
 import React from "react";
 import "./SignUpForm.css";
-import API from "../../utils/API";
+import API from "../../utils/api/API";
 
 class SignUpForm extends React.Component {
     state = {
@@ -60,7 +60,7 @@ class SignUpForm extends React.Component {
                 userInfo.append("password", this.state.password);
                 userInfo.append("photo", this.state.selectedFile);
 
-                API.signUp(userInfo)
+                API.user.signUp(userInfo)
                     .then(res => {
                         localStorage.clear();
                         localStorage.setItem("token", res.data.token);

@@ -1,6 +1,6 @@
 import React from "react";
 import "./UpdateForm.css";
-import API from "../../utils/API";
+import API from "../../utils/api/API";
 
 class SignUpForm extends React.Component {
     state = {
@@ -18,7 +18,7 @@ class SignUpForm extends React.Component {
     };
 
     componentDidMount = () => {
-        API.getDbUser(localStorage.getItem("username")).then(res =>
+        API.user.getDbUser(localStorage.getItem("username")).then(res =>
             this.setState({
                 firstName: res.data.firstName,
                 lastName: res.data.lastName,

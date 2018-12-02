@@ -1,5 +1,5 @@
 import React from "react";
-import API from "../../utils/API";
+import API from "../../utils/api/API";
 import Navbar from "../../components/Navbar";
 import PhotosForm from "../../components/PhotosForm";
 import PreviewCard from "../../components/PreviewCard";
