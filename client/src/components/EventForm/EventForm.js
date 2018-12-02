@@ -66,13 +66,11 @@ class EventForm extends React.Component {
             newEvent.append("photo", this.state.selectedFile);
 
             newEvent.append("username", localStorage.getItem("username"));
-            
+
             // API Call to create an event
             API.event
                 .createEvent(newEvent)
-                .then(res => {
-                    console.log(res.data);
-                })
+                .then(res => (window.location.pathname = "/events"))
                 .catch(err => console.log(err));
         } else alert(`WARNING!\nPlease fill out the form!`);
     };
