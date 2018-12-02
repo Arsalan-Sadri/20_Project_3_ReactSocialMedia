@@ -65,9 +65,11 @@ class EventForm extends React.Component {
             newEvent.append("description", this.state.description);
             newEvent.append("photo", this.state.selectedFile);
 
+            newEvent.append("username", localStorage.getItem("username"));
+            
             // API Call to create an event
             API.event
-                .createEvent(localStorage.getItem("username"), newEvent)
+                .createEvent(newEvent)
                 .then(res => {
                     console.log(res.data);
                 })

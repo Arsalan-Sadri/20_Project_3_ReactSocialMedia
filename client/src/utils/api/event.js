@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export default {
-    createEvent: (username, newEvent) =>
+    createEvent: (newEvent) =>
         axios({
             method: "post",
             url: "/api/event/create-event",

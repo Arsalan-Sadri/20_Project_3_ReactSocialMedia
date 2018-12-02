@@ -3,18 +3,18 @@ import Navbar from "../../components/Navbar";
 import EventCard from "../../components/EventCard";
 import Footer from "../../components/Footer";
 import "./EventsPg.css";
-import API from "../../utils/api/API";
+// import API from "../../utils/api/API";
 
 class EventsPg extends React.Component {
     state = {
         events: []
     };
 
-    componentDidMount() {
-        API.event.getUserEvents(localStorage.getItem("username"))
-            .then(res => this.setState({ events: res.data }))
-            .catch(err => console.log(err));
-    }
+    // componentDidMount() {
+    //     API.event.getUserEvents(localStorage.getItem("username"))
+    //         .then(res => this.setState({ events: res.data }))
+    //         .catch(err => console.log(err));
+    // }
 
     render() {
         return (

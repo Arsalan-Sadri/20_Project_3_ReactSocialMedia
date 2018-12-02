@@ -85,7 +85,8 @@ module.exports = {
                     username: dbUser.username,
                     email: dbUser.email,
                     photoURL: "http://" + req.headers.host + "/" + dbUser.photoURL,
-                    password: dbUser.password
+                    password: dbUser.password,
+                    events: dbUser.events
                 });
             })
             .catch(err => res.send("User not found!"));
@@ -103,10 +104,32 @@ module.exports = {
                     state: dbUser.state,
                     username: dbUser.username,
                     email: dbUser.email,
-                    photoURL: "http://" + req.headers.host + "/" + dbUser.photoURL
+                    photoURL: "http://" + req.headers.host + "/" + dbUser.photoURL,
+                    events: dbUser.events
                 });
             })
             .catch(err => res.send("User not found!"));
+    },
+    updateUserEvents: (username, eventID, host) => {
+        return db.User.findOneAndUpdate(
+            { username: username },
+            { $push: { events: eventID } },
+            { new: true }
+        )
+            .then(dbUser => {
+                return {
+                    firstName: dbUser.firstName,
+                    lastName: dbUser.lastName,
+                    jobTitle: dbUser.jobTitle,
+                    city: dbUser.city,
+                    state: dbUser.state,
+                    username: dbUser.username,
+                    email: dbUser.email,
+                    photoURL: "http://" + host + "/" + dbUser.photoURL,
+                    events: dbUser.events
+                };
+            })
+            .catch(err => console.log(err));
     },
     findAll: (req, res) =>
         db.User.find({})
