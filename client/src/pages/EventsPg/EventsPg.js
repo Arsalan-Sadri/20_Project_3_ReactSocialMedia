@@ -8,15 +8,16 @@ import API from "../../utils/api/API";
 
 class EventsPg extends React.Component {
     state = {
-        events: []
+        events: [],
+        renderNoEvent: false
     };
 
     componentDidMount() {
         API.user
             .getUserEvents(localStorage.getItem("username"))
             .then(res => {
-                console.log(res.data);
-                this.setState({ events: res.data.events });
+                if (res.data.events.length === 0) this.setState({ renderNoEvent: true });
+                else this.setState({ events: res.data.events });
             })
             .catch(err => console.log(err));
     }
@@ -28,7 +29,7 @@ class EventsPg extends React.Component {
                 <div className="container-fluid bg-light py-5">
                     <div className="row mb-5">
                         <div className="col-md">
-                            {this.state.events.length === 0 ? (
+                            {this.state.renderNoEvent ? (
                                 <NoEvent />
                             ) : (
                                 this.state.events.map(event => (

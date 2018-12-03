@@ -70,11 +70,10 @@ class EventForm extends React.Component {
 
             newEvent.append("username", localStorage.getItem("username"));
 
-            window.location.pathname = "/events";
-            // API.event
-            //     .createEvent(newEvent)
-            //     .then(res => (window.location.pathname = "/events"))
-            //     .catch(err => console.log(err));
+            API.event
+                .createEvent(newEvent)
+                .then(res => console.log(res.data)) // window.location.pathname = "/events")
+                .catch(err => console.log(err));
         } else alert(`WARNING!\nPlease fill out the form!`);
     };
 
