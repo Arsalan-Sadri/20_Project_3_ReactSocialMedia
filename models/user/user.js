@@ -29,12 +29,14 @@ const userSchema = new mongoose.Schema({
     username: {
         type: String,
         trim: true,
+        lowercase: true,
         required: "Username is required!",
         unique: true
     },
     email: {
         type: String,
         trim: true,
+        lowercase: true,
         required: "Email address is required!",
         unique: true,
         match: [

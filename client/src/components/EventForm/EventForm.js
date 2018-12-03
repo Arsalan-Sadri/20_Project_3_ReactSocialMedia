@@ -9,6 +9,7 @@ class EventForm extends React.Component {
         capacity: "",
         date: "",
         time: "",
+        street: "",
         city: "",
         state: "",
         zipCode: "",
@@ -139,6 +140,19 @@ class EventForm extends React.Component {
                             className="form-control"
                             name="time"
                             value={this.state.time}
+                            onChange={this.inputChangeHandler}
+                        />
+                    </div>
+                </div>
+                <div className="form-row mb-3">
+                    <div className="col-md">
+                        <input
+                            type="text"
+                            className="form-control"
+                            required
+                            placeholder="Street"
+                            name="street"
+                            value={this.state.street}
                             onChange={this.inputChangeHandler}
                         />
                     </div>
