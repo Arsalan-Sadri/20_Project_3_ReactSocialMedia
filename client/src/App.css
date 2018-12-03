@@ -1,9 +1,4 @@
-/* body {
-    background: rgb(244, 244, 244);
+body {
+    position: relative;
+    min-height: 100vh;
 }
-
-.container-fluid {
-    padding-left: 20%;
-    padding-right: 20%;
-    min-height: 700px;
-} */
