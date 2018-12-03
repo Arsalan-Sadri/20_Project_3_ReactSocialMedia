@@ -44,6 +44,7 @@ class EventForm extends React.Component {
             this.state.capacity &&
             this.state.date &&
             this.state.time &&
+            this.state.street &&
             this.state.city &&
             this.state.state &&
             this.state.zipCode &&
@@ -59,6 +60,7 @@ class EventForm extends React.Component {
             newEvent.append("date", this.state.date);
             newEvent.append("time", this.state.time);
 
+            newEvent.append("street", this.state.street);
             newEvent.append("city", this.state.city);
             newEvent.append("state", this.state.state);
             newEvent.append("zipCode", this.state.zipCode);
@@ -68,7 +70,6 @@ class EventForm extends React.Component {
 
             newEvent.append("username", localStorage.getItem("username"));
 
-            // API Call to create an event
             API.event
                 .createEvent(newEvent)
                 .then(res => (window.location.pathname = "/events"))
