@@ -29,6 +29,7 @@ const eventSchema = new mongoose.Schema({
     state: {
         type: String,
         trim: true,
+        uppercase: true,
         required: "State is required!"
     },
     zipCode: {
