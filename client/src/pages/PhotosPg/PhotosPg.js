@@ -50,7 +50,7 @@ class ProfilePg extends React.Component {
             const photos = new FormData();
             this.state.selectedFiles.forEach(elm => photos.append("photos", elm));
 
-            API.uploadPhotos(photos)
+            API.user.uploadPhotos(photos)
                 .then(res => {
                     window.location.pathname =
                         "/profile/" + localStorage.getItem("username");
