@@ -39,7 +39,7 @@ class EventsPg extends React.Component {
                                         name={event.name}
                                         category={event.category}
                                         capacity={event.capacity}
-                                        date={event.data}
+                                        date={event.date}
                                         time={event.time}
                                         street={event.street}
                                         city={event.city}
