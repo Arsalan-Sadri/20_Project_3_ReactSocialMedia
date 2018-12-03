@@ -31,7 +31,7 @@ class Profile extends React.Component {
 
     render() {
         return (
-            <div className="card">
+            <div className="card profile-card">
                 <img className="card-img-top" src={this.state.photoURL} alt="card" />
                 <div className="card-body">
                     <h4 className="card-title">

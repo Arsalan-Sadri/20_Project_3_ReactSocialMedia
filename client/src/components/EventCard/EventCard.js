@@ -4,31 +4,26 @@ import "./EventCard.css";
 class EventCard extends React.Component {
     render() {
         return (
-            <div className="card">
-                <img className="card-img-top" src={this.state.photoURL} alt="card" />
+            <div className="card event-card m-5">
+                <img className="card-img-top" src={this.props.photoURL} alt="card" />
                 <div className="card-body">
-                    <h4 className="card-title">{this.state.name}</h4>
+                    <h4 className="card-title">{this.props.name}</h4>
                     <p className="my-0">
-                        <span>{this.state.category}</span>{" "}
-                        <span>
-                            <i className="fas fa-male" /> {this.state.capacity}
-                        </span>
+                        <i className="fas fa-male" /> {this.props.capacity}
                     </p>
                     <p className="my-0">
-                        <i className="fas fa-map-marker-alt" aria-hidden="true" />{" "}
-                        {this.state.city}
-                        {","} {this.state.state} {this.state.zipCode}
+                        <i className="fas fa-map-marker-alt" /> {this.props.city}
+                        {","} {this.props.state} {this.props.zipCode}
                     </p>
                     <p className="my-0">
-                        <i className="fas fa-info-circle" aria-hidden="true" />{" "}
-                        {this.state.description}
+                        <i className="fas fa-info-circle" /> {this.props.description}
                     </p>
                 </div>
                 <div className="card-footer">
-                    <a className="btn my-2 mx-1" href="/create-event">
+                    <a className="btn my-2 mx-1" href="/modify-event">
                         <i className="far fa-edit" /> Modify event
                     </a>
-                    <a className="btn ml-1" href="/update-profile">
+                    <a className="btn ml-1" href="/delete-event">
                         <i className="far fa-calendar-times" /> Delete event
                     </a>
                 </div>

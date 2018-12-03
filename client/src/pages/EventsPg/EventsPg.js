@@ -15,7 +15,7 @@ class EventsPg extends React.Component {
             .getUserEvents(localStorage.getItem("username"))
             .then(res => {
                 console.log(res.data);
-                // this.setState({ events: res.data });
+                this.setState({ events: res.data.events });
             })
             .catch(err => console.log(err));
     }
@@ -26,9 +26,10 @@ class EventsPg extends React.Component {
                 <Navbar />
                 <div className="container-fluid bg-light py-5">
                     <div className="row mb-5">
-                        <div className="col-md-7">
+                        <div className="col-md">
                             {this.state.events.map(event => (
                                 <EventCard
+                                    key={event._id}
                                     name={event.name}
                                     category={event.category}
                                     capacity={event.capacity}
@@ -38,7 +39,9 @@ class EventsPg extends React.Component {
                                     state={event.state}
                                     zipCode={event.zipCode}
                                     description={event.description}
-                                    photoURL={event.photoURL}
+                                    photoURL={`http://${window.location.host}/${
+                                        event.photoURL
+                                    }`}
                                 />
                             ))}
                         </div>
