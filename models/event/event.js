@@ -4,15 +4,18 @@ const eventSchema = new mongoose.Schema({
     name: {
         type: String,
         trim: true,
-        required: "Event's name is required!"
+        required: "Name is required!"
     },
     category: {
         type: String,
         trim: true,
+        enum: ["Sports", "Meetup", "Boot camp", "Summit", "Rally"],
         required: "Category is required!"
     },
     capacity: {
         type: Number,
+        min: 2,
+        max: 100,
         trim: true,
         required: "Capacity is required!"
     },
