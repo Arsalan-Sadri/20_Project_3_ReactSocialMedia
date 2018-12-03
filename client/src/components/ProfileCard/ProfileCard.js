@@ -14,7 +14,8 @@ class Profile extends React.Component {
     };
 
     componentDidMount() {
-        API.user.getDbUser(localStorage.getItem("username"))
+        API.user
+            .getDbUser(localStorage.getItem("username"))
             .then(res =>
                 this.setState({
                     firstName: res.data.firstName,
@@ -49,11 +50,11 @@ class Profile extends React.Component {
                     </p>
                 </div>
                 <div className="card-footer">
-                    <a className="btn my-2 mx-1" href="/create-event">
-                        <i className="fas fa-plus-circle" /> Create event
-                    </a>
-                    <a className="btn ml-1" href="/update-profile">
+                    <a className="btn my-2 mr-1" href="/update-profile">
                         <i className="fas fa-edit" /> Update profile
+                    </a>
+                    <a className="btn ml-1" href="/delete-profile">
+                        <i className="fas fa-user-minus" /> Delete profile
                     </a>
                 </div>
             </div>

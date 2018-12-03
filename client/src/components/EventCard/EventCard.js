@@ -9,6 +9,11 @@ class EventCard extends React.Component {
                 <div className="card-body">
                     <h4 className="card-title">{this.props.name}</h4>
                     <p className="my-0">
+                        <i className="far fa-calendar-alt" /> {this.props.date}
+                        {", "}
+                        <i className="far fa-clock" /> {this.props.time}
+                    </p>
+                    <p className="my-0">
                         <i className="fas fa-male" /> {this.props.capacity}
                     </p>
                     <p className="my-0">
@@ -16,7 +21,8 @@ class EventCard extends React.Component {
                         {","} {this.props.state} {this.props.zipCode}
                     </p>
                     <p className="my-0">
-                        <i className="fas fa-info-circle" /> {this.props.description}
+                        <i className="fas fa-info-circle text-info" />{" "}
+                        {this.props.description}
                     </p>
                 </div>
                 <div className="card-footer">

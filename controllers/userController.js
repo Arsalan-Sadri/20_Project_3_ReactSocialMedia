@@ -100,7 +100,7 @@ module.exports = {
             { new: true }
         ).then(dbUser => {
             delete dbUser.password;
-            dbUser.photoURL = `http://${req.headers.host}/${dbUser.photoURL}`;
+            dbUser.photoURL = `http://${host}/${dbUser.photoURL}`;
             return dbUser;
         }),
     getUserEvents: (req, res) => {
