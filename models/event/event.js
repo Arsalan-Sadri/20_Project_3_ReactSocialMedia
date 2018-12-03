@@ -16,6 +16,16 @@ const eventSchema = new mongoose.Schema({
         trim: true,
         required: "Capacity is required!"
     },
+    date: {
+        type: Date,
+        trim: true,
+        required: "Date is required!"
+    },
+    time: {
+        type: Date,
+        trim: true,
+        required: "Time is required!"
+    },
     street: {
         type: String,
         trim: true,
