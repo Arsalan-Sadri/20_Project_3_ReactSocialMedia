@@ -17,7 +17,10 @@ class EventCard extends React.Component {
                         <i className="fas fa-male" /> {this.props.capacity}
                     </p>
                     <p className="my-0">
-                        <i className="fas fa-map-marker-alt" /> {this.props.city}
+                        <i className="fas fa-map-marker-alt" /> {this.props.street}
+                        <br />
+                        {"   "}
+                        {this.props.city}
                         {","} {this.props.state} {this.props.zipCode}
                     </p>
                     <p className="my-0">

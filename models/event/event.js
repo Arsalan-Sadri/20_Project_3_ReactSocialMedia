@@ -22,7 +22,7 @@ const eventSchema = new mongoose.Schema({
         required: "Date is required!"
     },
     time: {
-        type: Date,
+        type: String,
         trim: true,
         required: "Time is required!"
     },

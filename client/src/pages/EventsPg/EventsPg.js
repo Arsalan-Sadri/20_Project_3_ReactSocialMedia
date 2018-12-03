@@ -5,6 +5,7 @@ import Footer from "../../components/Footer";
 import NoEvent from "../../components/NoEvent";
 import "./EventsPg.css";
 import API from "../../utils/api/API";
+import { ENETDOWN } from "constants";
 
 class EventsPg extends React.Component {
     state = {
@@ -40,6 +41,7 @@ class EventsPg extends React.Component {
                                         capacity={event.capacity}
                                         date={event.data}
                                         time={event.time}
+                                        street={event.street}
                                         city={event.city}
                                         state={event.state}
                                         zipCode={event.zipCode}
