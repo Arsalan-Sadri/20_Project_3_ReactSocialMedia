@@ -3,8 +3,9 @@ import Navbar from "../../components/Navbar";
 import EventCard from "../../components/EventCard";
 import Footer from "../../components/Footer";
 import NoEvent from "../../components/NoEvent";
-import "./EventsPg.css";
+import SignUpPg from "../../pages/SignUpPg";
 import API from "../../utils/api/API";
+import "./EventsPg.css";
 
 class EventsPg extends React.Component {
     state = {
@@ -13,6 +14,10 @@ class EventsPg extends React.Component {
     };
 
     componentDidMount() {
+        setTimeout(() => {
+            localStorage.clear();
+        }, 600000);
+
         API.user
             .getUserEvents(localStorage.getItem("username"))
             .then(res => {
@@ -23,6 +28,11 @@ class EventsPg extends React.Component {
     }
 
     render() {
+        if (
+            !localStorage.getItem("token") ||
+            localStorage.getItem("token") === "undefined"
+        )
+            return <SignUpPg />;
         return (
             <React.Fragment>
                 <Navbar />
