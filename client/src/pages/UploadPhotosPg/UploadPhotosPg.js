@@ -29,16 +29,19 @@ class UploadPhotosPg extends React.Component {
             file.key = new Date().toISOString() + "-" + file.name;
 
             var fReader = new FileReader();
-            fReader.onload = function(aFile) {
+            fReader.onload = function(selectedFileImg) {
+                console.log(selectedFileImg);
                 return function(event) {
-                    aFile.dataURL = event.target.result;
+                    selectedFileImg.dataURL = event.target.result;
                     this.setState({
                         selectedFiles: photos,
                         fileBrowserDisplayVal: photos.length + " files selected."
                     });
                 }.bind(this);
             }.bind(this)(file);
+
             photos.push(file);
+
             fReader.readAsDataURL(file);
         }
     };
