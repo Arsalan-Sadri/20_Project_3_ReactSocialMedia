@@ -11,3 +11,11 @@ a.btn {
     color: white !important;
     background: rgb(163, 31, 196);
 }
+
+.fa-map-marker-alt {
+    color: rgb(137, 50, 218);
+}
+
+.fa-envelope {
+    color: rgb(137, 50, 218);
+}

@@ -40,12 +40,12 @@ class Profile extends React.Component {
                     </h4>
                     <p className="my-0">{this.state.jobTitle}</p>
                     <div className="row">
-                        <div className="col-md-auto pr-0">
+                        <div className="col-auto pr-0">
                             <i className="fas fa-map-marker-alt" aria-hidden="true" />
                             <br />
                             <i className="fas fa-envelope" aria-hidden="true" />
                         </div>
-                        <div className="col-md-auto pl-2">
+                        <div className="col-auto pl-2">
                             <p className="my-0">
                                 {this.state.city}
                                 {","} {this.state.state}
@@ -57,10 +57,10 @@ class Profile extends React.Component {
                     </div>
                 </div>
                 <div className="card-footer">
-                    <a className="btn my-2 mr-1" href="/update-profile">
+                    <a className="btn my-2 mr-2" href="/update-profile">
                         <i className="fas fa-edit" /> Update profile
                     </a>
-                    <a className="btn ml-1" href="/delete-profile">
+                    <a className="btn" href="/delete-profile">
                         <i className="fas fa-user-minus" /> Delete profile
                     </a>
                 </div>
