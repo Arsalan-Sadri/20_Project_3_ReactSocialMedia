@@ -39,15 +39,22 @@ class Profile extends React.Component {
                         {this.state.firstName} {this.state.lastName}
                     </h4>
                     <p className="my-0">{this.state.jobTitle}</p>
-                    <p className="my-0">
-                        <i className="fas fa-map-marker-alt" aria-hidden="true" />{" "}
-                        {this.state.city}
-                        {","} {this.state.state}
-                    </p>
-                    <p className="my-0">
-                        <i className="fas fa-envelope" aria-hidden="true" />{" "}
-                        <i>{this.state.email}</i>
-                    </p>
+                    <div className="row">
+                        <div className="col-md-auto pr-0">
+                            <i className="fas fa-map-marker-alt" aria-hidden="true" />
+                            <br />
+                            <i className="fas fa-envelope" aria-hidden="true" />
+                        </div>
+                        <div className="col-md-auto pl-2">
+                            <p className="my-0">
+                                {this.state.city}
+                                {","} {this.state.state}
+                            </p>
+                            <p className="my-0">
+                                <i>{this.state.email}</i>
+                            </p>
+                        </div>
+                    </div>
                 </div>
                 <div className="card-footer">
                     <a className="btn my-2 mr-1" href="/update-profile">
