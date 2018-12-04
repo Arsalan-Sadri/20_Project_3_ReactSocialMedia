@@ -30,7 +30,6 @@ class UploadPhotosPg extends React.Component {
 
             var fReader = new FileReader();
             fReader.onload = function(selectedFileImg) {
-                console.log(selectedFileImg);
                 return function(event) {
                     selectedFileImg.dataURL = event.target.result;
                     this.setState({
