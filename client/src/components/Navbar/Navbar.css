@@ -54,6 +54,8 @@ a.this-tab {
 }
 
 .nav-item.dropdown a {
+    padding-top: 10px;
+    padding-bottom: 6px;
     border-bottom: 4px solid transparent;
 }
 
@@ -64,4 +66,3 @@ a.this-tab {
 .dropdown-menu a:hover {
     background: rgb(232, 232, 235);
 }
-
