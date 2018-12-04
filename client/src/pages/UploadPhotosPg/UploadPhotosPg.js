@@ -50,7 +50,8 @@ class UploadPhotosPg extends React.Component {
             const photos = new FormData();
             this.state.selectedFiles.forEach(elm => photos.append("photos", elm));
 
-            API.user.uploadPhotos(photos)
+            API.user
+                .uploadPhotos(photos)
                 .then(res => {
                     window.location.pathname =
                         "/profile/" + localStorage.getItem("username");
@@ -77,7 +78,6 @@ class UploadPhotosPg extends React.Component {
                                 uploadBtnHandler={this.uploadBtnHandler}
                             />
                         </div>
-                        <div className="col-md-auto">-user photos/album goes here-</div>
                     </div>
                     <div className="row">
                         <div className="col-md">

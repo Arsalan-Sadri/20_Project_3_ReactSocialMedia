@@ -15,9 +15,7 @@ const PhotosForm = props => (
                         onChange={props.fileSelectionHandler}
                         multiple
                     />
-                    <label
-                        className="custom-file-label"
-                        htmlFor="validatedCustomFile">
+                    <label className="custom-file-label" htmlFor="validatedCustomFile">
                         {props.fileBrowserDisplayVal}
                     </label>
                 </div>
@@ -26,8 +24,7 @@ const PhotosForm = props => (
         <div className="form-row mb-5">
             <div className="col-md">
                 <button className="btn btn" onClick={props.uploadBtnHandler}>
-                    <i className="fa fa-cloud-upload-alt" aria-hidden="true" />{" "}
-                    Upload
+                    <i className="fas fa-cloud-upload-alt" aria-hidden="true" /> Upload
                 </button>
             </div>
         </div>
