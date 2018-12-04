@@ -8,7 +8,7 @@
     max-height: 25vh;
 }
 
-a.btn.event-card {
+a.btn.event-card-btn {
     color: white !important;
     background: rgb(171, 16, 185);
 }
