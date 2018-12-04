@@ -228,7 +228,7 @@ class EventForm extends React.Component {
                 <div className="form-row mb-3">
                     <div className="col-md">
                         <button
-                            className="btn btn-lg"
+                            className="btn btn-lg event-form"
                             onClick={this.createEventBtnHandler}>
                             Submit
                         </button>

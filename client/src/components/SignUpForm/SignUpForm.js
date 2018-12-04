@@ -218,7 +218,7 @@ class SignUpForm extends React.Component {
                 </div>
                 <div className="form-row mb-3">
                     <div className="col-md">
-                        <button className="btn btn-lg" onClick={this.signUpBtnHandler}>
+                        <button className="btn btn-lg sign-up-btn" onClick={this.signUpBtnHandler}>
                             <i className="fas fa-user-plus" aria-hidden="true" /> Sign up
                         </button>
                     </div>

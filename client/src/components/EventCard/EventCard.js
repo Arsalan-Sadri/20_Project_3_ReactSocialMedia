@@ -29,10 +29,10 @@ class EventCard extends React.Component {
                     </p>
                 </div>
                 <div className="card-footer">
-                    <a className="btn my-2 mx-1" href="/modify-event">
+                    <a className="btn my-2 ml-1 mr-2 event-card" href="/modify-event">
                         <i className="far fa-edit" /> Modify event
                     </a>
-                    <a className="btn ml-1" href="/delete-event">
+                    <a className="btn ml event-card" href="/delete-event">
                         <i className="far fa-calendar-times" /> Delete event
                     </a>
                 </div>

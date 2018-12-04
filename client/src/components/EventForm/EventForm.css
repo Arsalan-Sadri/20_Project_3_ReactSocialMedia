@@ -2,9 +2,9 @@ label.custom-file-label {
     font-style: italic;
 }
 
-button {
+button.event-form {
     color: white;
-    background: rgb(163, 31, 196);
+    background: rgb(171, 16, 185);
 }
 
 form.sign-up-form {
