@@ -7,6 +7,7 @@ import UpdatePg from "./pages/UpdatePg";
 import PhotosPg from "./pages/PhotosPg";
 import CreateEventPg from "./pages/CreateEventPg";
 import EventsPg from "./pages/EventsPg";
+import UploadPhotosPg from "./pages/UploadPhotosPg";
 import "./App.css";
 
 const App = () => (
@@ -20,6 +21,7 @@ const App = () => (
             <Route exact path="/photos/:username" component={PhotosPg} />
             <Route exact path="/events" component={EventsPg} />
             <Route exact path="/create-event" component={CreateEventPg} />
+            <Route exact path="/upload-photos" component={UploadPhotosPg} />
         </Switch>
     </Router>
 );
