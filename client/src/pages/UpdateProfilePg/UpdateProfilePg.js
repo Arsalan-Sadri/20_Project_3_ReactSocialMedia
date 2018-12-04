@@ -1,11 +1,11 @@
 import React from "react";
-import "./UpdatePg.css";
+import "./UpdateProfilePg.css";
 import Navbar from "../../components/Navbar";
 import UpdateForm from "../../components/UpdateForm";
 import Footer from "../../components/Footer";
-import SignUpPg from "../../pages/SignUpPg";
+import SignUpPg from "../SignUpPg";
 
-class ProfilePg extends React.Component {
+class UpdateProfilePg extends React.Component {
     componentDidMount() {
         setTimeout(() => {
             localStorage.clear();
@@ -37,4 +37,4 @@ class ProfilePg extends React.Component {
     }
 }
 
-export default ProfilePg;
+export default UpdateProfilePg;

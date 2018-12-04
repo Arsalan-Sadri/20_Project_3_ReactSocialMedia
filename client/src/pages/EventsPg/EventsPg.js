@@ -5,7 +5,6 @@ import Footer from "../../components/Footer";
 import NoEvent from "../../components/NoEvent";
 import "./EventsPg.css";
 import API from "../../utils/api/API";
-import { ENETDOWN } from "constants";
 
 class EventsPg extends React.Component {
     state = {
