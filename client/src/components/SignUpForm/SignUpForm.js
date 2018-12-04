@@ -60,11 +60,13 @@ class SignUpForm extends React.Component {
                 userInfo.append("password", this.state.password);
                 userInfo.append("photo", this.state.selectedFile);
 
-                API.user.signUp(userInfo)
+                API.user
+                    .signUp(userInfo)
                     .then(res => {
                         localStorage.clear();
                         localStorage.setItem("token", res.data.token);
                         localStorage.setItem("username", res.data.username);
+                        localStorage.setItem("firstName", res.data.firstName);
                         window.location.pathname =
                             "/profile/" + localStorage.getItem("username");
                     })

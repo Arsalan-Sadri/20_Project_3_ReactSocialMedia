@@ -25,7 +25,8 @@ module.exports = {
                                 else {
                                     res.json({
                                         token: token,
-                                        username: dbUser.username
+                                        username: dbUser.username,
+                                        firstName: dbUser.firstName
                                     });
                                 }
                             }
@@ -52,14 +53,15 @@ module.exports = {
                             },
                             process.env.JWT_KEY,
                             {
-                                expiresIn: "1h"
+                                expiresIn: 600000
                             },
                             function(err, token) {
                                 if (err) res.send(err);
                                 else {
                                     res.json({
                                         token: token,
-                                        username: dbUser.username
+                                        username: dbUser.username,
+                                        firstName: dbUser.firstName
                                     });
                                 }
                             }

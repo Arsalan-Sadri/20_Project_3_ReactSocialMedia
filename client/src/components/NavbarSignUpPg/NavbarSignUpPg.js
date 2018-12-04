@@ -25,7 +25,8 @@ class NavbarSignUpPg extends React.Component {
                 password: this.state.password
             };
 
-            API.user.signIn(userCredential)
+            API.user
+                .signIn(userCredential)
                 .then(res => {
                     switch (res.data) {
                         case "Email not found!":
@@ -40,6 +41,7 @@ class NavbarSignUpPg extends React.Component {
                             localStorage.clear();
                             localStorage.setItem("token", res.data.token);
                             localStorage.setItem("username", res.data.username);
+                            localStorage.setItem("firstName", res.data.firstName);
                             window.location.pathname =
                                 "/profile/" + localStorage.getItem("username");
                     }
