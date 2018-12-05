@@ -36,8 +36,8 @@ class EventCard extends React.Component {
                                 <br />
                                 {this.props.city}
                                 {","} {this.props.state} {this.props.zipCode}
-                                <p className="my-0"> {this.props.description}</p>
                             </p>
+                            <p className="my-0"> {this.props.description}</p>
                         </div>
                     </div>
                 </div>
