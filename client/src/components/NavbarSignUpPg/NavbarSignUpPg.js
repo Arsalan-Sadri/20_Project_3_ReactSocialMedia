@@ -54,7 +54,7 @@ class NavbarSignUpPg extends React.Component {
         return (
             <nav className="navbar navbar-expand-md navbar-dark sticky-top">
                 {/********** BRAND **********/}
-                <a className="navbar-brand log-LanPg" href="/">
+                <a className="navbar-brand sign-up-navbar-brand" href="/">
                     {/* <img src={logo} alt="" /> */}
                     Logo
                 </a>
@@ -85,7 +85,7 @@ class NavbarSignUpPg extends React.Component {
                             onChange={this.inputChangeHandler}
                         />
                         <input
-                            className="form-control-sm mr-2"
+                            className="form-control-sm mr-3"
                             type="password"
                             aria-label="password"
                             placeholder="Password"
@@ -95,7 +95,7 @@ class NavbarSignUpPg extends React.Component {
                         />
                         {/********** BUTTON **********/}
                         <button
-                            className="btn btn-outline btn-sm text-white ml-1 mb-0"
+                            className="btn btn-outline btn-sm text-white mb-0"
                             onClick={this.signInHandler}>
                             <i className="fa fa-sign-in" aria-hidden="true" /> Sign in
                         </button>

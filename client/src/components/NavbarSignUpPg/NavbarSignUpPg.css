@@ -1,4 +1,4 @@
-.log-LanPg {
+.sign-up-navbar-brand {
     font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans",
         Arial, sans-serif;
     font-size: 3em;
@@ -25,4 +25,28 @@ img {
 .form-inline input:focus {
     outline: 0;
     background: rgb(231, 222, 171);
+}
+
+@media screen and (max-width: 381px) {
+    .form-inline input {
+        margin-bottom: 5px;
+    }
+}
+
+@media screen and (max-width: 447px) {
+    .form-inline button {
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 381px) {
+    .form-inline button {
+        margin-top: 0;
+    }
+}
+
+@media screen and (max-width: 276px) {
+    .form-inline button {
+        margin-top: 10px;
+    }
 }
