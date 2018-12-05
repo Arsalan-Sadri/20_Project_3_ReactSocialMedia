@@ -6,3 +6,8 @@
     padding: 20px;
     border-radius: 10px;
 }
+
+a.add-photos-link {
+    color: white;
+    background: rgb(161, 52, 211);
+}
