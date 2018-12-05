@@ -1,38 +1,6 @@
-@media screen and (min-width: 1000px) {
-    .navbar {
-        padding-left: 10%;
-        padding-right: 10%;
-    }
-}
-
-@media screen and (min-width: 1200px) {
-    .navbar {
-        padding-left: 15%;
-        padding-right: 15%;
-    }
-}
-
-@media screen and (min-width: 1500px) {
-    .navbar {
-        padding-left: 20%;
-        padding-right: 20%;
-    }
-}
-
-@media screen and (min-width: 1700px) {
-    .navbar {
-        padding-left: 25%;
-        padding-right: 25%;
-    }
-}
-
-.navbar {
-    background: rgb(137, 50, 218);
-}
-
 .log-LanPg {
-    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-        "Lucida Sans", Arial, sans-serif;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans",
+        Arial, sans-serif;
     font-size: 3em;
 }
 
@@ -43,7 +11,7 @@ img {
 
 .navbar button {
     background: rgb(115, 11, 212);
-    border: 1px solid rgb(89, 15, 158);;
+    border: 1px solid rgb(89, 15, 158);
 }
 
 .navbar button:hover {
