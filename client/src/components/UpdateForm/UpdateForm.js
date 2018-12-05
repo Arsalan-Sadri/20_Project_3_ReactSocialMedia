@@ -230,7 +230,7 @@ class SignUpForm extends React.Component {
                 </div>
                 <div className="form-row mb-3">
                     <div className="col-md">
-                        <button className="btn btn-lg" onClick={this.updateBtnHandler}>
+                        <button className="btn btn-lg update-form-btn" onClick={this.updateBtnHandler}>
                             <i className="fas fa-user-edit" aria-hidden="true" /> Update
                         </button>
                     </div>
