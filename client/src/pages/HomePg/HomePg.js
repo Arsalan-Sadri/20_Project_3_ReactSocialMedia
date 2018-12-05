@@ -20,7 +20,7 @@ class HomePg extends React.Component {
         return (
             <React.Fragment>
                 <Navbar />
-                <div className="container-fluid bg-light py-5">
+                <div className="container-fluid bg-light py-5 main-container">
                     <div className="row">
                         <div className="col-md-4">-- CONTENT --</div>
                     </div>

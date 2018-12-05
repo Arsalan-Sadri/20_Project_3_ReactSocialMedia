@@ -21,7 +21,7 @@ class ProfilePg extends React.Component {
         return (
             <React.Fragment>
                 <Navbar />
-                <div className="container-fluid bg-light py-5">
+                <div className="container-fluid bg-light py-5 main-container">
                     <div className="row mb-5 justify-content-md-center">
                         <div className="col-md-7">
                             <h1>
