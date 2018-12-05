@@ -42,13 +42,14 @@ class EventsPg extends React.Component {
                             {this.state.renderNoEvent ? (
                                 <NoEvent />
                             ) : (
-                                this.state.events.map(event => (
-                                    <EventCard
+                                this.state.events.map(event => {
+                                    console.log(event.date);
+                                   return <EventCard
                                         key={event._id}
                                         name={event.name}
                                         category={event.category}
                                         capacity={event.capacity}
-                                        date={event.date}
+                                        date={new Date(event.date).toDateString()}
                                         time={event.time}
                                         street={event.street}
                                         city={event.city}
@@ -58,8 +59,8 @@ class EventsPg extends React.Component {
                                         photoURL={`http://${window.location.host}/${
                                             event.photoURL
                                         }`}
-                                    />
-                                ))
+                                    />;
+                                    })
                             )}
                         </div>
                     </div>
