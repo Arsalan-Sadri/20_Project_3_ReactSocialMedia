@@ -29,3 +29,10 @@
 aside {
     width: 50%;
 }
+
+/* min-height(687px) = Navbar(98px) + .sign-up-page-container(554px) + Footer(35px) */
+@media screen and (min-height: 687px) {
+    .sign-up-page-container {
+        min-height: 657px; /* window.innerHeight(790px) - (Navbar + Footer) */
+    }
+}
