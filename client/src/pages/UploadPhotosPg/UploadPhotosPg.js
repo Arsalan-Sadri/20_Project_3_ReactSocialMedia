@@ -73,7 +73,7 @@ class UploadPhotosPg extends React.Component {
                 <Navbar />
                 <div className="container-fluid bg-light py-5">
                     <div className="row">
-                        <div className="col-md-auto">
+                        <div className="col-sm-auto">
                             <UploadPhotosForm
                                 fileBrowserDisplayVal={this.state.fileBrowserDisplayVal}
                                 fileSelectionHandler={this.fileSelectionHandler}
