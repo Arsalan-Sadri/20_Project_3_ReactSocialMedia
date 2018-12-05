@@ -29,15 +29,15 @@ class EventCard extends React.Component {
                             <br />
                             <i className="fas fa-info-circle text-info" />
                         </div>
-                        <div className="col-auto pl-2">
+                        <div className="col pl-2">
                             <p className="my-0">{this.props.capacity}</p>
                             <p className="my-0">
                                 {this.props.street}
                                 <br />
                                 {this.props.city}
                                 {","} {this.props.state} {this.props.zipCode}
+                                <p className="my-0"> {this.props.description}</p>
                             </p>
-                            <p className="my-0"> {this.props.description}</p>
                         </div>
                     </div>
                 </div>
