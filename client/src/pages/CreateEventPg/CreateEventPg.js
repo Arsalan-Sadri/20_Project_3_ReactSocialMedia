@@ -22,7 +22,7 @@ class ProfilePg extends React.Component {
             <React.Fragment>
                 <Navbar />
                 <div className="container-fluid bg-light py-5 main-container">
-                    <div className="row mb-5 justify-content-md-center">
+                    <div className="row justify-content-md-center">
                         <div className="col-md-7">
                             <h1>
                                 <i className="fas fa-calendar-alt" aria-hidden="true" />{" "}
