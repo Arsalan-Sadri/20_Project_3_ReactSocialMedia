@@ -10,8 +10,6 @@ import EventsPg from "./pages/EventsPg";
 import UploadPhotosPg from "./pages/UploadPhotosPg";
 import "./App.css";
 
-console.log(window.innerHeight);
-
 const App = () => (
     <Router>
         <Switch>
