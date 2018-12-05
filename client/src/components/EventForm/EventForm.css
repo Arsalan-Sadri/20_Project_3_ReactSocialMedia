@@ -4,7 +4,7 @@ label.custom-file-label {
 
 button.event-form {
     color: white;
-    background: rgb(161, 52, 211);
+    background: var(--theme-button-color);
 }
 
 form.sign-up-form {

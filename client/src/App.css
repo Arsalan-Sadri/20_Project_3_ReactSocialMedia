@@ -61,8 +61,13 @@
 }
 /* ********** */
 
+:root {
+    --theme-main-color: rgb(137, 50, 218);
+    --theme-button-color: rgb(161, 52, 211);
+}
+
 .navbar {
-    background: rgb(137, 50, 218);
+    background: var(--theme-main-color);
 }
 
 /* min-height(687px) = Navbar(44px) + .profile-page-container(590px) + Footer(35px) */

@@ -144,7 +144,7 @@ class SignUpForm extends React.Component {
                         <div className="input-group">
                             <div className="input-group-prepend">
                                 <span className="input-group-text">
-                                    http://www.website.com/
+                                    http://www.website.com/profile/
                                 </span>
                             </div>
                             <input

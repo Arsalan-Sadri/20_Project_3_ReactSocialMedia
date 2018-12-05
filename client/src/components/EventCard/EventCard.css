@@ -10,5 +10,5 @@
 
 a.btn.event-card-btn {
     color: white !important;
-    background: rgb(161, 52, 211);
+    background: var(--theme-button-color);
 }
