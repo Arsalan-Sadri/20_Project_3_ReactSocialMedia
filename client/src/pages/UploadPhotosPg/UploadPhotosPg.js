@@ -1,7 +1,7 @@
 import React from "react";
 import API from "../../utils/api/API";
 import Navbar from "../../components/Navbar";
-import PhotosForm from "../../components/PhotosForm";
+import UploadPhotosForm from "../../components/UploadPhotosForm";
 import PreviewCard from "../../components/PreviewCard";
 import Footer from "../../components/Footer";
 import SignUpPg from "../SignUpPg";
@@ -74,7 +74,7 @@ class UploadPhotosPg extends React.Component {
                 <div className="container-fluid bg-light py-5">
                     <div className="row">
                         <div className="col-md-auto">
-                            <PhotosForm
+                            <UploadPhotosForm
                                 fileBrowserDisplayVal={this.state.fileBrowserDisplayVal}
                                 fileSelectionHandler={this.fileSelectionHandler}
                                 uploadBtnHandler={this.uploadBtnHandler}

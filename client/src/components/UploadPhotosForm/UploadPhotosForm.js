@@ -1,7 +1,7 @@
 import React from "react";
-import "./PhotosForm.css";
+import "./UploadPhotosForm.css";
 
-const PhotosForm = props => (
+const UploadPhotosForm = props => (
     <form className="p-2">
         <div className="form-row mb-3">
             <div className="col-md">
@@ -31,4 +31,4 @@ const PhotosForm = props => (
     </form>
 );
 
-export default PhotosForm;
+export default UploadPhotosForm;
