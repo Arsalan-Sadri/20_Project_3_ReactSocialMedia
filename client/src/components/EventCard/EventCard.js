@@ -9,29 +9,41 @@ class EventCard extends React.Component {
                 <div className="card-body">
                     <h4 className="card-title">{this.props.name}</h4>
                     <div className="row">
-                        <div className="col-auto">
-                            <p className="my-0">
-                                <i className="fas fa-male pl-1 text-secondary mr-2" />
-                                {this.props.capacity + " going"}
-                            </p>
-
-                            <p className="my-0">
-                                <i className="fas fa-map-marker-alt text-primary mr-2" />
-                                {this.props.street}
-                                <br />
-                                {this.props.city}
-                                {","} {this.props.state} {this.props.zipCode}
-                            </p>
-                            <p className="my-0">
-                                <i className="fas fa-info-circle text-info mr-2" />
-                                {this.props.description}
-                            </p>
+                        <div className="col-8">
+                            <div className="row">
+                                <div className="col-auto">
+                                    <i className="fas fa-male pl-1 text-secondary" />
+                                    <br />
+                                    <i className="fas fa-map-marker-alt text-primary" />
+                                    <br />
+                                    <i className="fas fa-info-circle text-info" />
+                                </div>
+                                <div className="col-auto pl-0">
+                                    {this.props.capacity + " going"}
+                                    <br />
+                                    {this.props.street}
+                                    <br />
+                                    {this.props.city}
+                                    {","} {this.props.state} {this.props.zipCode}
+                                    <br />
+                                    {this.props.description}
+                                </div>
+                            </div>
                         </div>
-                        <div className="col-auto pr-0">
-                            <p className="my-0">
-                                <i className="far fa-calendar-alt text-warning mr-2" />
-                                {this.props.date}
-                            </p>
+                        <div className="col-4">
+                            <div className="row">
+                                <div className="col-auto">
+                                    <i className="far fa-calendar-alt text-warning" />
+                                    <br />
+                                    <i className="far fa-clock text-danger" />
+                                </div>
+                                <div className="col-auto pl-0">
+                                    {this.props.date}
+                                    <br />
+                                    {this.props.time}
+                                </div>
+                            </div>
+                            <br />
                         </div>
                     </div>
                 </div>
@@ -49,10 +61,3 @@ class EventCard extends React.Component {
 }
 
 export default EventCard;
-
-{
-    /* <p className="my-0">
-                                <i className="far fa-clock text-danger" />{" "}
-                                {this.props.time}{" "}
-                            </p> */
-}
