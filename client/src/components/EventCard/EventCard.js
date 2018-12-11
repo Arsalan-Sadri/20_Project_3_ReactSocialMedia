@@ -9,43 +9,45 @@ class EventCard extends React.Component {
                 <div className="card-body">
                     <h4 className="card-title">{this.props.name}</h4>
                     <div className="row">
-                        <div className="col-8">
+                        <div className="col-12 col-md-4">
+                            <div className="row">
+                                <div className="col-auto">
+                                    <i className="far fa-calendar-alt text-danger" />
+                                    <br />
+                                    <i className="far fa-clock text-warning" />
+                                    <br />
+                                    <i className="fas fa-map-marker-alt text-primary" />
+                                </div>
+                                <div className="col pl-0">
+                                    {this.props.date}
+                                    <br />
+                                    <span className="">
+                                        {this.props.time}
+                                    </span>
+                                    <br />
+                                    <u className="font-italic text-secondary">
+                                        {this.props.street}
+                                        <br />
+                                        {this.props.city}
+                                        {","} {this.props.state} {this.props.zipCode}
+                                    </u>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-12 col-md-8 pt-3 pt-md-0">
                             <div className="row">
                                 <div className="col-auto">
                                     <i className="fas fa-male pl-1 text-secondary" />
                                     <br />
-                                    <i className="fas fa-map-marker-alt text-primary" />
-                                    <br />
-                                    <br />
                                     <i className="fas fa-info-circle text-info" />
                                 </div>
-                                <div className="col-auto pl-0">
+                                <div className="col pl-0">
                                     {this.props.capacity + " going"}
                                     <br />
-                                    {this.props.street}
-                                    <br />
-                                    {this.props.city}
-                                    {","} {this.props.state} {this.props.zipCode}
-                                    <br />
-                                    This is the description
-                                    {/* {this.props.description} */}
+                                    {/* This is the description */}
+                                    {this.props.description}
                                 </div>
                             </div>
-                        </div>
-                        <div className="col-4">
-                            <div className="row justify-content-center">
-                                <div className="col-auto">
-                                    <i className="far fa-calendar-alt text-warning" />
-                                    <br />
-                                    <i className="far fa-clock text-danger" />
-                                </div>
-                                <div className="col-auto pl-0">
-                                    {this.props.date}
-                                    <br />
-                                    {this.props.time}
-                                </div>
-                            </div>
-                            <br />
                         </div>
                     </div>
                 </div>
