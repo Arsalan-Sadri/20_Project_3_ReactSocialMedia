@@ -33,7 +33,11 @@ class Profile extends React.Component {
     render() {
         return (
             <div className="card profile-card">
-                <img className="card-img-top" src={this.state.photoURL} alt="card" />
+                <img
+                    className="card-img-top"
+                    src={`http://${window.location.host}/${this.state.photoURL}`}
+                    alt="card"
+                />
                 <div className="card-body">
                     <h4 className="card-title">
                         {this.state.firstName} {this.state.lastName}
@@ -41,7 +45,10 @@ class Profile extends React.Component {
                     <p className="my-0">{this.state.jobTitle}</p>
                     <div className="row">
                         <div className="col-auto pr-0">
-                            <i className="fas fa-map-marker-alt text-primary" aria-hidden="true" />
+                            <i
+                                className="fas fa-map-marker-alt text-primary"
+                                aria-hidden="true"
+                            />
                             <br />
                             <i className="fas fa-envelope text-info" aria-hidden="true" />
                         </div>

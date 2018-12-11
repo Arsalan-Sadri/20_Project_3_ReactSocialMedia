@@ -16,6 +16,7 @@ class EventCard extends React.Component {
                                     <br />
                                     <i className="fas fa-map-marker-alt text-primary" />
                                     <br />
+                                    <br />
                                     <i className="fas fa-info-circle text-info" />
                                 </div>
                                 <div className="col-auto pl-0">
@@ -26,12 +27,13 @@ class EventCard extends React.Component {
                                     {this.props.city}
                                     {","} {this.props.state} {this.props.zipCode}
                                     <br />
-                                    {this.props.description}
+                                    This is the description
+                                    {/* {this.props.description} */}
                                 </div>
                             </div>
                         </div>
                         <div className="col-4">
-                            <div className="row">
+                            <div className="row justify-content-center">
                                 <div className="col-auto">
                                     <i className="far fa-calendar-alt text-warning" />
                                     <br />

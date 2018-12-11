@@ -79,7 +79,6 @@ module.exports = {
         })
             .then(dbUser => {
                 delete dbUser.password;
-                dbUser.photoURL = `http://${req.headers.host}/${dbUser.photoURL}`;
                 res.send(dbUser);
             })
             .catch(err => res.send("User not found!"));
