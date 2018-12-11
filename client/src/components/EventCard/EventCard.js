@@ -4,7 +4,7 @@ import "./EventCard.css";
 class EventCard extends React.Component {
     render() {
         return (
-            <div className="card event-card">
+            <div className="card event-card mb-5">
                 <img className="card-img-top" src={this.props.photoURL} alt="card" />
                 <div className="card-body">
                     <h4 className="card-title">{this.props.name}</h4>
