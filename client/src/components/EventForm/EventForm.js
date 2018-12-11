@@ -79,7 +79,7 @@ class EventForm extends React.Component {
 
     render() {
         return (
-            <form className="p-2">
+            <form className="event-form p-2 text-secondary font-italic">
                 <div className="form-row mb-3">
                     <div className="col-md">
                         <input
@@ -92,9 +92,7 @@ class EventForm extends React.Component {
                             onChange={this.inputChangeHandler}
                         />
                     </div>
-                </div>
-                <div className="form-row mb-3">
-                    <div className="col-md-7">
+                    <div className="col-md-4">
                         <select
                             className="form-control"
                             name="category"
@@ -110,8 +108,9 @@ class EventForm extends React.Component {
                             <option>Rally</option>
                         </select>
                     </div>
-                    <div className="col-md-1" />
-                    <div className="col-md-4">
+                </div>
+                <div className="form-row mb-3">
+                    <div className="col">
                         <input
                             type="number"
                             min="2"
@@ -123,26 +122,59 @@ class EventForm extends React.Component {
                             onChange={this.inputChangeHandler}
                         />
                     </div>
-                </div>
-                <div className="form-row mb-3">
-                    <div className="col-md-7">
+                    <div className="col">
                         <input
-                            type="date"
+                            type="number"
+                            min="1"
+                            max="1000"
+                            placeholder="Cost"
                             className="form-control"
-                            name="date"
-                            value={this.state.date}
+                            name="cost"
+                            value={this.state.cost}
                             onChange={this.inputChangeHandler}
                         />
                     </div>
-                    <div className="col-md-1" />
-                    <div className="col-md-4">
-                        <input
-                            type="time"
-                            className="form-control"
-                            name="time"
-                            value={this.state.time}
-                            onChange={this.inputChangeHandler}
-                        />
+                </div>
+                <div className="form-row justify-content-between">
+                    <div className="col-5">
+                        <div className="form-group">
+                            <label htmlFor="input-start-date">&nbsp;Starts</label>
+                            <input
+                                id="input-start-date"
+                                type="date"
+                                className="form-control"
+                                name="date"
+                                value={this.state.date}
+                                onChange={this.inputChangeHandler}
+                            />
+                            <input
+                                type="time"
+                                className="form-control"
+                                name="time"
+                                value={this.state.time}
+                                onChange={this.inputChangeHandler}
+                            />
+                        </div>
+                    </div>
+                    <div className="col-5">
+                        <div className="form-group">
+                            <label for="input-end-date">&nbsp;Ends</label>
+                            <input
+                                id="input-end-date"
+                                type="date"
+                                className="form-control"
+                                name="date"
+                                value={this.state.date}
+                                onChange={this.inputChangeHandler}
+                            />
+                            <input
+                                type="time"
+                                className="form-control"
+                                name="time"
+                                value={this.state.time}
+                                onChange={this.inputChangeHandler}
+                            />
+                        </div>
                     </div>
                 </div>
                 <div className="form-row mb-3">
