@@ -88,6 +88,9 @@
     }
 }
 
+/**********
+    Making cards borderless
+**********/
 .card {
     border: none;
     background: var(--bootstrap-bg-light);
@@ -96,3 +99,4 @@
 .my-card-footer {
     padding: 1.25rem;
 }
+/* ********** */
