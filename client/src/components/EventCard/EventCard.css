@@ -12,9 +12,8 @@ a.event-card {
     background: var(--theme-button-color);
 }
 
-/* @media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) {
     .event-card img {
-        width: 700px;
-        height: 400px;
+        height: 350px;
     }
-} */
+}
