@@ -63,7 +63,7 @@ class EventForm extends React.Component {
             newEvent.append("name", this.state.name);
             newEvent.append("category", this.state.category);
             newEvent.append("capacity", this.state.capacity);
-            
+
             newEvent.append("isTicketFree", this.state.isTicketFree);
             newEvent.append("ticketTier", this.state.ticketTier);
             newEvent.append("cost", this.state.cost);
@@ -182,8 +182,8 @@ class EventForm extends React.Component {
                         />
                     </div>
                 </div>
-                <div className="form-row justify-content-between">
-                    <div className="col-5">
+                <div className="form-row justify-content-md-between">
+                    <div className="col-6 col-md-5">
                         <div className="form-group">
                             <label htmlFor="input-start-date">&nbsp;Starts</label>
                             <input
@@ -203,7 +203,7 @@ class EventForm extends React.Component {
                             />
                         </div>
                     </div>
-                    <div className="col-5">
+                    <div className="col-6 col-md-5">
                         <div className="form-group">
                             <label htmlFor="input-end-date">&nbsp;Ends</label>
                             <input
@@ -224,8 +224,8 @@ class EventForm extends React.Component {
                         </div>
                     </div>
                 </div>
-                <div className="form-row mb-3">
-                    <div className="col-md">
+                <div className="form-row mb-md-1">
+                    <div className="col-md-8">
                         <input
                             type="text"
                             className="form-control"
@@ -238,7 +238,7 @@ class EventForm extends React.Component {
                     </div>
                 </div>
                 <div className="form-row mb-3">
-                    <div className="col-md-7">
+                    <div className="col-md-6">
                         <input
                             type="text"
                             className="form-control"

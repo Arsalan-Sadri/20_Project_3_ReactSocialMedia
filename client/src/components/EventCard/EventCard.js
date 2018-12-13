@@ -9,23 +9,21 @@ class EventCard extends React.Component {
                 <div className="card-body">
                     <h4 className="card-title">{this.props.name}</h4>
                     <div className="row">
-                        <div className="col-12 col-md-4">
+                        <div className="col-md-4">
                             <div className="row">
                                 <div className="col-auto">
-                                    <i className="far fa-calendar-alt text-danger" />
+                                    <i className="far fa-calendar-alt" />
                                     <br />
-                                    <i className="far fa-clock text-warning" />
+                                    <i className="far fa-clock text-danger" />
                                     <br />
                                     <i className="fas fa-map-marker-alt text-primary" />
                                 </div>
                                 <div className="col pl-0">
                                     {this.props.date}
                                     <br />
-                                    <span className="">
-                                        {this.props.time}
-                                    </span>
+                                    <span className="text-danger">{this.props.time}</span>
                                     <br />
-                                    <u className="font-italic text-secondary">
+                                    <u className="font-italic text-primary">
                                         {this.props.street}
                                         <br />
                                         {this.props.city}
@@ -34,7 +32,7 @@ class EventCard extends React.Component {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-12 col-md-8 pt-3 pt-md-0">
+                        <div className="col-md-8 pt-3 pt-md-0">
                             <div className="row">
                                 <div className="col-auto">
                                     <i className="fas fa-male pl-1 text-secondary" />

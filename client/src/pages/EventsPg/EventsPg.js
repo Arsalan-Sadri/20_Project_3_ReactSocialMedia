@@ -37,7 +37,7 @@ class EventsPg extends React.Component {
                 <Navbar />
                 <div className="container-fluid bg-light py-5 main-container">
                     <div className="row justify-content-center">
-                        <div className="col col-md-10">
+                        <div className="col-md-9">
                             {this.state.renderNoEvent ? (
                                 <NoEvent />
                             ) : (
