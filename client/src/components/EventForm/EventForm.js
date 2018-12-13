@@ -22,8 +22,7 @@ class EventForm extends React.Component {
 
     inputChangeHandler = event => {
         const { name, value } = event.target;
-        console.log(name);
-        console.log(value);
+
         this.setState({
             [name]: value
         });
