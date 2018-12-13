@@ -1,7 +1,3 @@
-.event-form {
-    /* max-width: 600px; */
-}
-
 label.custom-file-label {
     font-style: italic;
 }
@@ -40,4 +36,8 @@ textarea {
     outline: 0;
     box-shadow: 0 0 0;
     border: 0px solid #ced4da;
+}
+
+.hide {
+    display: none;
 }

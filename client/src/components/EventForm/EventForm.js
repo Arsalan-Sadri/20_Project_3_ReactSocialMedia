@@ -15,14 +15,15 @@ class EventForm extends React.Component {
         zipCode: "",
         description: "",
         selectedFile: null,
-        fileBrowserDisplayVal: "Select a thumbnail... (optional)"
+        fileBrowserDisplayVal: "Select a thumbnail... (optional)",
+        isTicketFree: "",
+        ticketTier: ""
     };
-
-    componentDidMount = () => {};
 
     inputChangeHandler = event => {
         const { name, value } = event.target;
-
+        console.log(name);
+        console.log(value);
         this.setState({
             [name]: value
         });
@@ -79,7 +80,7 @@ class EventForm extends React.Component {
 
     render() {
         return (
-            <form className="event-form p-2 text-secondary font-italic">
+            <form className="p-2 text-secondary font-italic">
                 <div className="form-row mb-3">
                     <div className="col-md">
                         <input
@@ -101,11 +102,17 @@ class EventForm extends React.Component {
                             <option value="" disabled>
                                 Category
                             </option>
-                            <option>Sports</option>
                             <option>Meetup</option>
+                            <option>Tutoring</option>
+                            <option>Sports</option>
                             <option>Boot camp</option>
+                            <option>Fundraising</option>
                             <option>Summit</option>
+                            <option>Conference</option>
                             <option>Rally</option>
+                            <option>Music</option>
+                            <option>Wine tasting</option>
+                            <option>Culinary arts</option>
                         </select>
                     </div>
                 </div>
@@ -119,6 +126,34 @@ class EventForm extends React.Component {
                             className="form-control"
                             name="capacity"
                             value={this.state.capacity}
+                            onChange={this.inputChangeHandler}
+                        />
+                    </div>
+                    <div className="col-md-5">
+                        <select
+                            className="form-control"
+                            name="isTicketFree"
+                            value={this.state.isTicketFree}
+                            onChange={this.inputChangeHandler}>
+                            <option value="" disabled>
+                                Is this event free?
+                            </option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                </div>
+                <div
+                    className={
+                        this.state.isTicketFree === "no" ? "form-row mb-3" : "hide"
+                    }>
+                    <div className="col-9">
+                        <input
+                            type="text"
+                            placeholder="Enter a ticket tier, e.g. Early Bird, VIP, ..."
+                            className="form-control"
+                            name="ticketTier"
+                            value={this.state.ticketTier}
                             onChange={this.inputChangeHandler}
                         />
                     </div>
@@ -158,7 +193,7 @@ class EventForm extends React.Component {
                     </div>
                     <div className="col-5">
                         <div className="form-group">
-                            <label for="input-end-date">&nbsp;Ends</label>
+                            <label htmlFor="input-end-date">&nbsp;Ends</label>
                             <input
                                 id="input-end-date"
                                 type="date"
