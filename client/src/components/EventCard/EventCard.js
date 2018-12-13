@@ -49,7 +49,7 @@ class EventCard extends React.Component {
                         </div>
                     </div>
                 </div>
-                <div className="card-footer">
+                <div className="my-card-footer">
                     <a className="btn my-2 mr-2 event-card" href="/modify-event">
                         <i className="far fa-edit" /> Modify event
                     </a>

@@ -63,7 +63,7 @@ class Profile extends React.Component {
                         </div>
                     </div>
                 </div>
-                <div className="card-footer">
+                <div className="my-card-footer">
                     <a className="btn my-2 mr-2 profile-card" href="/update-profile">
                         <i className="fas fa-edit" /> Update profile
                     </a>

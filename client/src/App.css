@@ -30,7 +30,7 @@
 }
 
 /********** 
-    Styling both navbars 
+    Styling Navbar and NavbarLanPg
 **********/
 @media screen and (min-width: 1000px) {
     .navbar {
@@ -64,6 +64,7 @@
 :root {
     --theme-main-color: rgb(137, 50, 218);
     --theme-button-color: rgb(161, 52, 211);
+    --bootstrap-bg-light: #f8f9fa;
 }
 
 .navbar {
@@ -85,4 +86,13 @@
         */
         min-height: 711px;
     }
+}
+
+.card {
+    border: none;
+    background: var(--bootstrap-bg-light);
+}
+
+.my-card-footer {
+    padding: 1.25rem;
 }
