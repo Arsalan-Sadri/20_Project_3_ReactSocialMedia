@@ -25,12 +25,12 @@ class EventCard extends React.Component {
                                     <span>{" - "}</span>
                                     <span className="">{this.props.endTime}</span>
                                     <br />
-                                    <u className="text-secondary">
+                                    <span className="text-secondary">
                                         {this.props.street}
                                         <br />
                                         {this.props.city}
                                         {","} {this.props.state} {this.props.zipCode}
-                                    </u>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -39,7 +39,7 @@ class EventCard extends React.Component {
                                 <div className="col-auto">
                                     <i className="fas fa-dollar-sign pl-1" />
                                     <br />
-                                    <i className="fas fa-male pl-1 text-secondary" />
+                                    <i className="fas fa-male pl-1" />
                                     <br />
                                     <i className="fas fa-info-circle text-info" />
                                 </div>

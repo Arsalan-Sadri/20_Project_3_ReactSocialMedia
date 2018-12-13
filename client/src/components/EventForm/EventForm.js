@@ -7,7 +7,7 @@ class EventForm extends React.Component {
         name: "",
         category: "",
         capacity: "",
-        isTicketFree: "question",
+        isEventFree: "question",
         ticketTier: "",
         cost: "",
         startDate: "",
@@ -45,7 +45,7 @@ class EventForm extends React.Component {
             this.state.name &&
             this.state.category &&
             this.state.capacity &&
-            this.state.isTicketFree &&
+            this.state.isEventFree &&
             this.state.ticketTier &&
             this.state.cost &&
             this.state.startDate &&
@@ -64,7 +64,7 @@ class EventForm extends React.Component {
             newEvent.append("category", this.state.category);
             newEvent.append("capacity", this.state.capacity);
 
-            newEvent.append("isTicketFree", this.state.isTicketFree);
+            newEvent.append("isEventFree", this.state.isEventFree);
             newEvent.append("ticketTier", this.state.ticketTier);
             newEvent.append("cost", this.state.cost);
 
@@ -144,8 +144,8 @@ class EventForm extends React.Component {
                     <div className="col-md-5">
                         <select
                             className="form-control"
-                            name="isTicketFree"
-                            value={this.state.isTicketFree}
+                            name="isEventFree"
+                            value={this.state.isEventFree}
                             onChange={this.inputChangeHandler}>
                             <option value="question" disabled>
                                 Is this event free?
@@ -157,7 +157,7 @@ class EventForm extends React.Component {
                 </div>
                 <div
                     className={
-                        this.state.isTicketFree === "no" ? "form-row mb-3" : "hide"
+                        this.state.isEventFree === "no" ? "form-row mb-3" : "hide"
                     }>
                     <div className="col-9">
                         <input

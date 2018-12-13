@@ -48,7 +48,7 @@ class EventsPg extends React.Component {
                                             name={event.name}
                                             category={event.category}
                                             capacity={event.capacity}
-                                            isTicketFree={event.isTicketFree}
+                                            isEventFree={event.isEventFree}
                                             ticketTier={event.ticketTier}
                                             cost={event.cost}
                                             startDate={new Date(

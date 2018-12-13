@@ -31,7 +31,7 @@ const eventSchema = new mongoose.Schema({
         trim: true,
         required: "Capacity is required!"
     },
-    isTicketFree: {
+    isEventFree: {
         type: String,
         trim: true,
         required: "Is ticket free is required!"
