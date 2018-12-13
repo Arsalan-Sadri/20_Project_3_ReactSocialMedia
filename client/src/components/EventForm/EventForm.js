@@ -47,6 +47,7 @@ class EventForm extends React.Component {
             this.state.capacity &&
             this.state.isTicketFree &&
             this.state.ticketTier &&
+            this.state.cost &&
             this.state.startDate &&
             this.state.startTime &&
             this.state.endDate &&
@@ -60,11 +61,12 @@ class EventForm extends React.Component {
         ) {
             const newEvent = new FormData();
             newEvent.append("name", this.state.name);
-
             newEvent.append("category", this.state.category);
             newEvent.append("capacity", this.state.capacity);
+            
             newEvent.append("isTicketFree", this.state.isTicketFree);
             newEvent.append("ticketTier", this.state.ticketTier);
+            newEvent.append("cost", this.state.cost);
 
             newEvent.append("startDate", this.state.startDate);
             newEvent.append("startTime", this.state.startTime);
@@ -160,7 +162,7 @@ class EventForm extends React.Component {
                     <div className="col-9">
                         <input
                             type="text"
-                            placeholder="Enter a ticket tier, e.g. Early Bird, VIP, ..."
+                            placeholder="Ticket's tier, e.g. Student, Early Bird, VIP, ..."
                             className="form-control"
                             name="ticketTier"
                             value={this.state.ticketTier}
@@ -189,14 +191,14 @@ class EventForm extends React.Component {
                                 type="date"
                                 className="form-control"
                                 name="startDate"
-                                value={this.state.date}
+                                value={this.state.startDate}
                                 onChange={this.inputChangeHandler}
                             />
                             <input
                                 type="time"
                                 className="form-control"
                                 name="startTime"
-                                value={this.state.time}
+                                value={this.state.startTime}
                                 onChange={this.inputChangeHandler}
                             />
                         </div>
@@ -209,14 +211,14 @@ class EventForm extends React.Component {
                                 type="date"
                                 className="form-control"
                                 name="endDate"
-                                value={this.state.date}
+                                value={this.state.endDate}
                                 onChange={this.inputChangeHandler}
                             />
                             <input
                                 type="time"
                                 className="form-control"
                                 name="endTime"
-                                value={this.state.time}
+                                value={this.state.endTime}
                                 onChange={this.inputChangeHandler}
                             />
                         </div>

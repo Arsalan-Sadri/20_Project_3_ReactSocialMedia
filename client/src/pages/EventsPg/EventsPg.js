@@ -43,14 +43,13 @@ class EventsPg extends React.Component {
                                 <NoEvent />
                             ) : (
                                 this.state.events.map(event => {
-                                    console.log(event.date);
                                    return <EventCard
                                         key={event._id}
                                         name={event.name}
                                         category={event.category}
                                         capacity={event.capacity}
-                                        date={new Date(event.date).toDateString()}
-                                        time={event.time}
+                                        date={new Date(event.startDate).toDateString()}
+                                        time={event.startTime}
                                         street={event.street}
                                         city={event.city}
                                         state={event.state}

@@ -9,7 +9,19 @@ const eventSchema = new mongoose.Schema({
     category: {
         type: String,
         trim: true,
-        enum: ["Sports", "Meetup", "Boot camp", "Summit", "Rally"],
+        enum: [
+            "Meetup",
+            "Tutoring",
+            "Sports",
+            "Boot camp",
+            "Fundraising",
+            "Summit",
+            "Conference",
+            "Rally",
+            "Music",
+            "Wine tasting",
+            "Culinary arts"
+        ],
         required: "Category is required!"
     },
     capacity: {
@@ -19,15 +31,42 @@ const eventSchema = new mongoose.Schema({
         trim: true,
         required: "Capacity is required!"
     },
-    date: {
-        type: Date,
-        trim: true,
-        required: "Date is required!"
-    },
-    time: {
+    isTicketFree: {
         type: String,
         trim: true,
-        required: "Time is required!"
+        required: "Is ticket free is required!"
+    },
+    ticketTier: {
+        type: String,
+        trim: true,
+        required: "Type of ticket is required!"
+    },
+    cost: {
+        type: Number,
+        min: 1,
+        max: 1000,
+        trim: true,
+        required: "Cost of ticket is required!"
+    },
+    startDate: {
+        type: Date,
+        trim: true,
+        required: "Start date is required!"
+    },
+    startTime: {
+        type: String,
+        trim: true,
+        required: "Start time is required!"
+    },
+    endDate: {
+        type: Date,
+        trim: true,
+        required: "End date is required!"
+    },
+    endTime: {
+        type: String,
+        trim: true,
+        required: "End time is required!"
     },
     street: {
         type: String,
