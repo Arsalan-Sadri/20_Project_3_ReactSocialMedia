@@ -46,8 +46,6 @@ class EventCard extends React.Component {
                                     />
                                     <br />
                                     <i className="fas fa-male pl-1" />
-                                    <br />
-                                    <i className="fas fa-info-circle text-info" />
                                 </div>
                                 <div className="col pl-0">
                                     {this.props.isEventfree ? "Free" : this.props.cost}{" "}
@@ -55,11 +53,15 @@ class EventCard extends React.Component {
                                     {this.props.ticketTier}
                                     <br />
                                     {this.props.capacity + " going"}
-                                    <br />
-                                    {this.props.description}
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div className="row mt-3">
+                        <div className="col-auto">
+                            <i className="fas fa-info-circle text-info" />
+                        </div>
+                        <div className="col pl-0">{this.props.description}</div>
                     </div>
                 </div>
                 <div className="my-card-footer">
