@@ -7,8 +7,13 @@ class EventForm extends React.Component {
         name: "",
         category: "",
         capacity: "",
-        date: "",
-        time: "",
+        isTicketFree: "question",
+        ticketTier: "",
+        cost: "",
+        startDate: "",
+        startTime: "",
+        endDate: "",
+        endTime: "",
         street: "",
         city: "",
         state: "",
@@ -16,8 +21,6 @@ class EventForm extends React.Component {
         description: "",
         selectedFile: null,
         fileBrowserDisplayVal: "Select a thumbnail... (optional)",
-        isTicketFree: "question",
-        ticketTier: ""
     };
 
     inputChangeHandler = event => {
@@ -177,14 +180,14 @@ class EventForm extends React.Component {
                                 id="input-start-date"
                                 type="date"
                                 className="form-control"
-                                name="date"
+                                name="startDate"
                                 value={this.state.date}
                                 onChange={this.inputChangeHandler}
                             />
                             <input
                                 type="time"
                                 className="form-control"
-                                name="time"
+                                name="startTime"
                                 value={this.state.time}
                                 onChange={this.inputChangeHandler}
                             />
@@ -197,14 +200,14 @@ class EventForm extends React.Component {
                                 id="input-end-date"
                                 type="date"
                                 className="form-control"
-                                name="date"
+                                name="endDate"
                                 value={this.state.date}
                                 onChange={this.inputChangeHandler}
                             />
                             <input
                                 type="time"
                                 className="form-control"
-                                name="time"
+                                name="endTime"
                                 value={this.state.time}
                                 onChange={this.inputChangeHandler}
                             />
