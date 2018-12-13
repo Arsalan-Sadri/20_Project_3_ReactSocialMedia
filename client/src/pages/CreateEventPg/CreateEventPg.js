@@ -3,7 +3,6 @@ import "./CreateEventPg.css";
 import Navbar from "../../components/Navbar";
 import EventForm from "../../components/EventForm";
 import Footer from "../../components/Footer";
-import SignUpPg from "../SignUpPg";
 
 class ProfilePg extends React.Component {
     componentDidMount() {
@@ -17,7 +16,7 @@ class ProfilePg extends React.Component {
             !localStorage.getItem("token") ||
             localStorage.getItem("token") === "undefined"
         )
-            return <SignUpPg />;
+            return (window.location.pathname = "/");
         return (
             <React.Fragment>
                 <Navbar />

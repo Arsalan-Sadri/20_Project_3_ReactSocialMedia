@@ -3,7 +3,6 @@ import "./UpdateProfilePg.css";
 import Navbar from "../../components/Navbar";
 import UpdateForm from "../../components/UpdateForm";
 import Footer from "../../components/Footer";
-import SignUpPg from "../SignUpPg";
 
 class UpdateProfilePg extends React.Component {
     componentDidMount() {
@@ -17,7 +16,7 @@ class UpdateProfilePg extends React.Component {
             !localStorage.getItem("token") ||
             localStorage.getItem("token") === "undefined"
         )
-            return <SignUpPg />;
+        return (window.location.pathname = "/");
         return (
             <React.Fragment>
                 <Navbar />

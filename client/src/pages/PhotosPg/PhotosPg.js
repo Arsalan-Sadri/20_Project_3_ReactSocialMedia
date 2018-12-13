@@ -2,7 +2,6 @@ import React from "react";
 import Navbar from "../../components/Navbar";
 import NoPhoto from "../../components/NoPhoto";
 import Footer from "../../components/Footer";
-import SignUpPg from "../SignUpPg";
 import "./PhotosPg.css";
 // import API from "../../utils/api/API";
 
@@ -22,7 +21,7 @@ class PhotosPg extends React.Component {
             !localStorage.getItem("token") ||
             localStorage.getItem("token") === "undefined"
         )
-            return <SignUpPg />;
+            return (window.location.pathname = "/");
         return (
             <React.Fragment>
                 <Navbar />

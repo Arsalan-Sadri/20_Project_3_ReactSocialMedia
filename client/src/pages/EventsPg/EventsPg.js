@@ -3,7 +3,6 @@ import Navbar from "../../components/Navbar";
 import EventCard from "../../components/EventCard";
 import Footer from "../../components/Footer";
 import NoEvent from "../../components/NoEvent";
-import SignUpPg from "../../pages/SignUpPg";
 import API from "../../utils/api/API";
 import "./EventsPg.css";
 
@@ -32,7 +31,7 @@ class EventsPg extends React.Component {
             !localStorage.getItem("token") ||
             localStorage.getItem("token") === "undefined"
         )
-            return <SignUpPg />;
+            return (window.location.pathname = "/");
         return (
             <React.Fragment>
                 <Navbar />
@@ -43,23 +42,27 @@ class EventsPg extends React.Component {
                                 <NoEvent />
                             ) : (
                                 this.state.events.map(event => {
-                                   return <EventCard
-                                        key={event._id}
-                                        name={event.name}
-                                        category={event.category}
-                                        capacity={event.capacity}
-                                        date={new Date(event.startDate).toDateString()}
-                                        time={event.startTime}
-                                        street={event.street}
-                                        city={event.city}
-                                        state={event.state}
-                                        zipCode={event.zipCode}
-                                        description={event.description}
-                                        photoURL={`http://${window.location.host}/${
-                                            event.photoURL
-                                        }`}
-                                    />;
-                                    })
+                                    return (
+                                        <EventCard
+                                            key={event._id}
+                                            name={event.name}
+                                            category={event.category}
+                                            capacity={event.capacity}
+                                            date={new Date(
+                                                event.startDate
+                                            ).toDateString()}
+                                            time={event.startTime}
+                                            street={event.street}
+                                            city={event.city}
+                                            state={event.state}
+                                            zipCode={event.zipCode}
+                                            description={event.description}
+                                            photoURL={`http://${window.location.host}/${
+                                                event.photoURL
+                                            }`}
+                                        />
+                                    );
+                                })
                             )}
                         </div>
                     </div>
