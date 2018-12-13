@@ -20,7 +20,7 @@ class EventForm extends React.Component {
         zipCode: "",
         description: "",
         selectedFile: null,
-        fileBrowserDisplayVal: "Select a thumbnail... (optional)",
+        fileBrowserDisplayVal: "Select a thumbnail... (optional)"
     };
 
     inputChangeHandler = event => {
@@ -45,8 +45,12 @@ class EventForm extends React.Component {
             this.state.name &&
             this.state.category &&
             this.state.capacity &&
-            this.state.date &&
-            this.state.time &&
+            this.state.isTicketFree &&
+            this.state.ticketTier &&
+            this.state.startDate &&
+            this.state.startTime &&
+            this.state.endDate &&
+            this.state.endTime &&
             this.state.street &&
             this.state.city &&
             this.state.state &&
@@ -59,9 +63,13 @@ class EventForm extends React.Component {
 
             newEvent.append("category", this.state.category);
             newEvent.append("capacity", this.state.capacity);
+            newEvent.append("isTicketFree", this.state.isTicketFree);
+            newEvent.append("ticketTier", this.state.ticketTier);
 
-            newEvent.append("date", this.state.date);
-            newEvent.append("time", this.state.time);
+            newEvent.append("startDate", this.state.startDate);
+            newEvent.append("startTime", this.state.startTime);
+            newEvent.append("endDate", this.state.endDate);
+            newEvent.append("endTime", this.state.endTime);
 
             newEvent.append("street", this.state.street);
             newEvent.append("city", this.state.city);
