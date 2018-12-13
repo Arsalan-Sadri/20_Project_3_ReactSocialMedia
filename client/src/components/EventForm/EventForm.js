@@ -16,7 +16,7 @@ class EventForm extends React.Component {
         description: "",
         selectedFile: null,
         fileBrowserDisplayVal: "Select a thumbnail... (optional)",
-        isTicketFree: "",
+        isTicketFree: "question",
         ticketTier: ""
     };
 
@@ -135,7 +135,7 @@ class EventForm extends React.Component {
                             name="isTicketFree"
                             value={this.state.isTicketFree}
                             onChange={this.inputChangeHandler}>
-                            <option value="" disabled>
+                            <option value="question" disabled>
                                 Is this event free?
                             </option>
                             <option value="yes">Yes</option>
