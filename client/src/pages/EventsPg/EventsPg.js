@@ -48,10 +48,15 @@ class EventsPg extends React.Component {
                                             name={event.name}
                                             category={event.category}
                                             capacity={event.capacity}
-                                            date={new Date(
+                                            isTicketFree={event.isTicketFree}
+                                            ticketTier={event.ticketTier}
+                                            cost={event.cost}
+                                            startDate={new Date(
                                                 event.startDate
                                             ).toDateString()}
-                                            time={event.startTime}
+                                            endDate={event.endDate}
+                                            startTime={event.startTime}
+                                            endTime={event.endTime}
                                             street={event.street}
                                             city={event.city}
                                             state={event.state}

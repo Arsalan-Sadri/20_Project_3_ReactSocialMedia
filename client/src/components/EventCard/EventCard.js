@@ -19,9 +19,11 @@ class EventCard extends React.Component {
                                     <i className="fas fa-map-marker-alt text-secondary" />
                                 </div>
                                 <div className="col pl-0">
-                                    {this.props.date}
+                                    {this.props.startDate}
                                     <br />
-                                    <span className="">{this.props.time}</span>
+                                    <span className="">{this.props.startTime}</span>
+                                    <span>{" - "}</span>
+                                    <span className="">{this.props.endTime}</span>
                                     <br />
                                     <u className="text-secondary">
                                         {this.props.street}
@@ -35,11 +37,15 @@ class EventCard extends React.Component {
                         <div className="col-md-7 pt-3 pt-md-0">
                             <div className="row">
                                 <div className="col-auto">
+                                    <i className="fas fa-dollar-sign pl-1" />
+                                    <br />
                                     <i className="fas fa-male pl-1 text-secondary" />
                                     <br />
                                     <i className="fas fa-info-circle text-info" />
                                 </div>
                                 <div className="col pl-0">
+                                    {this.props.cost}
+                                    <br />
                                     {this.props.capacity + " going"}
                                     <br />
                                     {this.props.description}
