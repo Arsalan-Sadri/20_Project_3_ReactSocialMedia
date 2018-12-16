@@ -100,10 +100,10 @@ class EventForm extends React.Component {
         this.setState({
             ticketRowCounter: this.state.ticketRowCounter + 1
         });
-
+        
         let tempArr = [];
-        for (var i = 1; i <= this.state.ticketRowCounter; i++) tempArr.push(i);
-
+        for (var i = 0; i <= this.state.ticketRowCounter; i++) tempArr.push(i);
+        
         this.setState({
             addMoreRows: tempArr
         });
