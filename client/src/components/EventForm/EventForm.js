@@ -1,6 +1,8 @@
 import React from "react";
 import "./EventForm.css";
+import "../MoreTicketType";
 import API from "../../utils/api/API";
+import MoreTicketType from "../MoreTicketType";
 
 class EventForm extends React.Component {
     state = {
@@ -20,7 +22,8 @@ class EventForm extends React.Component {
         zipCode: "",
         description: "",
         selectedFile: null,
-        fileBrowserDisplayVal: "Select a thumbnail... (optional)"
+        fileBrowserDisplayVal: "Select a thumbnail... (optional)",
+        addMoreRows: 0
     };
 
     inputChangeHandler = event => {
@@ -88,6 +91,14 @@ class EventForm extends React.Component {
                 .then(res => (window.location.pathname = "/events"))
                 .catch(err => console.log(err));
         } else alert(`WARNING!\nPlease fill out the form!`);
+    };
+
+    addMoreBtnHandler = event => {
+        event.preventDefault();
+
+        this.setState({
+            addMoreRows: this.state.addMoreRows + 1
+        });
     };
 
     render() {
@@ -159,27 +170,21 @@ class EventForm extends React.Component {
                     className={
                         this.state.isEventFree === "no" ? "form-row mb-3" : "hide"
                     }>
-                    <div className="col-9">
-                        <input
-                            type="text"
-                            placeholder="Ticket's tier, e.g. Student, Early Bird, VIP, ..."
-                            className="form-control"
-                            name="ticketTier"
-                            value={this.state.ticketTier}
-                            onChange={this.inputChangeHandler}
-                        />
-                    </div>
                     <div className="col">
-                        <input
-                            type="number"
-                            min="1"
-                            max="1000"
-                            placeholder="Cost"
-                            className="form-control"
-                            name="cost"
-                            value={this.state.cost}
-                            onChange={this.inputChangeHandler}
-                        />
+                        {/* {this.state.addMoreRows.map(() => (
+                            <MoreTicketType
+                                inputChangeHandler={this.inputChangeHandler}
+                                ticketTier={this.state.ticketTier}
+                                cost={this.state.cost}
+                            />
+                        ))} */}
+                        <div className="form-row justify-content-md-end">
+                            <button
+                                className="btn btn-sm btn-link"
+                                onClick={this.addMoreBtnHandler}>
+                                <i className="far fa-plus-square" /> add more...
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div className="form-row justify-content-md-between">
@@ -305,7 +310,7 @@ class EventForm extends React.Component {
                     </div>
                 </div>
                 <div className="form-row mb-3">
-                    <div className="col-md">
+                    <div className="col">
                         <button
                             className="btn btn-lg event-form"
                             onClick={this.createEventBtnHandler}>

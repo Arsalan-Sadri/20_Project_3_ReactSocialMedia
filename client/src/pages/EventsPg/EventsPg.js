@@ -41,33 +41,31 @@ class EventsPg extends React.Component {
                             {this.state.renderNoEvent ? (
                                 <NoEvent />
                             ) : (
-                                this.state.events.map(event => {
-                                    return (
-                                        <EventCard
-                                            key={event._id}
-                                            name={event.name}
-                                            category={event.category}
-                                            capacity={event.capacity}
-                                            isEventFree={event.isEventFree}
-                                            ticketTier={event.ticketTier}
-                                            cost={event.cost}
-                                            startDate={new Date(
-                                                event.startDate
-                                            ).toDateString()}
-                                            endDate={event.endDate}
-                                            startTime={event.startTime}
-                                            endTime={event.endTime}
-                                            street={event.street}
-                                            city={event.city}
-                                            state={event.state}
-                                            zipCode={event.zipCode}
-                                            description={event.description}
-                                            photoURL={`http://${window.location.host}/${
-                                                event.photoURL
-                                            }`}
-                                        />
-                                    );
-                                })
+                                this.state.events.map(event => (
+                                    <EventCard
+                                        key={event._id}
+                                        name={event.name}
+                                        category={event.category}
+                                        capacity={event.capacity}
+                                        isEventFree={event.isEventFree}
+                                        ticketTier={event.ticketTier}
+                                        cost={event.cost}
+                                        startDate={new Date(
+                                            event.startDate
+                                        ).toDateString()}
+                                        endDate={event.endDate}
+                                        startTime={event.startTime}
+                                        endTime={event.endTime}
+                                        street={event.street}
+                                        city={event.city}
+                                        state={event.state}
+                                        zipCode={event.zipCode}
+                                        description={event.description}
+                                        photoURL={`http://${window.location.host}/${
+                                            event.photoURL
+                                        }`}
+                                    />
+                                ))
                             )}
                         </div>
                     </div>
