@@ -23,7 +23,8 @@ class EventForm extends React.Component {
         description: "",
         selectedFile: null,
         fileBrowserDisplayVal: "Select a thumbnail... (optional)",
-        addMoreRows: 0
+        ticketRowCounter: 1,
+        addMoreRows: [1]
     };
 
     inputChangeHandler = event => {
@@ -95,9 +96,16 @@ class EventForm extends React.Component {
 
     addMoreBtnHandler = event => {
         event.preventDefault();
+        
+        this.setState({
+            ticketRowCounter: this.state.ticketRowCounter + 1
+        });
+
+        let tempArr = [];
+        for (var i = 1; i <= this.state.ticketRowCounter; i++) tempArr.push(i);
 
         this.setState({
-            addMoreRows: this.state.addMoreRows + 1
+            addMoreRows: tempArr
         });
     };
 
@@ -171,13 +179,14 @@ class EventForm extends React.Component {
                         this.state.isEventFree === "no" ? "form-row mb-3" : "hide"
                     }>
                     <div className="col">
-                        {/* {this.state.addMoreRows.map(() => (
+                        {this.state.addMoreRows.map(elm => (
                             <MoreTicketType
+                                key={elm}
                                 inputChangeHandler={this.inputChangeHandler}
                                 ticketTier={this.state.ticketTier}
                                 cost={this.state.cost}
                             />
-                        ))} */}
+                        ))}
                         <div className="form-row justify-content-md-end">
                             <button
                                 className="btn btn-sm btn-link"
