@@ -96,14 +96,14 @@ class EventForm extends React.Component {
 
     addMoreBtnHandler = event => {
         event.preventDefault();
-        
+
         this.setState({
             ticketRowCounter: this.state.ticketRowCounter + 1
         });
-        
+
         let tempArr = [];
         for (var i = 0; i <= this.state.ticketRowCounter; i++) tempArr.push(i);
-        
+
         this.setState({
             addMoreRows: tempArr
         });
