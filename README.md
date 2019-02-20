@@ -24,7 +24,7 @@ and password, sign up, and create an account
 
 
 # :nut_and_bolt: Tools and Technologies
-* Languages, libraries, and frameworks: `HTML`, `CSS`, `JavaScript`, `React`
+* Languages, libraries, and frameworks: `HTML`, `CSS`, `JavaScript`, `React`, `Bootstrap`
 * Application Server: `Node.js` runtime environment
 * Database Server: `MongoDB`
 * Dependencies: `axios`, `bcrypt`, `body-parser`, `dotenv`, `express`, `express-fileupload`, `if-env`, `jsonwebtoken`, `mongoose`, `morgan`, `multer`, `react-modal`
