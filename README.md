@@ -17,7 +17,7 @@
 * Users can make friends or unfriend with other users 
 
 * Home page prior to sign in or sign up
-<img src="Docs/Images/signin_page.png" width="600" height="500">
+<img src="Docs/Images/signin_page.png" width="800" height="500">
 
 * Home page after sign in
 <img src="Docs/Images/home_page.png" width="600" height="500">
