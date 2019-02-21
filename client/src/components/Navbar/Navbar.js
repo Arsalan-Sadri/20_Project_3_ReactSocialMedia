@@ -17,7 +17,7 @@ class Navbar extends React.Component {
                 {/********** BRAND **********/}
                 <a className="navbar-brand" href="/">
                     {/* <img src={logo} alt="logo" /> */}
-                    LOGO
+                    Expoterest
                 </a>
                 {/********** TOGGLER BUTTON **********/}
                 <button

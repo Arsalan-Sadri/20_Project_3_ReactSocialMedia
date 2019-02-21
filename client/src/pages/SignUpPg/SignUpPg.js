@@ -16,8 +16,22 @@ class SignUpPg extends React.Component {
                                 <SignUpForm />
                             </section>
                         </div>
+                        {/* <div className="col-md-2"></div> */}
                         <div className="col-md-7">
-                            <aside className="mx-auto">[Welcome!]</aside>
+                            <aside>
+                                <h3 className="welcome-title">Welcome to Expoterest</h3>
+                                <ul>
+                                    <li>
+                                        A minimal social media web app where users can
+                                        sign up, upload pictures, create profiles and
+                                        events, make friends, and look for events nearby!
+                                    </li>
+                                    <li>
+                                        Just fill out the form on the leftd, hit the Sign
+                                        up, and you are in!
+                                    </li>
+                                </ul>
+                            </aside>
                         </div>
                     </div>
                 </div>

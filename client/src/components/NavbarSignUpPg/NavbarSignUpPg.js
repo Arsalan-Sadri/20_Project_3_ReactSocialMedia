@@ -56,7 +56,7 @@ class NavbarSignUpPg extends React.Component {
                 {/********** BRAND **********/}
                 <a className="navbar-brand sign-up-navbar-brand" href="/">
                     {/* <img src={logo} alt="" /> */}
-                    Logo
+                    Expoterest
                 </a>
                 {/********** TOGGLER BUTTON **********/}
                 <button

@@ -1,3 +1,7 @@
+h3.welcome-title {
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans",
+        Arial, sans-serif;
+}
 aside {
     width: 50%;
 }
