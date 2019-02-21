@@ -66,13 +66,10 @@
 }
 
 /* Making the footer stick at the bottom */
-/* navbar-signup-page 100px */
-/* footer 50px */
-.container-fluid {
-    min-height: calc(100vh - (100px + 50px));
-}
-
-.my-footer {
-    height: 50px;
+    /* navbar-signup-page 100px */
+    /* main-navbar 45px */
+    /* footer 45px */
+.container-fluid:not(.container-sign-up-page) {
+    min-height: calc(100vh - (45px + 45px));
 }
 /* ********** */

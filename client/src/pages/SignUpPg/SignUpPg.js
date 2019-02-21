@@ -9,7 +9,7 @@ class SignUpPg extends React.Component {
         return (
             <React.Fragment>
                 <NavbarSignUpPg />
-                <div className="container-fluid py-5 bg-light sign-up-page-container">
+                <div className="container-fluid py-5 bg-light container-sign-up-page">
                     <div className="row">
                         <div className="col-md-5">
                             <section>

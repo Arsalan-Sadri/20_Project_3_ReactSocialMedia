@@ -7,6 +7,8 @@
 
     background: rgb(137, 50, 218);
     color: white;
+
+    height: 45px;
 }
 
 @media screen and (max-width: 460px) {

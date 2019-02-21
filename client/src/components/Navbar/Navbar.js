@@ -13,7 +13,7 @@ class Navbar extends React.Component {
 
     render() {
         return (
-            <nav className="navbar navbar-expand-md navbar-dark sticky-top py-0">
+            <nav className="navbar navbar-expand-md navbar-dark sticky-top py-0 main-navbar">
                 {/********** BRAND **********/}
                 <a className="navbar-brand" href="/">
                     {/* <img src={logo} alt="logo" /> */}
