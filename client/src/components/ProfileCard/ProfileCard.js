@@ -40,11 +40,13 @@ class Profile extends React.Component {
                     </h4>
                     <p className="my-0">{this.state.jobTitle}</p>
                     <div className="row">
+                        {/* ********** ICON COLUMN ********** */}
                         <div className="col-auto pr-0">
-                            <i className="fas fa-map-marker-alt text-primary" aria-hidden="true" />
+                            <i className="fas fa-map-marker-alt text-primary" />
                             <br />
-                            <i className="fas fa-envelope text-info" aria-hidden="true" />
+                            <i className="fas fa-envelope text-info" />
                         </div>
+                        {/* ********** DATA COLUMN ********** */}
                         <div className="col-auto pl-2">
                             <p className="my-0">
                                 {this.state.city}
