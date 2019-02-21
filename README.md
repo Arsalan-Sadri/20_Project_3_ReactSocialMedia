@@ -5,10 +5,10 @@
   * Find all deployed applications. 
 
 # :page_with_curl: Description
-* A minimal social media platform
-* Users enter their basic information, upload a profile picutre, choose a username 
-and password, sign up, and create an account
-* Having singed up, users can then sign in using their credentials 
+* A minimal social media web app where users can sign up, upload pictures, create profiles and events, make friends, and look for events nearby!
+* At the beginning, users need to sign up. 
+* To do so, they need to enter their basic information, upload a profile picutre, choose a username and password, and create an account.
+* Having singed up, they can then sign in using their credentials from now on. 
 * Users can modify their account as they wish after being created  
 * Users can upload multiple photos and create albums 
 * Users can create events
