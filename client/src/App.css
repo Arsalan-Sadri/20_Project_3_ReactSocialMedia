@@ -65,9 +65,14 @@
     background: rgb(137, 50, 218);
 }
 
-/* min-height(687px) = Navbar(44px) + .profile-page-container(590px) + Footer(35px) */
-@media screen and (min-height: 669px) {
-    .main-container {
-        min-height: 711px; /* window.innerHeight(790px) - (Navbar + Footer) */
-    }
+/* Making the footer stick at the bottom */
+/* navbar-signup-page 100px */
+/* footer 50px */
+.container-fluid {
+    min-height: calc(100vh - (100px + 50px));
 }
+
+.my-footer {
+    height: 50px;
+}
+/* ********** */

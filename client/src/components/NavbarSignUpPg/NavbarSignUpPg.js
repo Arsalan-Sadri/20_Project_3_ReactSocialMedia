@@ -52,7 +52,7 @@ class NavbarSignUpPg extends React.Component {
 
     render() {
         return (
-            <nav className="navbar navbar-expand-md navbar-dark sticky-top">
+            <nav className="navbar navbar-expand-md navbar-dark sticky-top navbar-signup-page">
                 {/********** BRAND **********/}
                 <a className="navbar-brand sign-up-navbar-brand" href="/">
                     {/* <img src={logo} alt="" /> */}
