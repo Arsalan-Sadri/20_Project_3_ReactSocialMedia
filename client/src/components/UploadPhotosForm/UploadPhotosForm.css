@@ -1,4 +1,4 @@
-button.btn.photos-form-btn {
+button.upload-photos-btn {
     color: white;
-    background: rgb(161, 52, 211);
+    background: var(--theme-button-color);
 }

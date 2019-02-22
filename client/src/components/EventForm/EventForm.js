@@ -1,24 +1,31 @@
 import React from "react";
 import "./EventForm.css";
+import "../MoreTicketType";
 import API from "../../utils/api/API";
+import MoreTicketType from "../MoreTicketType";
 
 class EventForm extends React.Component {
     state = {
         name: "",
         category: "",
         capacity: "",
-        date: "",
-        time: "",
+        isEventFree: "question",
+        ticketTier: "",
+        cost: "",
+        startDate: "",
+        startTime: "",
+        endDate: "",
+        endTime: "",
         street: "",
         city: "",
         state: "",
         zipCode: "",
         description: "",
         selectedFile: null,
-        fileBrowserDisplayVal: "Select a thumbnail... (optional)"
+        fileBrowserDisplayVal: "Select a thumbnail... (optional)",
+        ticketRowCounter: 1,
+        addMoreRows: [1]
     };
-
-    componentDidMount = () => {};
 
     inputChangeHandler = event => {
         const { name, value } = event.target;
@@ -42,8 +49,13 @@ class EventForm extends React.Component {
             this.state.name &&
             this.state.category &&
             this.state.capacity &&
-            this.state.date &&
-            this.state.time &&
+            this.state.isEventFree &&
+            this.state.ticketTier &&
+            this.state.cost &&
+            this.state.startDate &&
+            this.state.startTime &&
+            this.state.endDate &&
+            this.state.endTime &&
             this.state.street &&
             this.state.city &&
             this.state.state &&
@@ -53,12 +65,17 @@ class EventForm extends React.Component {
         ) {
             const newEvent = new FormData();
             newEvent.append("name", this.state.name);
-
             newEvent.append("category", this.state.category);
             newEvent.append("capacity", this.state.capacity);
 
-            newEvent.append("date", this.state.date);
-            newEvent.append("time", this.state.time);
+            newEvent.append("isEventFree", this.state.isEventFree);
+            newEvent.append("ticketTier", this.state.ticketTier);
+            newEvent.append("cost", this.state.cost);
+
+            newEvent.append("startDate", this.state.startDate);
+            newEvent.append("startTime", this.state.startTime);
+            newEvent.append("endDate", this.state.endDate);
+            newEvent.append("endTime", this.state.endTime);
 
             newEvent.append("street", this.state.street);
             newEvent.append("city", this.state.city);
@@ -77,9 +94,24 @@ class EventForm extends React.Component {
         } else alert(`WARNING!\nPlease fill out the form!`);
     };
 
+    addMoreBtnHandler = event => {
+        event.preventDefault();
+
+        this.setState({
+            ticketRowCounter: this.state.ticketRowCounter + 1
+        });
+
+        let tempArr = [];
+        for (var i = 0; i <= this.state.ticketRowCounter; i++) tempArr.push(i);
+
+        this.setState({
+            addMoreRows: tempArr
+        });
+    };
+
     render() {
         return (
-            <form className="p-2">
+            <form className="p-2 text-secondary font-italic">
                 <div className="form-row mb-3">
                     <div className="col-md">
                         <input
@@ -92,9 +124,7 @@ class EventForm extends React.Component {
                             onChange={this.inputChangeHandler}
                         />
                     </div>
-                </div>
-                <div className="form-row mb-3">
-                    <div className="col-md-7">
+                    <div className="col-md-4">
                         <select
                             className="form-control"
                             name="category"
@@ -103,15 +133,22 @@ class EventForm extends React.Component {
                             <option value="" disabled>
                                 Category
                             </option>
-                            <option>Sports</option>
                             <option>Meetup</option>
+                            <option>Tutoring</option>
+                            <option>Sports</option>
                             <option>Boot camp</option>
+                            <option>Fundraising</option>
                             <option>Summit</option>
+                            <option>Conference</option>
                             <option>Rally</option>
+                            <option>Music</option>
+                            <option>Wine tasting</option>
+                            <option>Culinary arts</option>
                         </select>
                     </div>
-                    <div className="col-md-1" />
-                    <div className="col-md-4">
+                </div>
+                <div className="form-row mb-3">
+                    <div className="col">
                         <input
                             type="number"
                             min="2"
@@ -123,30 +160,86 @@ class EventForm extends React.Component {
                             onChange={this.inputChangeHandler}
                         />
                     </div>
-                </div>
-                <div className="form-row mb-3">
-                    <div className="col-md-7">
-                        <input
-                            type="date"
+                    <div className="col-md-5">
+                        <select
                             className="form-control"
-                            name="date"
-                            value={this.state.date}
-                            onChange={this.inputChangeHandler}
-                        />
-                    </div>
-                    <div className="col-md-1" />
-                    <div className="col-md-4">
-                        <input
-                            type="time"
-                            className="form-control"
-                            name="time"
-                            value={this.state.time}
-                            onChange={this.inputChangeHandler}
-                        />
+                            name="isEventFree"
+                            value={this.state.isEventFree}
+                            onChange={this.inputChangeHandler}>
+                            <option value="question" disabled>
+                                Is this event free?
+                            </option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
                     </div>
                 </div>
-                <div className="form-row mb-3">
-                    <div className="col-md">
+                <div
+                    className={
+                        this.state.isEventFree === "no" ? "form-row mb-3" : "hide"
+                    }>
+                    <div className="col">
+                        {this.state.addMoreRows.map(elm => (
+                            <MoreTicketType
+                                key={elm}
+                                inputChangeHandler={this.inputChangeHandler}
+                                ticketTier={this.state.ticketTier}
+                                cost={this.state.cost}
+                            />
+                        ))}
+                        <div className="form-row justify-content-md-end">
+                            <button
+                                className="btn btn-sm btn-link"
+                                onClick={this.addMoreBtnHandler}>
+                                <i className="far fa-plus-square" /> add more...
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div className="form-row justify-content-md-between">
+                    <div className="col-6 col-md-5">
+                        <div className="form-group">
+                            <label htmlFor="input-start-date">&nbsp;Starts</label>
+                            <input
+                                id="input-start-date"
+                                type="date"
+                                className="form-control"
+                                name="startDate"
+                                value={this.state.startDate}
+                                onChange={this.inputChangeHandler}
+                            />
+                            <input
+                                type="time"
+                                className="form-control"
+                                name="startTime"
+                                value={this.state.startTime}
+                                onChange={this.inputChangeHandler}
+                            />
+                        </div>
+                    </div>
+                    <div className="col-6 col-md-5">
+                        <div className="form-group">
+                            <label htmlFor="input-end-date">&nbsp;Ends</label>
+                            <input
+                                id="input-end-date"
+                                type="date"
+                                className="form-control"
+                                name="endDate"
+                                value={this.state.endDate}
+                                onChange={this.inputChangeHandler}
+                            />
+                            <input
+                                type="time"
+                                className="form-control"
+                                name="endTime"
+                                value={this.state.endTime}
+                                onChange={this.inputChangeHandler}
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div className="form-row mb-md-1">
+                    <div className="col-md-8">
                         <input
                             type="text"
                             className="form-control"
@@ -159,7 +252,7 @@ class EventForm extends React.Component {
                     </div>
                 </div>
                 <div className="form-row mb-3">
-                    <div className="col-md-7">
+                    <div className="col-md-6">
                         <input
                             type="text"
                             className="form-control"
@@ -226,7 +319,7 @@ class EventForm extends React.Component {
                     </div>
                 </div>
                 <div className="form-row mb-3">
-                    <div className="col-md">
+                    <div className="col">
                         <button
                             className="btn btn-lg event-form"
                             onClick={this.createEventBtnHandler}>

@@ -3,7 +3,6 @@ import "./CreateEventPg.css";
 import Navbar from "../../components/Navbar";
 import EventForm from "../../components/EventForm";
 import Footer from "../../components/Footer";
-import SignUpPg from "../SignUpPg";
 
 class ProfilePg extends React.Component {
     componentDidMount() {
@@ -17,13 +16,13 @@ class ProfilePg extends React.Component {
             !localStorage.getItem("token") ||
             localStorage.getItem("token") === "undefined"
         )
-            return <SignUpPg />;
+            return (window.location.pathname = "/");
         return (
             <React.Fragment>
                 <Navbar />
                 <div className="container-fluid bg-light py-5 main-container">
                     <div className="row justify-content-md-center">
-                        <div className="col-md-7">
+                        <div className="col-md-6">
                             <h1>
                                 <i className="fas fa-calendar-alt" aria-hidden="true" />{" "}
                                 Create Event

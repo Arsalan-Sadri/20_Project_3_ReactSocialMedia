@@ -32,7 +32,10 @@ module.exports = {
                             }
                         );
                     })
-                    .catch(err => res.send(err));
+                    .catch(err => {
+                        console.log(err);
+                        res.send(err);
+                    });
             }
         });
     },
@@ -79,7 +82,6 @@ module.exports = {
         })
             .then(dbUser => {
                 delete dbUser.password;
-                dbUser.photoURL = `http://${req.headers.host}/${dbUser.photoURL}`;
                 res.send(dbUser);
             })
             .catch(err => res.send("User not found!"));
@@ -113,7 +115,10 @@ module.exports = {
                 dbUser.photoURL = `http://${req.headers.host}/${dbUser.photoURL}`;
                 res.send(dbUser);
             })
-            .catch(err => res.send(err));
+            .catch(err => {
+                console.log(err);
+                res.send(err);
+            });
     },
     findAll: (req, res) =>
         db.User.find({})

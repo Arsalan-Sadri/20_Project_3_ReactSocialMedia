@@ -4,7 +4,6 @@ import Navbar from "../../components/Navbar";
 import UploadPhotosForm from "../../components/UploadPhotosForm";
 import PreviewCard from "../../components/PreviewCard";
 import Footer from "../../components/Footer";
-import SignUpPg from "../SignUpPg";
 import "./UploadPhotosPg.css";
 
 class UploadPhotosPg extends React.Component {
@@ -67,7 +66,7 @@ class UploadPhotosPg extends React.Component {
             !localStorage.getItem("token") ||
             localStorage.getItem("token") === "undefined"
         )
-            return <SignUpPg />;
+            return (window.location.pathname = "/");
         return (
             <React.Fragment>
                 <Navbar />

@@ -1,6 +1,4 @@
-/********** 
-    Styling the main content area
-**********/
+/* Styling the main content area */
 @media screen and (min-width: 1000px) {
     .container-fluid {
         padding-left: 10%;
@@ -29,9 +27,7 @@
     }
 }
 
-/********** 
-    Styling both navbars 
-**********/
+/* Styling Navbar and NavbarLanPg */
 @media screen and (min-width: 1000px) {
     .navbar {
         padding-left: 10%;
@@ -59,17 +55,33 @@
         padding-right: 25%;
     }
 }
-/* ********** */
+
+:root {
+    --theme-main-color: rgb(137, 50, 218);
+    --theme-button-color: rgb(161, 52, 211);
+    --bootstrap-bg-light: #f8f9fa;
+}
 
 .navbar {
-    background: rgb(137, 50, 218);
+    background: var(--theme-main-color);
 }
 
-/* Making the footer stick at the bottom */
-    /* navbar-signup-page 100px */
-    /* main-navbar 45px */
-    /* footer 45px */
+/* 
+    Making the footer stick at the bottom
+    navbar-signup-page 100px 
+    main-navbar 45px 
+    footer 45px 
+*/
 .container-fluid:not(.container-sign-up-page) {
     min-height: calc(100vh - (45px + 45px));
 }
-/* ********** */
+
+/* Making all cards borderless */
+.card {
+    border: none;
+    background: var(--bootstrap-bg-light);
+}
+
+.my-card-footer {
+    padding: 1.25rem;
+}

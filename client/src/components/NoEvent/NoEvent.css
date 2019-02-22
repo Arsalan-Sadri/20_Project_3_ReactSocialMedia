@@ -6,3 +6,8 @@
     padding: 20px;
     border-radius: 10px;
 }
+
+.create-event-link {
+    color: white;
+    background: var(--theme-button-color);
+}

@@ -5,7 +5,7 @@
     align-items: center;
     flex-wrap: wrap;
 
-    background: rgb(137, 50, 218);
+    background: var(--theme-main-color);
     color: white;
 
     height: 45px;

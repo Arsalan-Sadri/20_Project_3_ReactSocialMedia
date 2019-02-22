@@ -3,7 +3,6 @@ import Navbar from "../../components/Navbar";
 import EventCard from "../../components/EventCard";
 import Footer from "../../components/Footer";
 import NoEvent from "../../components/NoEvent";
-import SignUpPg from "../../pages/SignUpPg";
 import API from "../../utils/api/API";
 import "./EventsPg.css";
 
@@ -32,13 +31,13 @@ class EventsPg extends React.Component {
             !localStorage.getItem("token") ||
             localStorage.getItem("token") === "undefined"
         )
-            return <SignUpPg />;
+            return (window.location.pathname = "/");
         return (
             <React.Fragment>
                 <Navbar />
                 <div className="container-fluid bg-light py-5 main-container">
-                    <div className="row mb-5">
-                        <div className="col-md">
+                    <div className="row justify-content-center">
+                        <div className="col-md-8">
                             {this.state.renderNoEvent ? (
                                 <NoEvent />
                             ) : (
@@ -48,8 +47,15 @@ class EventsPg extends React.Component {
                                         name={event.name}
                                         category={event.category}
                                         capacity={event.capacity}
-                                        date={event.date}
-                                        time={event.time}
+                                        isEventFree={event.isEventFree}
+                                        ticketTier={event.ticketTier}
+                                        cost={event.cost}
+                                        startDate={new Date(
+                                            event.startDate
+                                        ).toDateString()}
+                                        endDate={event.endDate}
+                                        startTime={event.startTime}
+                                        endTime={event.endTime}
                                         street={event.street}
                                         city={event.city}
                                         state={event.state}

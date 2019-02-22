@@ -1,7 +1,6 @@
 import React from "react";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
-import SignUpPg from "../SignUpPg";
 import "./HomePg.css";
 
 class HomePg extends React.Component {
@@ -16,7 +15,7 @@ class HomePg extends React.Component {
             !localStorage.getItem("token") ||
             localStorage.getItem("token") === "undefined"
         )
-            return <SignUpPg />;
+            return (window.location.pathname = "/");
         return (
             <React.Fragment>
                 <Navbar />

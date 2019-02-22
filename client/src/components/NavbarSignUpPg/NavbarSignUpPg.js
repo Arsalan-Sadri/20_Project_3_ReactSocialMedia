@@ -54,7 +54,7 @@ class NavbarSignUpPg extends React.Component {
         return (
             <nav className="navbar navbar-expand-md navbar-dark sticky-top navbar-sign-up-page">
                 {/********** BRAND **********/}
-                <a className="navbar-brand sign-up-navbar-brand" href="/">
+                <a className="navbar-brand navbar-brand-sign-up" href="/">
                     {/* <img src={logo} alt="" /> */}
                     Expoterest
                 </a>
@@ -95,7 +95,7 @@ class NavbarSignUpPg extends React.Component {
                         />
                         {/********** BUTTON **********/}
                         <button
-                            className="btn btn-outline btn-sm text-white mb-0"
+                            className="btn btn-outline btn-sm text-white mb-0 sign-in-button"
                             onClick={this.signInHandler}>
                             <i className="fa fa-sign-in" aria-hidden="true" /> Sign in
                         </button>

@@ -33,7 +33,11 @@ class Profile extends React.Component {
     render() {
         return (
             <div className="card profile-card">
-                <img className="card-img-top" src={this.state.photoURL} alt="card" />
+                <img
+                    className="card-img-top"
+                    src={`http://${window.location.host}/${this.state.photoURL}`}
+                    alt="card"
+                />
                 <div className="card-body">
                     <h4 className="card-title">
                         {this.state.firstName} {this.state.lastName}
@@ -58,7 +62,7 @@ class Profile extends React.Component {
                         </div>
                     </div>
                 </div>
-                <div className="card-footer">
+                <div className="my-card-footer">
                     <a className="btn my-2 mr-2 profile-card" href="/update-profile">
                         <i className="fas fa-edit" /> Update profile
                     </a>

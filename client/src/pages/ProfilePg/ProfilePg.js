@@ -4,7 +4,6 @@ import Navbar from "../../components/Navbar";
 import ProfileCard from "../../components/ProfileCard";
 import Footer from "../../components/Footer";
 import PhotoCarousel from "../../components/PhotoCarousel";
-import SignUpPg from "../../pages/SignUpPg";
 import Modal from "../../components/Modal";
 
 class ProfilePg extends React.Component {
@@ -33,7 +32,7 @@ class ProfilePg extends React.Component {
             !localStorage.getItem("token") ||
             localStorage.getItem("token") === "undefined"
         )
-            return <SignUpPg />;
+            return (window.location.pathname = "/");
         return (
             <React.Fragment>
                 <Navbar />

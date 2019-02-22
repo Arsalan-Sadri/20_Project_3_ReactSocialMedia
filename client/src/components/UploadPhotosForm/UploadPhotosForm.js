@@ -23,7 +23,7 @@ const UploadPhotosForm = props => (
         </div>
         <div className="form-row mb-5">
             <div className="col-md">
-                <button className="btn photos-form-btn" onClick={props.uploadBtnHandler}>
+                <button className="btn upload-photos-btn" onClick={props.uploadBtnHandler}>
                     <i className="fas fa-cloud-upload-alt" aria-hidden="true" /> Upload
                 </button>
             </div>

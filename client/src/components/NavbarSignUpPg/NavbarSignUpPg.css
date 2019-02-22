@@ -13,12 +13,12 @@ img {
     height: 100px;
 }
 
-.navbar button {
+.sign-in-button {
     background: rgb(115, 11, 212);
     border: 1px solid rgb(89, 15, 158);
 }
 
-.navbar button:hover {
+.sign-in-button:hover {
     background: rgb(104, 9, 104);
 }
 
