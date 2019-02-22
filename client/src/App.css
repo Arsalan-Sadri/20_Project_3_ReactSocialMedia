@@ -56,12 +56,14 @@
     }
 }
 
+/* Definning global color theme */
 :root {
     --theme-main-color: rgb(137, 50, 218);
     --theme-button-color: rgb(161, 52, 211);
     --bootstrap-bg-light: #f8f9fa;
 }
 
+/* Applying color theme to navbar */
 .navbar {
     background: var(--theme-main-color);
 }
