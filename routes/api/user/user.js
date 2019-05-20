@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const userControlller = require("../../../controllers/userController");
+const userController = require("../../../controllers/userController");
 const middleware = require("../../../middleware");
 const multer = require("multer");
 
@@ -16,11 +16,11 @@ const upload = multer({ storage });
 
  router
     .route("/sign-up")
-    .post(upload.single("photo"), userControlller.signUp);
+    .post(upload.single("photo"), userController.signUp);
 
 router
     .route("/sign-in")
-    .post(userControlller.signIn);
+    .post(userController.signIn);
 
 
 router
@@ -28,11 +28,11 @@ router
 
 router
     .route("/:username")
-    .get(userControlller.findOneAndReturn);
+    .get(userController.findOneAndReturn);
 
 router
     .route("/:username/update-profile")
-    .post(upload.single("photo"), userControlller.updateOneAndReturn);
+    .post(upload.single("photo"), userController.updateOneAndReturn);
     
 router
     .route("/:username/upload-photos")
@@ -40,6 +40,6 @@ router
 
 router
     .route("/:username/events")
-    .get(userControlller.getUserEvents)
+    .get(userController.getUserEvents)
 
 module.exports = router;
