@@ -1,1 +1,0 @@
-This file exists to ensure the containing folder, i.e. uploads, will be pushed to Heroku production server
