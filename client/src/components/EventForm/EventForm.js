@@ -2,7 +2,6 @@ import React from "react";
 import "./EventForm.css";
 import "../MoreTicketType";
 import API from "../../utils/api/API";
-import MoreTicketType from "../MoreTicketType";
 
 class EventForm extends React.Component {
     state = {
@@ -49,9 +48,6 @@ class EventForm extends React.Component {
             this.state.name &&
             this.state.category &&
             this.state.capacity &&
-            this.state.isEventFree &&
-            this.state.ticketTier &&
-            this.state.cost &&
             this.state.startDate &&
             this.state.startTime &&
             this.state.endDate &&
@@ -67,10 +63,6 @@ class EventForm extends React.Component {
             newEvent.append("name", this.state.name);
             newEvent.append("category", this.state.category);
             newEvent.append("capacity", this.state.capacity);
-
-            newEvent.append("isEventFree", this.state.isEventFree);
-            newEvent.append("ticketTier", this.state.ticketTier);
-            newEvent.append("cost", this.state.cost);
 
             newEvent.append("startDate", this.state.startDate);
             newEvent.append("startTime", this.state.startTime);
@@ -159,41 +151,6 @@ class EventForm extends React.Component {
                             value={this.state.capacity}
                             onChange={this.inputChangeHandler}
                         />
-                    </div>
-                    <div className="col-md-5">
-                        <select
-                            className="form-control"
-                            name="isEventFree"
-                            value={this.state.isEventFree}
-                            onChange={this.inputChangeHandler}>
-                            <option value="question" disabled>
-                                Is this event free?
-                            </option>
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
-                        </select>
-                    </div>
-                </div>
-                <div
-                    className={
-                        this.state.isEventFree === "no" ? "form-row mb-3" : "hide"
-                    }>
-                    <div className="col">
-                        {this.state.addMoreRows.map(elm => (
-                            <MoreTicketType
-                                key={elm}
-                                inputChangeHandler={this.inputChangeHandler}
-                                ticketTier={this.state.ticketTier}
-                                cost={this.state.cost}
-                            />
-                        ))}
-                        <div className="form-row justify-content-md-end">
-                            <button
-                                className="btn btn-sm btn-link"
-                                onClick={this.addMoreBtnHandler}>
-                                <i className="far fa-plus-square" /> add more...
-                            </button>
-                        </div>
                     </div>
                 </div>
                 <div className="form-row justify-content-md-between">

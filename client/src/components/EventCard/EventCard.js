@@ -37,21 +37,9 @@ class EventCard extends React.Component {
                         <div className="col-md-7 pt-3 pt-md-0">
                             <div className="row">
                                 <div className="col-auto">
-                                    <i
-                                        className={
-                                            this.props.isEventfree
-                                                ? "hide"
-                                                : "fas fa-dollar-sign pl-1"
-                                        }
-                                    />
-                                    <br />
                                     <i className="fas fa-male pl-1" />
                                 </div>
                                 <div className="col pl-0">
-                                    {this.props.isEventfree ? "Free" : this.props.cost}{" "}
-                                    <i className="fas fa-ticket-alt pl-4 pr-2" />
-                                    {this.props.ticketTier}
-                                    <br />
                                     {this.props.capacity + " going"}
                                 </div>
                             </div>

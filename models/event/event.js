@@ -31,23 +31,6 @@ const eventSchema = new mongoose.Schema({
         trim: true,
         required: "Capacity is required!"
     },
-    isEventFree: {
-        type: String,
-        trim: true,
-        required: "Is ticket free is required!"
-    },
-    ticketTier: {
-        type: String,
-        trim: true,
-        required: "Type of ticket is required!"
-    },
-    cost: {
-        type: Number,
-        min: 1,
-        max: 1000,
-        trim: true,
-        required: "Cost of ticket is required!"
-    },
     startDate: {
         type: Date,
         trim: true,
