@@ -1,7 +1,7 @@
 const db = require("../models");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-require("dotenv").load();
+require('dotenv').config();
 
 module.exports = {
     signUp: (req, res) => {
