@@ -74,6 +74,7 @@ class Navbar extends React.Component {
                     {/********** DROPDOWN **********/}
                     <div className="nav-item dropdown ml-auto">
                         <a
+                            href="/"
                             className="nav-link dropdown-toggle text-white px-0"
                             // href={"/profile/" + localStorage.getItem("username")}
                             id="navbarDropdown"
@@ -87,7 +88,7 @@ class Navbar extends React.Component {
                             className="dropdown-menu dropdown-menu-right"
                             aria-labelledby="navbarDropdown">
                             <div className="dropdown-divider" />
-                            <a className="dropdown-item" onClick={this.signOutHandler}>
+                            <a href="/" className="dropdown-item" onClick={this.signOutHandler}>
                                 <i className="fas fa-sign-out" aria-hidden="true" /> Sign
                                 out
                             </a>
