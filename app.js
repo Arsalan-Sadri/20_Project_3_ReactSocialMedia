@@ -27,6 +27,6 @@ mongoose.connect(
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, function() {
     console.log(
-        `\n**********\nApp is running on: http://${host}:${PORT}\n**********\n`
+        `\n**********\nApp is running\n**********\n`
     );
 });
