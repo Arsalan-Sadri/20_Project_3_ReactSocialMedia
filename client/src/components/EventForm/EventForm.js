@@ -1,6 +1,5 @@
 import React from "react";
 import "./EventForm.css";
-import "../MoreTicketType";
 import API from "../../utils/api/API";
 
 class EventForm extends React.Component {
