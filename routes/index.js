@@ -4,8 +4,12 @@ const path = require("path");
 
 router
     .route("/")
-    .get((req, res) =>
+    .get((req, res) =>{
+        console.log("HOMEPAGE HIT!!!");
+        console.log(__dirname);
+        
         res.sendFile(path.join(__dirname, "../client/build/index.html"))
+    }
     );
 
 router

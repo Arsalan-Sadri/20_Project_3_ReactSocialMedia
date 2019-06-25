@@ -12,6 +12,7 @@ app.use(bodyParser.json());
 app.use("/uploads", express.static("uploads"));
 
 if (process.env.NODE_ENV === "production") {
+    console.log(`\nNODE_ENV= ${process.env.NODE_ENV}\n`)
     app.use(express.static("client/build"));
 }
 
@@ -27,6 +28,6 @@ mongoose.connect(
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, function() {
     console.log(
-        `\n**********\nApp is running\n**********\n`
+        `\n**********\nApp is running on port: ${PORT}\n**********\n`
     );
 });
