@@ -1,7 +1,7 @@
 {
-  "name": "mern",
+  "name": "20_project_3_react-social-media",
   "version": "1.0.0",
-  "description": "",
+  "description": "20_Project_3_ReactSocialMedia",
   "main": "app.js",
   "engines": {
     "node": "10.16.0"
