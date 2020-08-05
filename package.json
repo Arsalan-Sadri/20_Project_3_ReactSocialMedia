@@ -28,7 +28,7 @@
     "body-parser": "^1.18.3",
     "dotenv": "^8.0.0",
     "express": "^4.15.4",
-    "express-fileupload": "^1.0.0",
+    "express-fileupload": "^1.1.9",
     "if-env": "^1.0.4",
     "jsonwebtoken": "^8.3.0",
     "mongoose": "^5.6.1",
