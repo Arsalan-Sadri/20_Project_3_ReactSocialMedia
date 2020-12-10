@@ -1,25 +1,26 @@
-require('dotenv').config();
+require('../controllers/node_modules/dotenv').config();
 const express = require('express');
 const app = express();
-const logger = require('morgan');
-const bodyParser = require('body-parser');
+const morgan = require('morgan');
 const routes = require('./routes');
-const dbConnected = require('./config.js');
+const path = require('path');
+const cors = require('cors');
+const helmet = require('helmet');
 
-app.use(logger('dev'));
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-
+app.use(morgan('common'));
+app.use(cors);
+app.use(helmet);
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 app.use('/uploads', express.static('uploads'));
 
 if (process.env.NODE_ENV === 'production') {
-  console.log(`\nNODE_ENV= ${process.env.NODE_ENV}\n`);
-  app.use(express.static('client/build'));
+  app.use(express.static(path.join(__dirname, 'client', 'build')));
 }
 
 app.use(routes);
 
-dbConnected
+require('./config.js')
   .then(() =>
     app.listen(process.env.PORT, () => console.log('Server is running...'))
   )
