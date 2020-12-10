@@ -1,4 +1,4 @@
-require('../controllers/node_modules/dotenv').config();
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const morgan = require('morgan');
@@ -24,4 +24,4 @@ require('./config.js')
   .then(() =>
     app.listen(process.env.PORT, () => console.log('Server is running...'))
   )
-  .catch((er) => console.error(err));
+  .catch((err) => console.error(err));
